@@ -1,0 +1,19 @@
+{
+  "name": "generator-omg-basic",
+  "version": "0.0.0",
+  "description": "",
+  "homepage": "https://github.com/oh-my-github/yo-omg-basic",
+  "author": {
+    "name": "1ambda",
+    "email": "1amb4a@gmail.com",
+    "url": ""
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "oh-my-github"
+  ],
+  "license": "Apache-2.0"
+}
