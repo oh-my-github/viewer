@@ -15,7 +15,6 @@
     "eslint-plugin-react": "^3.6.3",
     "fbjs": "^0.4.0",
     "file-loader": "^0.8.4",
-    "git-repository": "^0.1.1",
     "glob": "^5.0.15",
     "history": "^1.12.6",
     "hygienist-middleware": "^0.1.0",
@@ -46,7 +45,6 @@
     "test": "npm run lint && mocha --compilers js:babel/register",
     "clean": "babel-node --eval \"require('./tools/clean')().catch(err => console.log(err.stack))\"",
     "build": "babel-node --eval \"require('./tools/build')().catch(err => console.log(err.stack))\"",
-    "start": "babel-node --eval \"require('./tools/start')().catch(err => console.log(err.stack))\"",
-    "deploy": "babel-node --eval \"require('./tools/deploy')().catch(err => console.log(err.stack))\""
+    "start": "babel-node --eval \"require('./tools/start')().catch(err => console.log(err.stack))\""
   }
 }
