@@ -5,15 +5,14 @@
     "babel-preset-stage-0": "^6.3.13",
     "babel-register": "^6.4.3",
     "eslint-config-xo-space": "^0.7.0",
-    "isparta": "^4.0.0"
+    "mocha": "^2.3.4",
+    "yeoman-assert": "^2.1.1",
+    "yeoman-test": "^1.0.0"
   },
   "eslintConfig": {
     "extends": "xo-space",
     "env": {
       "mocha": true
     }
-  },
-  "scripts": {
-    "test": "echo \"ERROR\"
   }
 }

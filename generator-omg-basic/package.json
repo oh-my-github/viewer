@@ -16,6 +16,20 @@
     "oh-my-github"
   ],
   "license": "Apache-2.0",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "babel-register": "^6.4.3",
+    "eslint": "^1.10.3",
+    "eslint-config-xo-space": "^0.7.0",
+    "mocha": "^2.3.4",
+    "yeoman-assert": "^2.1.1",
+    "yeoman-test": "^1.0.0",
+    "yosay": "^1.1.0"
+  },
+  "scripts": {
+    "test": "mocha --compilers js:babel-core/register generators/**/*.spec.js"
   }
 }
