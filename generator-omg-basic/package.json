@@ -23,7 +23,7 @@
     "babel-preset-stage-0": "^6.3.13",
     "babel-register": "^6.4.3",
     "eslint": "^1.10.3",
-    "eslint-config-xo-space": "^0.7.0",
+    "eslint-config-xo-space": "^0.8.0",
     "mocha": "^2.3.4",
     "yeoman-assert": "^2.1.1",
     "yeoman-test": "^1.0.0",

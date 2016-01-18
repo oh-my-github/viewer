@@ -29,13 +29,20 @@ generator-omg-basic $ npm link
 ### Test: Generator
 
 ```bash
-yo-omg-basic $ gulp test
+yo-omg-basic $ npm test
 ```
 
-### Test: Template
+### Test: App Template
 
 ```bash
-yo-omg basic $ cd generator-omg-basic/generator/app/templates
-templates    $ npm test
+yo-omg-basic $ cd app-template
+app-template $ npm test
+```
+
+### Run: App Template
+
+```bash
+yo-omg-basic $ cd app-template
+app-template $ npm start
 ```
 
