@@ -29,7 +29,7 @@ generator-omg-basic $ npm link
 ### Test: Generator
 
 ```bash
-yo-omg basic $ gulp test
+yo-omg-basic $ gulp test
 ```
 
 ### Test: Template
