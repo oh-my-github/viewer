@@ -1,4 +1,4 @@
-# yo-omg-basic 
+# Oh My Github Basic Profile Template 
 
 ## Usage 
 

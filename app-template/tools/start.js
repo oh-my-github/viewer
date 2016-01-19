@@ -16,7 +16,7 @@ export default async () => {
 
   browserSync({
     server: {
-      baseDir: 'build',
+      baseDir: ['build', 'resource'],
 
       middleware: [
         hygienistMiddleware('build'),
@@ -43,6 +43,11 @@ export default async () => {
     files: [
       'build/**/*.css',
       'build/**/*.html',
+      'resource/*.*'
     ],
+
+    routes: {
+      '/oh-my-github.json': 'resource/oh-my-github.json'
+    }
   });
 };
