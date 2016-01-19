@@ -3,12 +3,6 @@ var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
 
-var path = require("path");
-
-var GENERATOR_APP_DIR = path.dirname(__dirname);
-var GENERATOR_DIR = path.join(GENERATOR_APP_DIR, "../");
-var PROJECT_DIR = path.join(GENERATOR_DIR, "../");
-
 module.exports = yeoman.Base.extend({
   prompting: function () {
     var done = this.async();

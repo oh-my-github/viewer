@@ -44,6 +44,7 @@
     "test": "mocha --compilers js:babel-core/register test/*.spec.js",
     "clean": "babel-node --eval \"require('./tools/clean').default().catch(err => console.log(err.stack))\"",
     "build": "babel-node --eval \"require('./tools/build').default().catch(err => console.log(err.stack))\"",
-    "start": "babel-node --eval \"require('./tools/start').default().catch(err => console.log(err.stack))\""
+    "start": "babel-node --eval \"require('./tools/start').default().catch(err => console.log(err.stack))\"",
+    "dist":  "babel-node --eval \"require('./tools/dist').default().catch(err => console.log(err.stack))\""
   }
 }
