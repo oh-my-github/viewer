@@ -19,8 +19,6 @@ const FuelSavingsApp = (props) => {
 
   const settings = props.fuelSavingsAppState;
 
-
-
   return (
     <div>
       <RaisedButton label="Default" />

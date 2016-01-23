@@ -26,6 +26,8 @@ var getPlugins = function(env) {
       break;
   }
 
+  plugins.push(new webpack.DefinePlugin({'process.env.NODE_ENV': JSON.stringify(env)}));
+
   return plugins;
 };
 
