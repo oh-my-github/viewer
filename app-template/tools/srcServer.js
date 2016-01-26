@@ -14,7 +14,7 @@ var bundler = webpack(webpackConfig);
 // Run Browsersync and use middleware for Hot Module Replacement
 browserSync({
   server: {
-    baseDir: 'src',
+    baseDir: ['src', 'resource'],
 
     middleware: [
       webpackDevMiddleware(bundler, {
@@ -39,6 +39,11 @@ browserSync({
   // no need to watch '*.js' here, webpack will take care of it for us,
   // including full page reloads if HMR won't work
   files: [
-    'src/*.html'
-  ]
+    'src/*.html',
+    'resource/oh-my-gtihub.json'
+  ],
+
+  routes: {
+    'oh-my-github.json': 'resource/oh-my-github.json'
+  }
 });

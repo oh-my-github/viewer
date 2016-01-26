@@ -2,13 +2,14 @@
 //This boilerplate file is likely to be the same for each project that uses Redux.
 //With Redux, the actual stores are in /reducers.
 
-import { createStore, compose } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
 
-const finalCreateStore = compose(
-  // Middleware you want to use in production:
-  //applyMiddleware(d1, d2, d3),
-  // Other store enhancers if you use any
+const middlewares = [thunk]
+
+const finalCreateStore = applyMiddleware(
+  ...middlewares
 )(createStore);
 
 export default function configureStore(initialState) {
