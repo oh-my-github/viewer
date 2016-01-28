@@ -5,29 +5,33 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import UserInfoBox from '../components/UserInfoBox';
-import Header from "../components/Header";
+import Header from '../components/Header';
+import MainTab from '../components/MainTab';
 import * as ActionCreators from '../actions/ActionCreators';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.props.actions.fetchProfile();
+  }
+
   render() {
+    const { profile } = this.props;
 
     return (
       <div>
         <Header />
-        <UserInfoBox />
+        <UserInfoBox user={profile.user} />
+        <MainTab />
       </div>
     );
   }
 }
 
-App.propTypes = {
-  actions: PropTypes.object.isRequired,
-  profileAppState: PropTypes.object.isRequired
-};
-
 function mapStateToProps(state) {
   return {
-    profileAppState: state.profileAppState
+    profile: state.profile
   };
 }
 
@@ -41,3 +45,8 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(App);
+
+App.propTypes = {
+  actions: PropTypes.object.isRequired,
+  profile: PropTypes.object.isRequired
+};

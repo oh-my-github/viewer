@@ -4,10 +4,12 @@
 //With Redux, the actual stores are in /reducers.
 
 import { createStore, applyMiddleware, compose} from 'redux';
+import promise from 'redux-promise';
 import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
 
-const middlewares = [thunk, createLogger()];
+const middlewares = [promise];
+//const middlewares = [promise, createLogger()];
 
 import rootReducer from '../reducers';
 import DevTools from '../containers/DevTools';

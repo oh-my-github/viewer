@@ -3,8 +3,7 @@ import React, {PropTypes, Component } from 'react';
 class Header extends Component {
   render() {
     return (
-      <div className="light-blue" style={{height: "80px"}}>
-        Header
+      <div className="cyan" style={{height: "50px"}}>
       </div>
     );
   }
