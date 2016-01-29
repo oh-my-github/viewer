@@ -9,6 +9,13 @@ const styles = {
     paddingTop: 16,
     marginBottom: 12,
     fontWeight: 400
+  },
+  tabBg:{
+    position: "absolute",
+    left : 0,
+    width: "100%",
+    height: 48,
+    zIndex: -1
   }
 };
 
@@ -16,10 +23,11 @@ class MainTab extends Component {
 
   render() {
     return (
-      <div className="row">
+      <div className="container">
+        <div style={styles.tabBg} className="cyan"/>
         <Tabs>
           <Tab label="Language">
-            <div>
+            <div className="container">
               <h2 style={styles.headline}>Tab One</h2>
               <p>
                 This is an example tab.
@@ -31,16 +39,15 @@ class MainTab extends Component {
             </div>
           </Tab>
           <Tab label="Repository" >
-            <div>
+            <div className="container">
               <h2 style={styles.headline}>Tab Two</h2>
               <p>
                 This is another example tab.
               </p>
             </div>
           </Tab>
-          <Tab
-            label="Contribution">
-            <div>
+          <Tab label="Contribution">
+            <div className="container">
               <h2 style={styles.headline}>Tab Three</h2>
               <p>
                 This is a third example tab.
@@ -54,4 +61,3 @@ class MainTab extends Component {
 }
 
 export default MainTab;
-
