@@ -22,7 +22,7 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <UserInfoBox user={profile.user} />
+        <UserInfoBox user={profile.user} repositories={profile.repositories} />
         <MainTab />
       </div>
     );
