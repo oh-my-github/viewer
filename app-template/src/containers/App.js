@@ -21,7 +21,7 @@ class App extends React.Component {
 
     return (
       <div>
-        <Header />
+        <Header user={profile.user} />
         <UserInfoBox user={profile.user} repositories={profile.repositories} />
         <MainTabs />
       </div>

@@ -1,7 +1,9 @@
 import 'babel-polyfill';
 import 'isomorphic-fetch';
+
 import injectTapEventPlugin from 'react-tap-event-plugin';
-injectTapEventPlugin();
+injectTapEventPlugin(); /* for tab */
+$( document ).ready(function(){ $(".button-collapse").sideNav(); }); /* for nav */
 
 import React from 'react';
 import {render} from 'react-dom';
