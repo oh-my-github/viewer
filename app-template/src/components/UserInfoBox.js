@@ -1,9 +1,11 @@
 import React, {PropTypes, Component } from 'react';
+import RaisedButton from 'material-ui/lib/raised-button';
+import FontIcon from 'material-ui/lib/font-icon';
 
 import Paper from 'material-ui/lib/paper';
 
 const styles = {
-  avatarStyle: {
+  avatar: {
     height: 100,
     width: 100,
     margin: 10,
@@ -12,21 +14,11 @@ const styles = {
     borderRadius: '50%',
     boxShadow: '0 0 2px rgba(0, 0, 0, .9)'
   },
-  exampleImageInput: {
-    cursor: 'pointer',
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    right: 0,
-    left: 0,
-    width: '100%',
-    opacity: 0
+
+  statButton: {
+    margin: "5px"
   }
 };
-
-import FlatButton from 'material-ui/lib/flat-button';
-import FontIcon from 'material-ui/lib/font-icon';
-import ActionAndroid from 'material-ui/lib/svg-icons/action/android';
 
 class UserInfoBox extends Component {
   constructor(props) {
@@ -49,35 +41,22 @@ class UserInfoBox extends Component {
         <div className="container">
           <div className="row">
             <div className="col s12 m8 offset-m2 l6 offset-l3 center">
-              <div className="row"> <img style={styles.avatarStyle} src={user.avatar_url} /> </div>
-              <div className="row"> Github ID: {user.login} </div>
-              <div className="row"> Email: {user.email} </div>
-              <div className="row"> starCount: {repoStat.starCount} </div>
-              <div className="row"> watchCount: {repoStat.watchCount} </div>
-              <div className="row"> forkCount: {repoStat.forkCount} </div>
-              <FlatButton label="Choose an Image"
-                          icon={<ActionAndroid />}
-                >
-                <input type="file" style={styles.exampleImageInput} />
-              </FlatButton>
+              <div className="row"> <img style={styles.avatar} src={user.avatar_url} /> </div>
+              <div className="row"><p>{user.login}</p></div>
 
-              <FlatButton
-                label="Label after"
-                labelPosition="after"
-                primary={true}
-                style={styles.button}
-                icon={<ActionAndroid />}
-                />
+              <div className="row">
+                <a className="waves-effect waves-light btn blue-grey darken-1" style={styles.statButton}>
+                  <i className="material-icons left" >star</i>{repoStat.watchCount}
+                </a>
 
-              <FlatButton
-                label="GitHub Link"
-                linkButton={true}
-                href="https://github.com/callemall/material-ui"
-                secondary={true}
-                icon={<FontIcon className="muidocs-icon-custom-github" />}
-                />
-              <a className="waves-effect waves-light btn"><i className="material-icons left">cloud</i>button</a>
-              <a className="cyan waves-effect waves-light btn"><i className="material-icons right">android</i>button</a>
+                <a className="waves-effect waves-light btn blue-grey darken-1" style={styles.statButton}>
+                  <i className="material-icons left" >visibility</i>{repoStat.starCount}
+                </a>
+
+                <a className="waves-effect waves-light btn blue-grey darken-1" style={styles.statButton}>
+                  <i className="material-icons left" >supervisor_account</i>{repoStat.forkCount}
+                </a>
+              </div>
 
             </div>
           </div>

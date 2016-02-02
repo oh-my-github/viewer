@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 import UserInfoBox from '../components/UserInfoBox';
 import Header from '../components/Header';
-import MainTab from '../components/MainTab';
+import MainTabs from '../components/MainTabs';
 import * as ActionCreators from '../actions/ActionCreators';
 
 class App extends React.Component {
@@ -23,7 +23,7 @@ class App extends React.Component {
       <div>
         <Header />
         <UserInfoBox user={profile.user} repositories={profile.repositories} />
-        <MainTab />
+        <MainTabs />
       </div>
     );
   }
