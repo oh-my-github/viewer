@@ -18,6 +18,7 @@ class Header extends Component {
 
     return (
       <AppBar
+        className=""
         title="Github Profile"
         titleStyle={styles.title}
         iconElementRight={

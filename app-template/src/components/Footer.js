@@ -19,13 +19,12 @@ const styles = {
   }
 };
 
-// TODO: 1. footer
 // TODO: 3. converts tab content color to grey
 
 class Footer extends Component {
   render() {
 
-    const { user } = this.props;
+    const { user, meta } = this.props;
 
     return (
       <footer className="page-footer cyan">
@@ -44,11 +43,6 @@ class Footer extends Component {
                 />
             </div>
             <div className="col s12 l4 offset-l2">
-              <h5 className="white-text">Links</h5>
-              <ul>
-                <li><a className="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                <li><a className="grey-text text-lighten-3" href="#!">Link 2</a></li>
-              </ul>
             </div>
           </div>
         </div>
@@ -71,5 +65,6 @@ class Footer extends Component {
 export default Footer;
 
 Footer.propTypes = {
-  user: PropTypes.object.isRequired
+  user: PropTypes.object.isRequired,
+  meta: PropTypes.object.isRequired
 };

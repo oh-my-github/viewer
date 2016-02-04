@@ -13,7 +13,7 @@ const styles = {
   }
 };
 
-class LanguageTab extends Component {
+class TabContentLanguage extends Component {
   render() {
     return (
       <div className="container">
@@ -30,4 +30,4 @@ class LanguageTab extends Component {
   }
 }
 
-export default LanguageTab;
+export default TabContentLanguage;

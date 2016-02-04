@@ -1,11 +1,14 @@
 import React, { PropTypes, Component } from 'react';
 import Tabs from 'material-ui/lib/tabs/tabs';
 import Tab from 'material-ui/lib/tabs/tab';
-import EmptyTabs from "./EmptyTabs";
+import FlatButton from 'material-ui/lib/flat-button';
+import FontIcon from 'material-ui/lib/font-icon';
 
-import LanguageTabContent from "./LanguageTabContent";
-import RepositoryTabContent from "./RepositoryTabContent";
-import ContributionTabContent from "./ContributionTabContent";
+import EmptyTabs from "./EmptyTabs";
+import MainTabLabel from "./MainTabLabel";
+import TabContentLanguage from "./TabContentLanguage";
+import TabContentRepository from "./TabContentRepository";
+import TabContentContrib from "./TabContentContrib";
 
 const styles = {
   headline: {
@@ -17,8 +20,17 @@ const styles = {
   centerTabsContainer: {
     padding: 0,
     border: 0
+  },
+
+  centerTab: {
+    textDecoration: "none",
+    paddingBottom: 0
   }
 };
+
+const LanguageTabLabel = () => (<MainTabLabel icon="fa fa-code fa-fw" label="LANGUAGE" />);
+const RepositoryTabLabel = () => (<MainTabLabel icon="fa fa-folder-open-o fa-fw" label="REPOSITORY" />);
+const ContribTabLabel = () => (<MainTabLabel icon="fa fa-bar-chart fa-fw" label="CONTRIB" />);
 
 class MainTabs extends Component {
 
@@ -26,16 +38,19 @@ class MainTabs extends Component {
     return (
       <div className="row">
         <EmptyTabs />
-        <div className="col s12 m8 l6" style={styles.centerTabsContainer}>
+        <div className="col s12 m10 l6" style={styles.centerTabsContainer}>
           <Tabs>
-            <Tab label="Language">
-              <LanguageTabContent />
+            <Tab style={styles.centerTab}
+                 label={<LanguageTabLabel />}>
+              <TabContentLanguage />
             </Tab>
-            <Tab label="Repository">
-              <RepositoryTabContent />
+            <Tab style={styles.centerTab}
+                 label={<RepositoryTabLabel />}>
+              <TabContentRepository />
             </Tab>
-            <Tab label="Contribution">
-              <ContributionTabContent />
+            <Tab style={styles.centerTab}
+                 label={<ContribTabLabel />}>
+              <TabContentContrib />
             </Tab>
           </Tabs>
         </div>

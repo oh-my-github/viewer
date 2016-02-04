@@ -25,7 +25,7 @@ class App extends React.Component {
         <Header user={profile.user} />
         <UserInfoBox user={profile.user} repositories={profile.repositories} />
         <MainTabs />
-        <Footer user={profile.user} />
+        <Footer user={profile.user} meta={profile._$meta} />
       </div>
     );
   }

@@ -2,6 +2,8 @@ import React, { PropTypes, Component } from 'react';
 import Tabs from 'material-ui/lib/tabs/tabs';
 import Tab from 'material-ui/lib/tabs/tab';
 
+const colorMaterialCyan = "#00bcd4";
+
 const styles = {
   emptyTabContainer: {
     padding: 0,
@@ -11,18 +13,29 @@ const styles = {
     left: 0
   },
 
-  emptyTab: {
+  emptyTabs: {
     width: 0,
     float: "left"
+  },
+
+  emptyTabsInkBar: {
+    backgroundColor: colorMaterialCyan,
+    height: "2px"
+  },
+
+  emptyTab: {
+    color: colorMaterialCyan,
+    backgroundColor: colorMaterialCyan,
+    cursor: "default"
   }
 };
 
 class EmptyTabs extends Component {
   render() {
     return (
-      <div className="col s0 m2 l3 cyan" style={styles.emptyTabContainer}>
-        <Tabs style={styles.emptyTab}>
-          <Tab label=""> <div> </div> </Tab>
+      <div className="col s0 m1 l3 cyan" style={styles.emptyTabContainer}>
+        <Tabs inkBarStyle={styles.emptyTabsInkBar} style={styles.emptyTabs}>
+          <Tab style={styles.emptyTab} label="empty tab" selected={false} />
         </Tabs>
       </div>
     );

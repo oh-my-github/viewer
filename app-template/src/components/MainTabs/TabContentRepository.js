@@ -11,17 +11,17 @@ const styles = {
   }
 };
 
-class ContributionTab extends Component {
+class TabContentRepository extends Component {
   render() {
     return (
       <div className="container">
-        <h2 style={styles.headline}>Tab Three</h2>
+        <h2 style={styles.headline}>Tab Two</h2>
         <p>
-          This is a third example tab.
+          This is another example tab.
         </p>
       </div>
     );
   }
 }
 
-export default ContributionTab;
+export default TabContentRepository;
