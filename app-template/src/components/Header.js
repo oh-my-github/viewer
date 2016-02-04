@@ -2,11 +2,7 @@ import React, {PropTypes, Component } from 'react';
 
 import AppBar from 'material-ui/lib/app-bar';
 import FontIcon from 'material-ui/lib/font-icon';
-import MenuItem from 'material-ui/lib/menus/menu-item';
-import NavigationClose from 'material-ui/lib/svg-icons/navigation/close';
 import IconButton from 'material-ui/lib/icon-button';
-import ActionFlightTakeoff from 'material-ui/lib/svg-icons/action/flight-takeoff';
-
 
 const styles = {
   title: {
@@ -28,7 +24,7 @@ class Header extends Component {
           <IconButton tooltip="Go Github"
                       touch tooltipPosition="bottom-left"
                       href={"https://github.com/" + user.login}
-                      linkButton={true}>
+                      linkButton>
             <FontIcon className="fa fa-github" />
           </IconButton>
           }

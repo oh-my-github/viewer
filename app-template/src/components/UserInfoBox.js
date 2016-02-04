@@ -24,7 +24,7 @@ const styles = {
   },
 
   userInfoBox: {
-    padding: "50px 0 30px 0"
+    padding: "60px 0 10px 0"
   }
 };
 
@@ -64,6 +64,7 @@ class UserInfoBox extends Component {
                 <a className="waves-effect waves-light btn blue-grey darken-1" style={styles.statButton}>
                   <i className="material-icons left" >supervisor_account</i>{repoStat.forkCount}
                 </a>
+
               </div>
 
             </div>

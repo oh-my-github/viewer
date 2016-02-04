@@ -23,7 +23,6 @@ class EmptyTabs extends Component {
       <div className="col s0 m2 l3 cyan" style={styles.emptyTabContainer}>
         <Tabs style={styles.emptyTab}>
           <Tab label=""> <div> </div> </Tab>
-          <Tab label=""> <div> </div> </Tab>
         </Tabs>
       </div>
     );
