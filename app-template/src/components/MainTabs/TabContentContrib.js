@@ -13,6 +13,9 @@ const styles = {
 
 class TabContentContrib extends Component {
   render() {
+
+    const { activities } = this.props;
+
     return (
       <div className="container">
         <h2 style={styles.headline}>Tab Three</h2>
@@ -25,3 +28,7 @@ class TabContentContrib extends Component {
 }
 
 export default TabContentContrib;
+
+TabContentContrib.propTypes = {
+  activities: PropTypes.array.isRequired
+};

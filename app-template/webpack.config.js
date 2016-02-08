@@ -35,16 +35,16 @@ var getLoaders = function(env) {
   var loaders = [
     { test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel', 'eslint'] },
     {
-      test: /(\.css|\.scss)$/,
+      test: /(\.css)$/,
       include: path.join(__dirname, 'src'),
-      loaders: ['style', 'css?sourceMap&module&importLoaders=1', 'sass?sourceMap', 'postcss']
+      loaders: ['style', 'css?sourceMap&module&importLoaders=1', 'postcss']
     },
     { /** globally used css (for <link> in index.html) */
-      test: /(\.css|\.scss)$/,
+      test: /(\.css)$/,
       include: [
         path.join(__dirname, 'node_modules')
       ],
-      loaders: ['style', 'css?sourceMap&importLoaders=1', 'postcss', 'sass?sourceMap']
+      loaders: ['style', 'css?sourceMap&importLoaders=1', 'postcss']
     },
     {
       test: /\.woff(\?\S*)?$/,
@@ -83,15 +83,20 @@ var getEntry = function(env) {
 
 function getPostcssPlugins(env) {
 
+  var browserList = ['last 10 version', '> 5%', 'ie >= 8'];
+
   var plugins = [
     require('postcss-url')({
       copy: 'rebase'
     }),
     require('postcss-cssnext')({ // Allow future CSS features to be used, also auto-prefixes the CSS...
-      browsers: ['last 2 versions', 'IE > 10'] // ...based on this browser list
+      browsers: ['last 2 version', '> 5%', 'ie >= 8']
     }),
     require('postcss-reporter')({ // Posts messages from plugins to the terminal
       clearMessages: true
+    }),
+    require('autoprefixer')({
+      browsers: browserList
     }),
     require("postcss-import")()
   ];

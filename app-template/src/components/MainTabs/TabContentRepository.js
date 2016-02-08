@@ -13,6 +13,9 @@ const styles = {
 
 class TabContentRepository extends Component {
   render() {
+
+    const { repositories } = this.props;
+
     return (
       <div className="container">
         <h2 style={styles.headline}>Tab Two</h2>
@@ -25,3 +28,7 @@ class TabContentRepository extends Component {
 }
 
 export default TabContentRepository;
+
+TabContentRepository.propTypes = {
+  repositories: PropTypes.array.isRequired
+};

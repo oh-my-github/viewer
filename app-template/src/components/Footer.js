@@ -31,8 +31,8 @@ class Footer extends Component {
         <div className="container">
           <div className="row">
             <div className="col s12 l6">
-              <h5 className="white-text">Footer Content</h5>
-              <p className="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              <h5 className="white-text">About This Profile</h5>
+              <p className="grey-text text-lighten-4">Created at {meta.schema_created_at} </p>
               <RaisedButton
                 className="blue-grey darken-1"
                 label="Github Link"

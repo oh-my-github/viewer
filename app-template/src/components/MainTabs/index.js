@@ -35,22 +35,22 @@ const ContribTabLabel = () => (<MainTabLabel icon="fa fa-bar-chart fa-fw" label=
 class MainTabs extends Component {
 
   render() {
+
+    const { languages, repositories, activities } = this.props;
+
     return (
       <div className="row">
         <EmptyTabs />
-        <div className="col s12 m10 l6" style={styles.centerTabsContainer}>
+        <div className="col s12 m10 l8" style={styles.centerTabsContainer}>
           <Tabs>
-            <Tab style={styles.centerTab}
-                 label={<LanguageTabLabel />}>
-              <TabContentLanguage />
+            <Tab style={styles.centerTab} label={<LanguageTabLabel />}>
+              <TabContentLanguage languages={languages} />
             </Tab>
-            <Tab style={styles.centerTab}
-                 label={<RepositoryTabLabel />}>
-              <TabContentRepository />
+            <Tab style={styles.centerTab} label={<RepositoryTabLabel />}>
+              <TabContentRepository repositories={repositories} />
             </Tab>
-            <Tab style={styles.centerTab}
-                 label={<ContribTabLabel />}>
-              <TabContentContrib />
+            <Tab style={styles.centerTab} label={<ContribTabLabel />}>
+              <TabContentContrib activities={activities} />
             </Tab>
           </Tabs>
         </div>
@@ -61,3 +61,9 @@ class MainTabs extends Component {
 }
 
 export default MainTabs;
+
+MainTabs.propTypes = {
+  languages: PropTypes.array.isRequired,
+  repositories: PropTypes.array.isRequired,
+  activities: PropTypes.array.isRequired
+};

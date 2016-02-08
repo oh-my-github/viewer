@@ -6,25 +6,26 @@ import IconButton from 'material-ui/lib/icon-button';
 
 const styles = {
   title: {
-    fontSize: 24,
-    fontWeight: 300,
-    marginLeft: "0px"
+    fontSize: 23,
+    fontWeight: 300
   }
 };
 
 class Header extends Component {
   render() {
     const { user } = this.props;
+    const login = user.login;
 
     return (
       <AppBar
         className=""
         title="Github Profile"
         titleStyle={styles.title}
-        iconElementRight={
-          <IconButton tooltip="Go Github"
-                      touch tooltipPosition="bottom-left"
-                      href={"https://github.com/" + user.login}
+        iconElementLeft={
+          <IconButton tooltip={`https://github.com/${login}`}
+                      touch tooltipPosition="bottom-right"
+                      target="_blank"
+                      href={`https://github.com/${login}`}
                       linkButton>
             <FontIcon className="fa fa-github" />
           </IconButton>

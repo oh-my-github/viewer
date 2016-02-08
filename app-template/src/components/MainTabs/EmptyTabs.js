@@ -20,7 +20,7 @@ const styles = {
 
   emptyTabsInkBar: {
     backgroundColor: colorMaterialCyan,
-    height: "2px"
+    minHeight: "0px"
   },
 
   emptyTab: {
@@ -33,9 +33,9 @@ const styles = {
 class EmptyTabs extends Component {
   render() {
     return (
-      <div className="col s0 m1 l3 cyan" style={styles.emptyTabContainer}>
+      <div className="col s0 m1 l2 cyan" style={styles.emptyTabContainer}>
         <Tabs inkBarStyle={styles.emptyTabsInkBar} style={styles.emptyTabs}>
-          <Tab style={styles.emptyTab} label="empty tab" selected={false} />
+          <Tab style={styles.emptyTab} label="l" />
         </Tabs>
       </div>
     );

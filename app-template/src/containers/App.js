@@ -19,12 +19,14 @@ class App extends React.Component {
 
   render() {
     const { profile } = this.props;
+    const { languages, repositories, activities } = profile;
 
     return (
       <div>
         <Header user={profile.user} />
         <UserInfoBox user={profile.user} repositories={profile.repositories} />
-        <MainTabs />
+        <MainTabs languages={languages} repositories={repositories} activities={activities}
+          />
         <Footer user={profile.user} meta={profile._$meta} />
       </div>
     );

@@ -20,11 +20,13 @@ const styles = {
   loginId: {
     fontSize: 24,
     fontWeight: 200,
-    fontFamily: "Roboto"
+    fontFamily: "Roboto",
+    marginTop: 0,
+    marginBottom: 0
   },
 
   userInfoBox: {
-    padding: "60px 0 10px 0"
+    padding: "60px 0 5px 0"
   }
 };
 
