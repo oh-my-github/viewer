@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 
-import { createDevTools } from 'redux-devtools';
-import LogMonitor from 'redux-devtools-log-monitor';
+import { createDevTools } from 'redux-devtools'
+import LogMonitor from 'redux-devtools-log-monitor'
 
 const DevTools = createDevTools(
-  <LogMonitor theme="solarized" />
-);
+  <LogMonitor theme='solarized' />
+)
 
-export default DevTools;
+export default DevTools

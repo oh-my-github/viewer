@@ -1,15 +1,15 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes, Component } from 'react'
 
-import styles from "./index.css";
+import styles from './index.css'
 
-const ProgressDivStyles = [styles.progress].join(" ");
-const ProgressBarDivStyles = [styles.bar].join(" ");
+const ProgressDivStyles = [styles.progress].join(' ')
+const ProgressBarDivStyles = [styles.bar].join(' ')
 
 /** ref: http://cssdeck.com/labs/twitter-bootstrap-progress-bars */
 class ProgressBar extends Component {
 
   render() {
-    const { width, color } = this.props;
+    const { width, color } = this.props
 
     return (
       <div>
@@ -18,13 +18,13 @@ class ProgressBar extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default ProgressBar;
+export default ProgressBar
 
 ProgressBar.propTypes = {
   width: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired
-};
+}

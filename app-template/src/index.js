@@ -1,25 +1,28 @@
-import 'babel-polyfill';
-import 'isomorphic-fetch';
+/** inject poly-fills */
+import 'babel-polyfill'
+import 'isomorphic-fetch'
 
-import injectTapEventPlugin from 'react-tap-event-plugin';
-injectTapEventPlugin(); /* for tab */
-$( document ).ready(function(){ $(".button-collapse").sideNav(); }); /* for nav */
+/** enable and style UI components */
+import injectTapEventPlugin from 'react-tap-event-plugin'
+injectTapEventPlugin() /** for material-ui tab */
+import './index.css'   /** for global styling */
 
-import React from 'react';
-import {render} from 'react-dom';
-import { Provider } from 'react-redux';
-import App from './containers/App';
-import configureStore from './store/configureStore';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
 
-const store = configureStore();
+import App from './containers/App'
+import configureStore from './store/configureStore'
 
-render(
+const store = configureStore()
+
+ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>, document.getElementById('app')
-);
+)
 
 if (process.env.NODE_ENV !== 'production') {
-  const showDevTools = require('./showDevTools');
-  showDevTools(store);
+  const showDevTools = require('./showDevTools')
+  showDevTools(store)
 }

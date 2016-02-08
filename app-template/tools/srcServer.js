@@ -2,14 +2,14 @@
 // which supports hot reloading and synchronized testing.
 
 // Require Browsersync along with webpack and middleware for it
-var browserSync = require('browser-sync');
-var webpack = require('webpack');
-var webpackDevMiddleware = require('webpack-dev-middleware');
-var webpackHotMiddleware = require('webpack-hot-middleware');
-var webpackConfigBuilder = require('../webpack.config');
-var webpackConfig = webpackConfigBuilder('development');
+var browserSync = require('browser-sync')
+var webpack = require('webpack')
+var webpackDevMiddleware = require('webpack-dev-middleware')
+var webpackHotMiddleware = require('webpack-hot-middleware')
+var webpackConfigBuilder = require('../webpack.config')
+var webpackConfig = webpackConfigBuilder('development')
 
-var bundler = webpack(webpackConfig);
+var bundler = webpack(webpackConfig)
 
 // Run Browsersync and use middleware for Hot Module Replacement
 browserSync({
@@ -46,4 +46,4 @@ browserSync({
   routes: {
     'oh-my-github.json': 'resource/oh-my-github.json'
   }
-});
+})

@@ -1,4 +1,4 @@
-import * as ActionTypes from '../actions/ActionTypes';
+import * as ActionTypes from '../actions/ActionTypes'
 
 const initialProfileState = {
   user: {},
@@ -6,14 +6,14 @@ const initialProfileState = {
   activities: [],
   repositories: [],
   languages: []
-};
+}
 
 export default function profileReducer(state = initialProfileState, action) {
-  const {type, payload, error} = action;
+  const {type, payload, error} = action
 
-  if (ActionTypes.FETCH_PROFILE !== type) return state;
+  if (ActionTypes.FETCH_PROFILE !== type) return state
 
-  if (error) return state;
+  if (error) return state
 
   return Object.assign({}, state, {
     user: payload.user,
@@ -21,5 +21,5 @@ export default function profileReducer(state = initialProfileState, action) {
     activities: payload.activities,
     repositories: payload.repositories,
     languages: payload.languages
-  });
+  })
 }
