@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from 'react'
+import React, { PropTypes, Component, } from 'react'
 import Tabs from 'material-ui/lib/tabs/tabs'
 import Tab from 'material-ui/lib/tabs/tab'
 
@@ -7,14 +7,14 @@ const styles = {
     fontSize: 24,
     paddingTop: 16,
     marginBottom: 12,
-    fontWeight: 400
-  }
+    fontWeight: 400,
+  },
 }
 
 class TabContentRepository extends Component {
   render() {
 
-    const { repositories } = this.props
+    const { repositories, } = this.props
 
     return (
       <div className='container'>
@@ -30,5 +30,5 @@ class TabContentRepository extends Component {
 export default TabContentRepository
 
 TabContentRepository.propTypes = {
-  repositories: PropTypes.array.isRequired
+  repositories: PropTypes.array.isRequired,
 }

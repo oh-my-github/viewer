@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from 'react'
+import React, { PropTypes, Component, } from 'react'
 import Tabs from 'material-ui/lib/tabs/tabs'
 import Tab from 'material-ui/lib/tabs/tab'
 import FlatButton from 'material-ui/lib/flat-button'
@@ -15,18 +15,18 @@ const styles = {
     fontSize: 24,
     paddingTop: 16,
     marginBottom: 12,
-    fontWeight: 400
+    fontWeight: 400,
   },
   centerTabsContainer: {
     paddingLeft: 0,
     paddingRight: 0,
-    border: 0
+    border: 0,
   },
 
   centerTab: {
     textDecoration: 'none',
-    paddingBottom: 0
-  }
+    paddingBottom: 0,
+  },
 }
 
 const LanguageTabLabel = () => (<MainTabLabel icon='fa fa-code fa-fw' label='LANGUAGE' />)
@@ -37,7 +37,7 @@ class MainTabs extends Component {
 
   render() {
 
-    const { languages, repositories, activities } = this.props
+    const { languages, repositories, activities, } = this.props
 
     return (
       <div className='row'>
@@ -66,5 +66,5 @@ export default MainTabs
 MainTabs.propTypes = {
   languages: PropTypes.array.isRequired,
   repositories: PropTypes.array.isRequired,
-  activities: PropTypes.array.isRequired
+  activities: PropTypes.array.isRequired,
 }

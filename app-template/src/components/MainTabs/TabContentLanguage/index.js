@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from 'react'
+import React, { PropTypes, Component, } from 'react'
 import Tabs from 'material-ui/lib/tabs/tabs'
 import Tab from 'material-ui/lib/tabs/tab'
 import Tooltip from 'material-ui/lib/tooltip'
@@ -9,15 +9,15 @@ import SectionOtherLangs from './SectionOtherLangs'
 const styles = {
   tabContent: {
     paddingTop: '30px',
-    paddingBottom: '10px'
-  }
+    paddingBottom: '10px',
+  },
 }
 
 class TabContentLanguage extends Component {
 
   render() {
 
-    const { languages } = this.props
+    const { languages, } = this.props
     let repoLangs = languages
     let linePerLang = new Map()
 
@@ -37,7 +37,7 @@ class TabContentLanguage extends Component {
     let sortedRepoLangs = Array.from(linePerLang)
       .sort((a, b) => { return b[1] - a[1] /** order by desc (line) */ })
       .map(arraized => {
-        return {name: arraized[0], line: arraized[1]}
+        return {name: arraized[0], line: arraized[1],}
       })
 
     const mostLovedLangs = sortedRepoLangs.slice(1, 6)
@@ -55,5 +55,5 @@ class TabContentLanguage extends Component {
 export default TabContentLanguage
 
 TabContentLanguage.propTypes = {
-  languages: PropTypes.array.isRequired
+  languages: PropTypes.array.isRequired,
 }

@@ -1,8 +1,8 @@
 // This file bootstraps the app with the boilerplate necessary
 // to support hot reloading in Redux
-import React, {PropTypes} from 'react'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
+import React, { PropTypes, } from 'react'
+import { bindActionCreators, } from 'redux'
+import { connect, } from 'react-redux'
 
 import * as ActionCreators from '../actions/ActionCreators'
 import UserInfoBox from '../components/UserInfoBox'
@@ -18,8 +18,8 @@ class App extends React.Component {
   }
 
   render() {
-    const { profile, actions } = this.props
-    const { languages, repositories, activities } = profile
+    const { profile, actions, } = this.props
+    const { languages, repositories, activities, } = profile
 
     return (
       <div>
@@ -35,13 +35,13 @@ class App extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    profile: state.profile
+    profile: state.profile,
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(ActionCreators, dispatch)
+    actions: bindActionCreators(ActionCreators, dispatch),
   }
 }
 
@@ -52,5 +52,5 @@ export default connect(
 
 App.propTypes = {
   actions: PropTypes.object.isRequired,
-  profile: PropTypes.object.isRequired
+  profile: PropTypes.object.isRequired,
 }

@@ -1,29 +1,29 @@
-import React, { PropTypes, Component } from 'react'
+import React, { PropTypes, Component, } from 'react'
 import FlatButton from 'material-ui/lib/flat-button'
 import FontIcon from 'material-ui/lib/font-icon'
 
-const materialGreyLighten4 = '#f5f5f5'
+import { MainColors, SAME, } from '../../theme'
 
 const styles = {
   flatButton: {
-    color: materialGreyLighten4
+    color: MainColors[3],
   },
 
   flatButtonLabel: {
     fontSize: '14px',
-    fontWeight: 300
+    fontWeight: 300,
   },
 
   flatButtonIcon: {
     color: 'rgb(245, 245, 245)',
     fontSize: '19px',
     fontWeight: 300,
-    verticalAlign: 'middle'
+    verticalAlign: 'middle',
   },
 
   color: {
-    SAME: 'rgba(0, 0, 0, 0)'
-  }
+    SAME: SAME,
+  },
 }
 
 /**
@@ -32,7 +32,7 @@ const styles = {
  */
 class FlatButtonIcon extends Component {
   render() {
-    const { icon } = this.props
+    const { icon, } = this.props
 
     return (
       <FontIcon style={styles.flatButtonIcon} className={icon} />
@@ -42,7 +42,7 @@ class FlatButtonIcon extends Component {
 
 class MainTabLabel extends Component {
   render() {
-    const { icon, label } = this.props
+    const { icon, label, } = this.props
 
     return (
       <FlatButton
@@ -63,11 +63,11 @@ class MainTabLabel extends Component {
 export default MainTabLabel
 
 FlatButtonIcon.propTypes = {
-  icon: PropTypes.string.isRequired
+  icon: PropTypes.string.isRequired,
 }
 
 MainTabLabel.propTypes = {
   icon: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired
+  label: PropTypes.string.isRequired,
 }
 

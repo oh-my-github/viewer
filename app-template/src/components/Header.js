@@ -1,4 +1,4 @@
-import React, {PropTypes, Component } from 'react'
+import React, {PropTypes, Component, } from 'react'
 
 import AppBar from 'material-ui/lib/app-bar'
 import FontIcon from 'material-ui/lib/font-icon'
@@ -7,13 +7,13 @@ import IconButton from 'material-ui/lib/icon-button'
 const styles = {
   title: {
     fontSize: 23,
-    fontWeight: 200
-  }
+    fontWeight: 200,
+  },
 }
 
 class Header extends Component {
   render() {
-    const { user } = this.props
+    const { user, } = this.props
     const login = user.login
 
     return (
@@ -38,5 +38,5 @@ class Header extends Component {
 export default Header
 
 Header.propTypes = {
-  user: PropTypes.object.isRequired
+  user: PropTypes.object.isRequired,
 }

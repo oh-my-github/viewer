@@ -1,5 +1,5 @@
 import * as ActionTypes from './ActionTypes'
-import { createAction } from 'redux-actions'
+import { createAction, } from 'redux-actions'
 
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {

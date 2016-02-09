@@ -1,8 +1,8 @@
-import React, {PropTypes, Component } from 'react'
+import React, {PropTypes, Component, } from 'react'
 import RaisedButton from 'material-ui/lib/raised-button'
 import FontIcon from 'material-ui/lib/font-icon'
 
-import { MainColors } from '../theme'
+import { MainColors, } from '../theme'
 
 const styles = {
   avatar: {
@@ -10,12 +10,12 @@ const styles = {
     width: 100,
     margin: 10,
     borderRadius: '25%',
-    boxShadow: '0 0 2px rgba(0, 0, 0, .9)'
+    boxShadow: '0 0 2px rgba(0, 0, 0, .9)',
   },
 
   statButton: {
     backgroundColor: MainColors[2],
-    margin: '5px'
+    margin: '5px',
   },
 
   loginId: {
@@ -23,13 +23,13 @@ const styles = {
     fontWeight: 200,
     fontFamily: 'Roboto',
     marginTop: 0,
-    marginBottom: 0
+    marginBottom: 0,
   },
 
   userInfoBox: {
     backgroundColor: MainColors[1],
-    padding: '60px 0 5px 0'
-  }
+    padding: '60px 0 5px 0',
+  },
 }
 
 class UserInfoBox extends Component {
@@ -39,14 +39,14 @@ class UserInfoBox extends Component {
 
   render() {
 
-    const { user, repositories } = this.props
+    const { user, repositories, } = this.props
 
     const repoStat = repositories.reduce((stat, repo) => {
       stat.starCount += repo.stargazers_count
       stat.watchCount += repo.watchers_count
       stat.forkCount += repo.forks_count
       return stat
-    }, {watchCount: 0, starCount: 0, forkCount: 0})
+    }, {watchCount: 0, starCount: 0, forkCount: 0,})
 
     return (
       <div className='' style={styles.userInfoBox}>
@@ -82,6 +82,6 @@ export default UserInfoBox
 
 UserInfoBox.propTypes = {
   user: PropTypes.object.isRequired,
-  repositories: PropTypes.array.isRequired
+  repositories: PropTypes.array.isRequired,
 }
 

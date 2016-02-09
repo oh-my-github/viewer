@@ -1,18 +1,18 @@
-import React, { PropTypes, Component } from 'react'
+import React, { PropTypes, Component, } from 'react'
 
 import ProgressBar from '../../ProgressBar'
-import { BarChartColors } from '../../../theme'
+import { BarChartColors, } from '../../../theme'
 
 const styles = {
   title: {
     fontSize: '20px',
-    fontWeight: 200
+    fontWeight: 200,
   },
 
   progressBarRow: {
     marginTop: '25px',
-    marginBottom: '15px'
-  }
+    marginBottom: '15px',
+  },
 }
 
 class SectionMostLovedLangs extends Component {
@@ -41,7 +41,7 @@ class SectionMostLovedLangs extends Component {
   }
 
   render() {
-    const { mostLovedLangs } = this.props
+    const { mostLovedLangs, } = this.props
 
     return (
       <div>
@@ -59,5 +59,5 @@ class SectionMostLovedLangs extends Component {
 export default SectionMostLovedLangs
 
 SectionMostLovedLangs.propTypes = {
-  mostLovedLangs: PropTypes.array.isRequired
+  mostLovedLangs: PropTypes.array.isRequired,
 }

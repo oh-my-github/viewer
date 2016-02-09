@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from 'react'
+import React, { PropTypes, Component, } from 'react'
 import Tabs from 'material-ui/lib/tabs/tabs'
 import Tab from 'material-ui/lib/tabs/tab'
 
@@ -7,14 +7,14 @@ const styles = {
     fontSize: 24,
     paddingTop: 16,
     marginBottom: 12,
-    fontWeight: 400
-  }
+    fontWeight: 400,
+  },
 }
 
 class TabContentContrib extends Component {
   render() {
 
-    const { activities } = this.props
+    const { activities, } = this.props
 
     return (
       <div className='container'>
@@ -30,5 +30,5 @@ class TabContentContrib extends Component {
 export default TabContentContrib
 
 TabContentContrib.propTypes = {
-  activities: PropTypes.array.isRequired
+  activities: PropTypes.array.isRequired,
 }

@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from 'react'
+import React, { PropTypes, Component, } from 'react'
 import AutoComplete from 'material-ui/lib/auto-complete'
 import TextField from 'material-ui/lib/text-field'
 import RandomColor from 'randomcolor'
@@ -11,20 +11,20 @@ class SectionOtherLangs extends Component {
   constructor(props) {
     super(props)
 
-    this.state = { filterKeyword: '', progressBarColors: [] }
+    this.state = { filterKeyword: '', progressBarColors: [], }
   }
 
   componentWillReceiveProps(nextProps) {
-    const { otherLangs } = nextProps
+    const { otherLangs, } = nextProps
 
     if (otherLangs.length > 0) {
-      const colors = RandomColor({luminosity: 'light', hue: 'purple', count: otherLangs.length }).sort().reverse()
-      this.setState({progressBarColors: colors})
+      const colors = RandomColor({luminosity: 'light', hue: 'purple', count: otherLangs.length, }).sort().reverse()
+      this.setState({progressBarColors: colors,})
     }
   }
 
   handleChangeFilter(e) {
-    this.setState({filterKeyword: e.target.value})
+    this.setState({filterKeyword: e.target.value,})
   }
 
   renderTitle(langs) {
@@ -45,7 +45,7 @@ class SectionOtherLangs extends Component {
   }
 
   renderProgressBars(langs) {
-    const { filterKeyword, progressBarColors } = this.state
+    const { filterKeyword, progressBarColors, } = this.state
 
     let progressBars = []
 
@@ -65,12 +65,11 @@ class SectionOtherLangs extends Component {
       }
     }
 
-    return (<div> {progressBars} </div>)
+    return (<div>{progressBars}</div>)
   }
 
   render() {
-    const { otherLangs } = this.props
-    const { filterKeyword } = this.state
+    const { otherLangs, } = this.props
 
     return (
       <div>
@@ -91,5 +90,5 @@ class SectionOtherLangs extends Component {
 export default SectionOtherLangs
 
 SectionOtherLangs.propTypes = {
-  otherLangs: PropTypes.array.isRequired
+  otherLangs: PropTypes.array.isRequired,
 }

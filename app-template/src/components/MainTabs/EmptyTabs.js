@@ -1,8 +1,8 @@
-import React, { PropTypes, Component } from 'react'
+import React, { PropTypes, Component, } from 'react'
 import Tabs from 'material-ui/lib/tabs/tabs'
 import Tab from 'material-ui/lib/tabs/tab'
 
-import { MainColors } from '../../theme'
+import { MainColors, } from '../../theme'
 
 const styles = {
   emptyTabContainer: {
@@ -11,24 +11,24 @@ const styles = {
     margin: 0,
     border: 0,
     minHeight: '0 px',
-    left: 0
+    left: 0,
   },
 
   emptyTabs: {
     width: 0,
-    float: 'left'
+    float: 'left',
   },
 
   emptyTabsInkBar: {
     backgroundColor: MainColors[0],
-    minHeight: '0px'
+    minHeight: '0px',
   },
 
   emptyTab: {
     color: MainColors[0],
     backgroundColor: MainColors[0],
-    cursor: 'default'
-  }
+    cursor: 'default',
+  },
 }
 
 class EmptyTabs extends Component {
