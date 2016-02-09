@@ -1,12 +1,6 @@
 import * as ActionTypes from './ActionTypes'
 import { createAction } from 'redux-actions'
 
-export function getProfile() {
-  return {
-    type: ActionTypes.FETCH_PROFILE_TRY
-  }
-}
-
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
     return response

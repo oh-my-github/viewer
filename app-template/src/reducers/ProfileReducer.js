@@ -1,6 +1,6 @@
 import * as ActionTypes from '../actions/ActionTypes'
 
-const initialProfileState = {
+const initialState = {
   user: {},
   _$meta: {},
   activities: [],
@@ -8,8 +8,8 @@ const initialProfileState = {
   languages: []
 }
 
-export default function profileReducer(state = initialProfileState, action) {
-  const {type, payload, error} = action
+export default function profileReducer(state = initialState, action) {
+  const { type, payload, error } = action
 
   if (ActionTypes.FETCH_PROFILE !== type) return state
 

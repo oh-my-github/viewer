@@ -10,13 +10,14 @@ const styles = {
   },
 
   flatButtonLabel: {
-    fontSize: '13px',
-    fontWeight: 500
+    fontSize: '14px',
+    fontWeight: 300
   },
 
   flatButtonIcon: {
     color: 'rgb(245, 245, 245)',
     fontSize: '19px',
+    fontWeight: 300,
     verticalAlign: 'middle'
   },
 

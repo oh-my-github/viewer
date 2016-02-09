@@ -18,7 +18,8 @@ const styles = {
     fontWeight: 400
   },
   centerTabsContainer: {
-    padding: 0,
+    paddingLeft: 0,
+    paddingRight: 0,
     border: 0
   },
 

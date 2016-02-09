@@ -2,3 +2,12 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
 }
+
+/** disable materialize input box-shadow */
+input[type=text]:focus:not:([readonly]) {
+  box-shadow: none;
+}
+
+label {
+
+}

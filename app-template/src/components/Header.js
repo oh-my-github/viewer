@@ -7,7 +7,7 @@ import IconButton from 'material-ui/lib/icon-button'
 const styles = {
   title: {
     fontSize: 23,
-    fontWeight: 300
+    fontWeight: 200
   }
 }
 
