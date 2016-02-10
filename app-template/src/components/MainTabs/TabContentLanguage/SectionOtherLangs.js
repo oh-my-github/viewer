@@ -5,7 +5,7 @@ import RandomColor from 'randomcolor'
 
 import ProgressBar from '../../ProgressBar'
 
-import styles from './index.css'
+import { styles, } from './index'
 
 class SectionOtherLangs extends Component {
   constructor(props) {
@@ -73,13 +73,13 @@ class SectionOtherLangs extends Component {
 
     return (
       <div>
-        <div className={`col s12 ${styles.sectionTitle}`}>
+        <div className='col s12' style={styles.sectionTitle}>
           {this.renderTitle(otherLangs)}
         </div>
         <div className='col s12' >
           {this.renderFilter(otherLangs)}
         </div>
-        <div className={`col s12 center ${styles.containerProgressBar}`}>
+        <div className='col s12 center' style={styles.containerProgressBar}>
           {this.renderProgressBars(otherLangs)}
         </div>
       </div>

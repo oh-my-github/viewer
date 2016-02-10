@@ -11,7 +11,7 @@ export const MainColors = [
   '#00BCD4', /** cyan */
   '#E0F7FA', /** cyan lighten-5 */
   '#546E7A', /** blue-grey darken-1 */
-  '#F5F5F5', /** grey lighten-4 */
+  '#F9F9F9', /** grey lighten-4 */
 ]
 
 export const SAME = 'rgba(0, 0, 0, 0)'

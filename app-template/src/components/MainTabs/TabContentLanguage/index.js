@@ -6,10 +6,22 @@ import Tooltip from 'material-ui/lib/tooltip'
 import SectionMostLovedLangs from './SectionMostLovedLangs'
 import SectionOtherLangs from './SectionOtherLangs'
 
-const styles = {
+const mostLovedLangCount = 5
+
+export const styles = {
   tabContent: {
     paddingTop: '30px',
     paddingBottom: '10px',
+  },
+
+  sectionTitle: {
+    fontSize: '20px',
+    fontWeight: 200,
+  },
+
+  containerProgressBar: {
+  marginTop: '25px',
+  marginBottom: '15px',
   },
 }
 
@@ -20,8 +32,6 @@ class TabContentLanguage extends Component {
     const { languages, } = this.props
     let repoLangs = languages
     let linePerLang = new Map()
-
-    /** TODO: filter repos, langs */
 
     /** create Map<name, line> */
     for (let repoLang of repoLangs) {
@@ -40,8 +50,8 @@ class TabContentLanguage extends Component {
         return {name: arraized[0], line: arraized[1],}
       })
 
-    const mostLovedLangs = sortedRepoLangs.slice(1, 6)
-    const otherLangs = sortedRepoLangs.slice(6)
+    const mostLovedLangs = sortedRepoLangs.slice(0, mostLovedLangCount)
+    const otherLangs = sortedRepoLangs.slice(mostLovedLangCount)
 
     return (
       <div className='container' style={styles.tabContent} >

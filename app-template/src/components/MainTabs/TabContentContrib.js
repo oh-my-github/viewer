@@ -3,7 +3,7 @@ import Tabs from 'material-ui/lib/tabs/tabs'
 import Tab from 'material-ui/lib/tabs/tab'
 
 const styles = {
-  headline: {
+  title: {
     fontSize: 24,
     paddingTop: 16,
     marginBottom: 12,
@@ -18,7 +18,7 @@ class TabContentContrib extends Component {
 
     return (
       <div className='container'>
-        <h2 style={styles.headline}>Tab Three</h2>
+        <h2 style={styles.title}>Tab Three</h2>
         <p>
           This is a third example tab.
         </p>

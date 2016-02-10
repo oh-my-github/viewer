@@ -3,17 +3,7 @@ import React, { PropTypes, Component, } from 'react'
 import ProgressBar from '../../ProgressBar'
 import { BarChartColors, } from '../../../theme'
 
-const styles = {
-  title: {
-    fontSize: '20px',
-    fontWeight: 200,
-  },
-
-  progressBarRow: {
-    marginTop: '25px',
-    marginBottom: '15px',
-  },
-}
+import { styles, } from './index'
 
 class SectionMostLovedLangs extends Component {
   constructor(props) {
@@ -45,10 +35,10 @@ class SectionMostLovedLangs extends Component {
 
     return (
       <div>
-        <div className='col s12' style={styles.title}>
+        <div className='col s12' style={styles.sectionTitle}>
           Most Loved Programming Languages
         </div>
-        <div className='col s12 center' style={styles.progressBarRow}>
+        <div className='col s12 center' style={styles.containerProgressBar}>
           {this.renderProgressBars(mostLovedLangs)}
         </div>
       </div>

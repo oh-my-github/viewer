@@ -5,38 +5,40 @@ import Tab from 'material-ui/lib/tabs/tab'
 import { MainColors, } from '../../theme'
 
 const styles = {
-  emptyTabContainer: {
+  tabContainer: {
     backgroundColor: MainColors[0],
     padding: 0,
     margin: 0,
     border: 0,
-    minHeight: '0 px',
+    height: '50px', /** same as MainTab height */
+    float: 'left',
     left: 0,
   },
 
-  emptyTabs: {
+  tabs: {
     width: 0,
     float: 'left',
   },
 
-  emptyTabsInkBar: {
+  inkBar: {
     backgroundColor: MainColors[0],
-    minHeight: '0px',
   },
 
-  emptyTab: {
-    color: MainColors[0],
+  tab: {
     backgroundColor: MainColors[0],
     cursor: 'default',
+    padding: 0,
+    width: 0,
+    margin: 0,
   },
 }
 
 class EmptyTabs extends Component {
   render() {
     return (
-      <div className='col s0 m1 l2' style={styles.emptyTabContainer}>
-        <Tabs inkBarStyle={styles.emptyTabsInkBar} style={styles.emptyTabs}>
-          <Tab style={styles.emptyTab} label='l' />
+      <div className='col s0 m1 l2' style={styles.tabContainer}>
+        <Tabs inkBarStyle={styles.inkBar} style={styles.tabs}>
+          <Tab style={styles.tab} />
         </Tabs>
       </div>
     )

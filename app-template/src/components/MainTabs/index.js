@@ -4,28 +4,32 @@ import Tab from 'material-ui/lib/tabs/tab'
 import FlatButton from 'material-ui/lib/flat-button'
 import FontIcon from 'material-ui/lib/font-icon'
 
+import { MainColors, } from '../../theme'
 import EmptyTabs from './EmptyTabs'
 import MainTabLabel from './MainTabLabel'
 import TabContentLanguage from './TabContentLanguage'
 import TabContentRepository from './TabContentRepository'
 import TabContentContrib from './TabContentContrib'
 
-const styles = {
-  headline: {
+export const styles = {
+  title: {
     fontSize: 24,
     paddingTop: 16,
     marginBottom: 12,
     fontWeight: 400,
   },
-  centerTabsContainer: {
+  tabContainer: {
     paddingLeft: 0,
     paddingRight: 0,
     border: 0,
   },
 
-  centerTab: {
-    textDecoration: 'none',
-    paddingBottom: 0,
+  tab: {
+    height: '50px',
+  },
+
+  inkBar: {
+
   },
 }
 
@@ -42,15 +46,15 @@ class MainTabs extends Component {
     return (
       <div className='row'>
         <EmptyTabs />
-        <div className='col s12 m10 l8' style={styles.centerTabsContainer}>
+        <div className='col s12 m10 l8' style={styles.tabContainer}>
           <Tabs>
-            <Tab style={styles.centerTab} label={<LanguageTabLabel />}>
+            <Tab style={styles.tab} label={<RepositoryTabLabel />}>
+              <TabContentRepository languages={languages} repositories={repositories} />
+            </Tab>
+            <Tab style={styles.tab} label={<LanguageTabLabel />}>
               <TabContentLanguage languages={languages} />
             </Tab>
-            <Tab style={styles.centerTab} label={<RepositoryTabLabel />}>
-              <TabContentRepository repositories={repositories} />
-            </Tab>
-            <Tab style={styles.centerTab} label={<ContribTabLabel />}>
+            <Tab style={styles.tab} label={<ContribTabLabel />}>
               <TabContentContrib activities={activities} />
             </Tab>
           </Tabs>
