@@ -35,7 +35,7 @@ class SectionMostLovedLangs extends Component {
 
     return (
       <div>
-        <div className='col s12' style={styles.sectionTitle}>
+        <div className='col s12' style={styles.sectionRepo}>
           Most Loved Programming Languages
         </div>
         <div className='col s12 center' style={styles.containerProgressBar}>

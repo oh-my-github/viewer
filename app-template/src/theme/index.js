@@ -6,12 +6,22 @@ export const BarChartColors = [
   '#E3EACF',
 ]
 
+export const BatteryColors = [
+  '#ef5350',
+  '#757575',
+  '#ffa000',
+  '#66bb6a',
+  '#039be5',
+]
+
 // TODO: named colors
 export const MainColors = [
   '#00BCD4', /** cyan */
   '#E0F7FA', /** cyan lighten-5 */
   '#546E7A', /** blue-grey darken-1 */
-  '#F9F9F9', /** grey lighten-4 */
+  '#F8F8F8', /** grey lighten-4 */
+  '#FFFFFF', /** white, RepositoryTile Title Section */
+  '#757575', /** grey, RepositoryTile RepoSection Icon, Desc */
 ]
 
-export const SAME = 'rgba(0, 0, 0, 0)'
+export const SameColor = 'rgba(0, 0, 0, 0)'

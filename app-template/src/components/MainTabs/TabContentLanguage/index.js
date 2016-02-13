@@ -14,7 +14,7 @@ export const styles = {
     paddingBottom: '10px',
   },
 
-  sectionTitle: {
+  sectionRepo: {
     fontSize: '20px',
     fontWeight: 200,
   },

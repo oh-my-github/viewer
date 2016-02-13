@@ -73,7 +73,7 @@ class SectionOtherLangs extends Component {
 
     return (
       <div>
-        <div className='col s12' style={styles.sectionTitle}>
+        <div className='col s12' style={styles.sectionRepo}>
           {this.renderTitle(otherLangs)}
         </div>
         <div className='col s12' >

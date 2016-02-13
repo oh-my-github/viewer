@@ -51,13 +51,13 @@ class TabContentRepository extends Component {
 
     // TODO: pass color as props
     const colors = RandomColor({
-      luminosity: 'light', hue: 'random', count: CONST_ITEM_COUNT_PER_PAGE * 10,
+      hue: 'blue', count: CONST_ITEM_COUNT_PER_PAGE * 5,
     }).sort().reverse()
 
     const items = repositories.map((repo, index) => {
       return (<RepositoryTile key={index}
                               repository={repo}
-                              titleSectionColor={colors[index % CONST_ITEM_COUNT_PER_PAGE]} />
+                              languageColor={colors[index % CONST_ITEM_COUNT_PER_PAGE + CONST_ITEM_COUNT_PER_PAGE]} />
       )
     })
 
