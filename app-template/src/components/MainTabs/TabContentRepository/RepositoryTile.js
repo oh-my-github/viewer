@@ -102,20 +102,6 @@ class RepositoryTile extends Component {
     super(props)
   }
 
-  render() {
-    const { repository, languageColor, } = this.props
-
-    return (
-      <div className='col s12 m6 l6' style={styles.paperContainer}>
-        <Paper rounded={false} zDepth={1} style={styles.paper}>
-          {this.renderLangSection(repository, languageColor)}
-          {this.renderRepoSection(repository)}
-          {this.renderStatSection(repository)}
-        </Paper>
-      </div>
-    )
-  }
-
   renderLangSection(repository, color) {
     const style = Object.assign({}, styles.sectionLang, {
       backgroundColor: color,
@@ -217,6 +203,21 @@ class RepositoryTile extends Component {
       </div>
     )
   }
+
+  render() {
+    const { repository, languageColor, } = this.props
+
+    return (
+      <div className='col s12 m6 l6' style={styles.paperContainer}>
+        <Paper rounded={false} zDepth={1} style={styles.paper}>
+          {this.renderLangSection(repository, languageColor)}
+          {this.renderRepoSection(repository)}
+          {this.renderStatSection(repository)}
+        </Paper>
+      </div>
+    )
+  }
+
 }
 
 export default RepositoryTile

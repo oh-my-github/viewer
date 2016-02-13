@@ -1,10 +1,14 @@
 import React, { PropTypes, Component, } from 'react'
 import Tabs from 'material-ui/lib/tabs/tabs'
 import Tab from 'material-ui/lib/tabs/tab'
+import TextField from 'material-ui/lib/text-field'
+
 import ReactPaginate from 'react-paginate'
 import RandomColor from 'randomcolor'
 
 import RepositoryTile from './RepositoryTile'
+import RepositoryFilter from './RepositoryFilter'
+import RepositorySorter from './RepositorySorter'
 
 const styles = {
   title: {
@@ -22,39 +26,73 @@ class TabContentRepository extends Component {
 
     this.state = {
       repositories: [],
-      pageCount: 0,
-      offset: 0,
+
+      /** used to sort */
+      sortComparator: () => 0,
+
+      /** used to paginate */
+      currentPageNumber: 0,
+      currentItemOffset: 0,
     }
   }
 
   componentWillReceiveProps(nextProps) {
     const { repositories, } = nextProps
-    const { offset, } = this.state
-    const pageCount = Math.ceil( repositories.length / CONST_ITEM_COUNT_PER_PAGE)
-
-    const sliced = repositories.slice(offset, offset + CONST_ITEM_COUNT_PER_PAGE)
-    this.setState({repositories: sliced, pageCount: pageCount, })
+    const currentPageNumber = Math.ceil( repositories.length / CONST_ITEM_COUNT_PER_PAGE)
+    this.setState({currentPageNumber: currentPageNumber, repositories: repositories, })
   }
 
-  handlePageClick (data) {
+  handlePageChange(data) {
     const offset = Math.ceil(data.selected * CONST_ITEM_COUNT_PER_PAGE)
-    const { repositories, } = this.props
-
-    if (repositories) { /** slice repositories in props to render */
-      const sliced = repositories.slice(offset, offset + CONST_ITEM_COUNT_PER_PAGE)
-      this.setState({offset: offset, repositories: sliced, })
-    }
+    this.setState({currentItemOffset: offset, })
   }
 
-  renderPageItems(repositories) {
-    if (!repositories) return
+  handleFilterChange(event) {
+    const filterKeyword = event.target.value
+    const allRepos = this.props.repositories
+    const { sortComparator, } = this.state
+
+    const filtered = allRepos
+      .filter(repo => { /** return true if keyword is included in name or lang of repo */
+        if (repo.name.toLowerCase().includes(filterKeyword.toLowerCase())) return true
+
+        const lang = repo.language
+        if (lang && lang.toLowerCase().includes(filterKeyword.toLowerCase())) return true
+
+        return false
+      })
+
+    const sorted = filtered.sort(sortComparator)
+
+    const currentPageNumber = Math.ceil( sorted.length / CONST_ITEM_COUNT_PER_PAGE)
+    this.setState({repositories: sorted, currentPageNumber: currentPageNumber, })
+  }
+
+  sortRepository(comparator) {
+    const sorted = this.state.repositories.slice().sort(comparator)
+    this.setState({repositories: sorted, sortComparator: comparator, })
+  }
+
+  renderTitle() {
+    const { repositories, } = this.state
+
+    const titleText = (repositories === void 0 || repositories.length === 0) ? 'No Repository' :
+      (repositories.length === 1) ? '1 Repository' : `${repositories.length} Repositories`
+
+    return (<h2 style={styles.title}>{titleText}</h2>)
+  }
+
+  renderPageItems() {
+
+    const { repositories, currentItemOffset, } = this.state
+    const sliced = repositories.slice(currentItemOffset, currentItemOffset + CONST_ITEM_COUNT_PER_PAGE)
 
     // TODO: pass color as props
     const colors = RandomColor({
       hue: 'blue', count: CONST_ITEM_COUNT_PER_PAGE * 5,
     }).sort().reverse()
 
-    const items = repositories.map((repo, index) => {
+    const items = sliced.map((repo, index) => {
       return (<RepositoryTile key={index}
                               repository={repo}
                               languageColor={colors[index % CONST_ITEM_COUNT_PER_PAGE + CONST_ITEM_COUNT_PER_PAGE]} />
@@ -64,17 +102,17 @@ class TabContentRepository extends Component {
     return (<div> {items} </div>)
   }
 
-  renderPaginator(pageCount) {
-    if (pageCount <= 0) return
+  renderPaginator() {
+    const { currentPageNumber, } = this.state
 
-    return (
+    return(
       <ReactPaginate previousLabel={"previous"}
                      nextLabel={"next"}
                      breakLabel={<li className='break'><a href=''>...</a></li>}
-                     pageNum={pageCount}
+                     pageNum={currentPageNumber}
                      marginPagesDisplayed={1}
                      pageRangeDisplayed={3}
-                     clickCallback={this.handlePageClick.bind(this)}
+                     clickCallback={this.handlePageChange.bind(this)}
                      containerClassName={"pagination"}
                      subContainerClassName={"pages pagination"}
                      activeClassName={"active"} />
@@ -82,20 +120,18 @@ class TabContentRepository extends Component {
   }
 
   render() {
-    const { repositories, pageCount, } = this.state
-    const allRepositories = this.props.repositories
-
-    const titleText = (allRepositories === void 0 || allRepositories.length === 0) ? 'No Repository' :
-      (allRepositories.length === 1) ? '1 Repository' : `${allRepositories.length} Repositories`
 
     return (
       <div className='container'>
-        <h2 style={styles.title}>{titleText}</h2>
+        {this.renderTitle()}
+        <RepositoryFilter handleFilterChange={this.handleFilterChange.bind(this)} />
+        <RepositorySorter sortRepository={this.sortRepository.bind(this)} />
+
         <div className='row'>
-          {this.renderPageItems(repositories)}
+          {this.renderPageItems()}
         </div>
         <div className='row center'>
-          {this.renderPaginator(pageCount)}
+          {this.renderPaginator()}
         </div>
       </div>
     )

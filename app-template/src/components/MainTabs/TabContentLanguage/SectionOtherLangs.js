@@ -1,10 +1,10 @@
 import React, { PropTypes, Component, } from 'react'
 import AutoComplete from 'material-ui/lib/auto-complete'
 import TextField from 'material-ui/lib/text-field'
+
 import RandomColor from 'randomcolor'
 
 import ProgressBar from '../../ProgressBar'
-
 import { styles, } from './index'
 
 class SectionOtherLangs extends Component {
@@ -23,23 +23,21 @@ class SectionOtherLangs extends Component {
     }
   }
 
-  handleChangeFilter(e) {
-    this.setState({filterKeyword: e.target.value,})
+  handleFilterChange(event) {
+    this.setState({filterKeyword: event.target.value,})
   }
 
   renderTitle(langs) {
     return (
-      <div>
-        {(langs.length > 0) ?
-          `Other ${langs.length} Languages` : null}
-      </div>
+      <div> {(langs.length > 0) ? `Other ${langs.length} Languages` : null} </div>
     )
   }
 
   renderFilter(langs) {
     if (langs.length > 0) {
       return (
-        <TextField onChange={this.handleChangeFilter.bind(this)} floatingLabelText='Insert Language Which You Want To Find' />
+        <TextField onChange={this.handleFilterChange.bind(this)}
+                   floatingLabelText='Insert Language Which You Want To Find' />
       )
     }
   }
