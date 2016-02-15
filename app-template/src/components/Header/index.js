@@ -10,14 +10,15 @@ import Menu from 'material-ui/lib/menus/menu'
 import MenuItem from 'material-ui/lib/menus/menu-item'
 import Divider from 'material-ui/lib/divider'
 
-import Colors from 'material-ui/lib/styles/colors';
+import Colors from 'material-ui/lib/styles/colors'
 import SvgIconActionFavorite from 'material-ui/lib/svg-icons/action/favorite'
 import SvgIconActionCode from 'material-ui/lib/svg-icons/action/code'
 import SvgIconActionAccountCircle from 'material-ui/lib/svg-icons/action/account-circle'
 
+import { StatLabelStarFactory, StatLabelForkFactory, } from './StatIconLabel'
 
-import { MainColors, HeaderColors, } from '../theme'
-import RaisedFontIconButton from './RaisedFontIconButton'
+import { MainColors, HeaderColors, } from '../../theme'
+import RaisedFontIconButton from './../RaisedFontIconButton'
 
 const styles = {
   title: {
@@ -48,27 +49,8 @@ const styles = {
   },
 }
 
-
-class Header extends Component {
-  createAppBarStatIcon(label, iconClassName, color) {
-    const labelStyle = {fontWeight: 300, fontSize: 15, }
-    const style = {float: 'left', margin: '8px 15px 0 0', paddingLeft: 0, paddingRight: 0, minWidth: 25,}
-    const iconStyle = {marginRight: 7, fontSize: 15, color: color,}
-
-    const icon = (
-      <span> <FontIcon style={iconStyle} className={iconClassName} /> </span>
-    )
-
-    return (
-      <div style={style}>
-        {icon}
-        <span style={labelStyle}>{label}</span>
-      </div>
-    )
-  }
-
+export default class Header extends Component {
   createIconMenu(user) {
-
     return (
       <IconMenu iconButtonElement={<IconButton iconStyle={{fill: MainColors[4],}}><MoreVertIcon /></IconButton>}
                 targetOrigin={{horizontal: 'right', vertical: 'top',}}
@@ -92,8 +74,10 @@ class Header extends Component {
       return stat
     }, {starCount: 0, forkCount: 0,})
 
-    const starButton = this.createAppBarStatIcon(repoStat.starCount, 'fa fa-star', HeaderColors.star)
-    const forkButton = this.createAppBarStatIcon(repoStat.forkCount, 'fa fa-share-alt', HeaderColors.fork)
+    //const starButton = this.createAppBarStatIcon(repoStat.starCount, 'fa fa-star', HeaderColors.star)
+    //const forkButton = this.createAppBarStatIcon(repoStat.forkCount, 'fa fa-share-alt', HeaderColors.fork)
+    const starButton = StatLabelStarFactory(repoStat.starCount)
+    const forkButton = StatLabelForkFactory(repoStat.forkCount)
     const iconMenu = this.createIconMenu(user)
 
     return (
@@ -130,8 +114,6 @@ class Header extends Component {
     )
   }
 }
-
-export default Header
 
 Header.propTypes = {
   user: PropTypes.object.isRequired,

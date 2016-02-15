@@ -30,20 +30,12 @@ export const styles = {
   tab: {
     backgroundColor: TAB_COLOR,
     height: TAB_HEIGHT,
-  },
-
-  inkBar: {
-
+    verticalAlign: 'baseline',
   },
 }
 
 
 class MainTabs extends Component {
-
-  createTabLabel() {
-
-  }
-
   render() {
     const { languages, repositories, activities, } = this.props
 

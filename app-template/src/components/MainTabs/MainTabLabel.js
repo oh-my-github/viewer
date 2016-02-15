@@ -1,5 +1,4 @@
 import React, { PropTypes, Component, } from 'react'
-import FlatButton from 'material-ui/lib/flat-button'
 import FontIcon from 'material-ui/lib/font-icon'
 
 import ActivityTabLabelIcon from 'material-ui/lib/svg-icons/action/question-answer'
@@ -12,18 +11,12 @@ const ICON_COLOR = '#F0F0F0'
 
 const styles = {
   icon: {
-  },
-
-  iconContainer: {
-    display: 'inline-block',
-    paddingRight: 10,
-    verticalAlign: 'center',
+    verticalAlign: 'middle',
   },
 
   label: {
-    display: 'inline-block',
-    verticalAlign: 'center',
     fontWeight: 300,
+    paddingLeft: 10,
   },
 }
 
@@ -32,23 +25,22 @@ class MainTabLabel extends Component {
     const { icon, label, } = this.props
 
     return (
-      <div >
-        <div style={styles.iconContainer}>{icon}</div>
-        <span style={styles.label}>{label}</span>
+      <div>
+        {icon}<span className='hide-on-small-only' style={styles.label}>{label}</span>
       </div>
     )
   }
 }
 
 MainTabLabel.propTypes = {
-  icon: PropTypes.string.isRequired,
+  icon: PropTypes.object.isRequired,
   label: PropTypes.string.isRequired,
 }
 
 
-const LanguageIcon = (<LanguageTabLabelIcon style={styles.icon} color={ICON_COLOR} className='hide-on-small-only' />)
-const RepositoryIcon = (<RepositoryTabLabelIcon style={styles.icon} color={ICON_COLOR} className='hide-on-small-only' />)
-const ActivityIcon = (<ActivityTabLabelIcon styles={styles.icon} color={ICON_COLOR} className='hide-on-small-only' />)
+const LanguageIcon = (<LanguageTabLabelIcon style={styles.icon} color={ICON_COLOR} />)
+const RepositoryIcon = (<RepositoryTabLabelIcon style={styles.icon} color={ICON_COLOR} />)
+const ActivityIcon = (<ActivityTabLabelIcon style={styles.icon} color={ICON_COLOR} />)
 
 export const LanguageTabLabel = () =>
   (<MainTabLabel icon={LanguageIcon} label='LANGUAGE' />)
