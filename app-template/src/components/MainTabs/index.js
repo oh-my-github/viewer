@@ -11,6 +11,9 @@ import TabContentLanguage from './TabContentLanguage'
 import TabContentRepository from './TabContentRepository'
 import TabContentContrib from './TabContentContrib'
 
+const TAB_HEIGHT = '50px'
+const TAB_COLOR = MainColors[2]
+
 export const styles = {
   title: {
     fontSize: 24,
@@ -25,7 +28,8 @@ export const styles = {
   },
 
   tab: {
-    height: '50px',
+    backgroundColor: TAB_COLOR,
+    height: TAB_HEIGHT,
   },
 
   inkBar: {
@@ -40,12 +44,11 @@ const ContribTabLabel = () => (<MainTabLabel icon='fa fa-bar-chart fa-fw' label=
 class MainTabs extends Component {
 
   render() {
-
     const { languages, repositories, activities, } = this.props
 
     return (
       <div className='row'>
-        <EmptyTabs />
+        <EmptyTabs tabHeight={TAB_HEIGHT} tabColor={TAB_COLOR} />
         <div className='col s12 m10 l8' style={styles.tabContainer}>
           <Tabs>
             <Tab style={styles.tab} label={<RepositoryTabLabel />}>
@@ -59,7 +62,7 @@ class MainTabs extends Component {
             </Tab>
           </Tabs>
         </div>
-        <EmptyTabs />
+        <EmptyTabs tabHeight={TAB_HEIGHT} tabColor={TAB_COLOR} />
       </div>
     )
   }

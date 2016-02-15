@@ -31,20 +31,20 @@ class TabContentRepository extends Component {
       sortComparator: () => 0,
 
       /** used to paginate */
-      currentPageNumber: 0,
+      totalPageCount: 0,
       currentItemOffset: 0,
     }
   }
 
   componentWillReceiveProps(nextProps) {
     const { repositories, } = nextProps
-    const currentPageNumber = Math.ceil( repositories.length / CONST_ITEM_COUNT_PER_PAGE)
-    this.setState({currentPageNumber: currentPageNumber, repositories: repositories, })
+    const totalPageCount = Math.ceil( repositories.length / CONST_ITEM_COUNT_PER_PAGE)
+    this.setState({totalPageCount: totalPageCount, repositories: repositories, })
   }
 
   handlePageChange(data) {
     const offset = Math.ceil(data.selected * CONST_ITEM_COUNT_PER_PAGE)
-    this.setState({currentItemOffset: offset, })
+    this.setState({currentItemOffset: offset,})
   }
 
   handleFilterChange(event) {
@@ -64,8 +64,8 @@ class TabContentRepository extends Component {
 
     const sorted = filtered.sort(sortComparator)
 
-    const currentPageNumber = Math.ceil( sorted.length / CONST_ITEM_COUNT_PER_PAGE)
-    this.setState({repositories: sorted, currentPageNumber: currentPageNumber, })
+    const totalPageCount = Math.ceil( sorted.length / CONST_ITEM_COUNT_PER_PAGE)
+    this.setState({repositories: sorted, totalPageCount: totalPageCount, currentItemOffset: 0,})
   }
 
   sortRepository(comparator) {
@@ -102,14 +102,17 @@ class TabContentRepository extends Component {
     return (<div> {items} </div>)
   }
 
+  /** since react-paginate doesn't support es6 class, we can't extract it as an independent class */
   renderPaginator() {
-    const { currentPageNumber, } = this.state
+    const { totalPageCount, currentItemOffset, } = this.state
+    const currentPage = Math.ceil(currentItemOffset/ CONST_ITEM_COUNT_PER_PAGE)
 
     return(
       <ReactPaginate previousLabel={"previous"}
                      nextLabel={"next"}
                      breakLabel={<li className='break'><a href=''>...</a></li>}
-                     pageNum={currentPageNumber}
+                     forceSelected={currentPage}
+                     pageNum={totalPageCount}
                      marginPagesDisplayed={1}
                      pageRangeDisplayed={3}
                      clickCallback={this.handlePageChange.bind(this)}

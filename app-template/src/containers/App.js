@@ -5,7 +5,6 @@ import { bindActionCreators, } from 'redux'
 import { connect, } from 'react-redux'
 
 import * as ActionCreators from '../actions/ActionCreators'
-import UserInfoBox from '../components/UserInfoBox'
 import Header from '../components/Header'
 import MainTabs from '../components/MainTabs'
 import Footer from '../components/Footer'
@@ -19,15 +18,14 @@ class App extends React.Component {
 
   render() {
     const { profile, actions, } = this.props
-    const { languages, repositories, activities, } = profile
+    const { user, languages, repositories, activities, _$meta, } = profile
 
     return (
       <div>
-        <Header user={profile.user} />
-        <UserInfoBox user={profile.user} repositories={profile.repositories} />
+        <Header user={user} repositories={repositories} />
         <MainTabs actions={actions} languages={languages} repositories={repositories} activities={activities}
           />
-        <Footer user={profile.user} meta={profile._$meta} />
+        <Footer user={user} meta={_$meta} />
       </div>
     )
   }
