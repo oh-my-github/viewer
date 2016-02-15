@@ -25,7 +25,7 @@ export const styles = {
   },
 }
 
-class TabContentLanguage extends Component {
+export default class TabContentLanguage extends Component {
 
   render() {
 
@@ -61,8 +61,6 @@ class TabContentLanguage extends Component {
     )
   }
 }
-
-export default TabContentLanguage
 
 TabContentLanguage.propTypes = {
   languages: PropTypes.array.isRequired,

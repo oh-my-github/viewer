@@ -2,42 +2,29 @@ import React, { PropTypes, Component, } from 'react'
 import FlatButton from 'material-ui/lib/flat-button'
 import FontIcon from 'material-ui/lib/font-icon'
 
+import ActivityTabLabelIcon from 'material-ui/lib/svg-icons/action/question-answer'
+import LanguageTabLabelIcon from 'material-ui/lib/svg-icons/action/code'
+import RepositoryTabLabelIcon from 'material-ui/lib/svg-icons/social/poll'
+
 import { MainColors, SAME, } from '../../theme'
 
+const ICON_COLOR = '#F0F0F0'
+
 const styles = {
-  flatButton: {
-    color: MainColors[3],
+  icon: {
   },
 
-  flatButtonLabel: {
-    fontSize: '14px',
+  iconContainer: {
+    display: 'inline-block',
+    paddingRight: 10,
+    verticalAlign: 'center',
+  },
+
+  label: {
+    display: 'inline-block',
+    verticalAlign: 'center',
     fontWeight: 300,
   },
-
-  flatButtonIcon: {
-    color: 'rgb(245, 245, 245)',
-    fontSize: '19px',
-    fontWeight: 300,
-    verticalAlign: 'middle',
-  },
-
-  color: {
-    SAME: SAME,
-  },
-}
-
-/**
- * since react component doesn't support nested style overriding,
- * we should extract FlatButtonIcon as a single component
- */
-class FlatButtonIcon extends Component {
-  render() {
-    const { icon, } = this.props
-
-    return (
-      <FontIcon style={styles.flatButtonIcon} className={icon} />
-    )
-  }
 }
 
 class MainTabLabel extends Component {
@@ -45,29 +32,28 @@ class MainTabLabel extends Component {
     const { icon, label, } = this.props
 
     return (
-      <FlatButton
-        style={styles.flatButton}
-        rippleColor={styles.color.SAME}
-        hoverColor={styles.color.SAME}
-        labelStyle={styles.flatButtonLabel}
-        label={label}
-        default
-        linkButton
-        href='#'
-        icon={<FlatButtonIcon icon={icon} />}
-        />
+      <div >
+        <div style={styles.iconContainer}>{icon}</div>
+        <span style={styles.label}>{label}</span>
+      </div>
     )
   }
-}
-
-export default MainTabLabel
-
-FlatButtonIcon.propTypes = {
-  icon: PropTypes.string.isRequired,
 }
 
 MainTabLabel.propTypes = {
   icon: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
 }
+
+
+const LanguageIcon = (<LanguageTabLabelIcon style={styles.icon} color={ICON_COLOR} className='hide-on-small-only' />)
+const RepositoryIcon = (<RepositoryTabLabelIcon style={styles.icon} color={ICON_COLOR} className='hide-on-small-only' />)
+const ActivityIcon = (<ActivityTabLabelIcon styles={styles.icon} color={ICON_COLOR} className='hide-on-small-only' />)
+
+export const LanguageTabLabel = () =>
+  (<MainTabLabel icon={LanguageIcon} label='LANGUAGE' />)
+export const RepositoryTabLabel = () =>
+  (<MainTabLabel icon={RepositoryIcon} label='REPOSITORY' />)
+export const ActivityTabLabel = () =>
+  (<MainTabLabel icon={ActivityIcon} label='ACTIVITY' />)
 

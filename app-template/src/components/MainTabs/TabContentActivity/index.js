@@ -2,6 +2,8 @@ import React, { PropTypes, Component, } from 'react'
 import Tabs from 'material-ui/lib/tabs/tabs'
 import Tab from 'material-ui/lib/tabs/tab'
 
+import ActionFlightTakeoff from 'material-ui/lib/svg-icons/action/flight-takeoff';
+
 const styles = {
   title: {
     fontSize: 24,
@@ -11,10 +13,12 @@ const styles = {
   },
 }
 
-class TabContentContrib extends Component {
+export default class TabContentActivity extends Component {
   render() {
 
     const { activities, } = this.props
+
+    console.log(activities)
 
     return (
       <div className='container'>
@@ -22,13 +26,18 @@ class TabContentContrib extends Component {
         <p>
           This is a third example tab.
         </p>
+
+        <div className='row'>
+          a
+        </div>
+        <div className='row'>
+          b
+        </div>
       </div>
     )
   }
 }
 
-export default TabContentContrib
-
-TabContentContrib.propTypes = {
+TabContentActivity.propTypes = {
   activities: PropTypes.array.isRequired,
 }

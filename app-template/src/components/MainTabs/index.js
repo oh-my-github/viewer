@@ -6,10 +6,10 @@ import FontIcon from 'material-ui/lib/font-icon'
 
 import { MainColors, } from '../../theme'
 import EmptyTabs from './EmptyTabs'
-import MainTabLabel from './MainTabLabel'
+import { LanguageTabLabel, RepositoryTabLabel, ActivityTabLabel, } from './MainTabLabel'
 import TabContentLanguage from './TabContentLanguage'
 import TabContentRepository from './TabContentRepository'
-import TabContentContrib from './TabContentContrib'
+import TabContentActivity from './TabContentActivity'
 
 const TAB_HEIGHT = '50px'
 const TAB_COLOR = MainColors[2]
@@ -37,11 +37,12 @@ export const styles = {
   },
 }
 
-const LanguageTabLabel = () => (<MainTabLabel icon='fa fa-code fa-fw' label='LANGUAGE' />)
-const RepositoryTabLabel = () => (<MainTabLabel icon='fa fa-folder-open-o fa-fw' label='REPOSITORY' />)
-const ContribTabLabel = () => (<MainTabLabel icon='fa fa-bar-chart fa-fw' label='CONTRIB' />)
 
 class MainTabs extends Component {
+
+  createTabLabel() {
+
+  }
 
   render() {
     const { languages, repositories, activities, } = this.props
@@ -51,14 +52,14 @@ class MainTabs extends Component {
         <EmptyTabs tabHeight={TAB_HEIGHT} tabColor={TAB_COLOR} />
         <div className='col s12 m10 l8' style={styles.tabContainer}>
           <Tabs>
-            <Tab style={styles.tab} label={<RepositoryTabLabel />}>
-              <TabContentRepository languages={languages} repositories={repositories} />
+            <Tab style={styles.tab} label={<ActivityTabLabel />}>
+              <TabContentActivity activities={activities} />
             </Tab>
             <Tab style={styles.tab} label={<LanguageTabLabel />}>
               <TabContentLanguage languages={languages} />
             </Tab>
-            <Tab style={styles.tab} label={<ContribTabLabel />}>
-              <TabContentContrib activities={activities} />
+            <Tab style={styles.tab} label={<RepositoryTabLabel />}>
+              <TabContentRepository languages={languages} repositories={repositories} />
             </Tab>
           </Tabs>
         </div>

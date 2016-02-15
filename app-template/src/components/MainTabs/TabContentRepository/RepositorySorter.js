@@ -4,12 +4,11 @@ import MenuItem from 'material-ui/lib/menus/menu-item'
 
 import moment from 'moment'
 
-function compareDate(date1, date2) {
+function compareDate(date1, date2) { /** latest */
   return moment(date2).valueOf() - moment(date1).valueOf()
 }
 
-const SORTER = [
-  { value: 'none', text: 'Default', comparator: () => 0, },
+export const SORTER = [
   { value: 'updated_at', text: 'Recently Updated', comparator: (repo1, repo2) => {
     return compareDate(repo1.updated_at, repo2.updated_at)
   }, },

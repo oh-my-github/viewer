@@ -8,7 +8,7 @@ import RandomColor from 'randomcolor'
 
 import RepositoryTile from './RepositoryTile'
 import RepositoryFilter from './RepositoryFilter'
-import RepositorySorter from './RepositorySorter'
+import RepositorySorter, { SORTER, } from './RepositorySorter'
 
 const styles = {
   title: {
@@ -20,7 +20,7 @@ const styles = {
 
 const CONST_ITEM_COUNT_PER_PAGE = 4
 
-class TabContentRepository extends Component {
+export default class TabContentRepository extends Component {
   constructor(props) {
     super(props)
 
@@ -28,7 +28,7 @@ class TabContentRepository extends Component {
       repositories: [],
 
       /** used to sort */
-      sortComparator: () => 0,
+      sortComparator: SORTER[0].comparator,
 
       /** used to paginate */
       totalPageCount: 0,
@@ -39,7 +39,10 @@ class TabContentRepository extends Component {
   componentWillReceiveProps(nextProps) {
     const { repositories, } = nextProps
     const totalPageCount = Math.ceil( repositories.length / CONST_ITEM_COUNT_PER_PAGE)
-    this.setState({totalPageCount: totalPageCount, repositories: repositories, })
+
+    const sorted = repositories.slice().sort(this.state.sortComparator)
+
+    this.setState({totalPageCount: totalPageCount, repositories: sorted, })
   }
 
   handlePageChange(data) {
@@ -57,7 +60,7 @@ class TabContentRepository extends Component {
         if (repo.name.toLowerCase().includes(filterKeyword.toLowerCase())) return true
 
         const lang = repo.language
-        if (lang && lang.toLowerCase().includes(filterKeyword.toLowerCase())) return true
+        if (lang && lang.toLowerCase().includes(filterKeyword.trim().toLowerCase())) return true
 
         return false
       })
@@ -87,7 +90,6 @@ class TabContentRepository extends Component {
     const { repositories, currentItemOffset, } = this.state
     const sliced = repositories.slice(currentItemOffset, currentItemOffset + CONST_ITEM_COUNT_PER_PAGE)
 
-    // TODO: pass color as props
     const colors = RandomColor({
       hue: 'blue', count: CONST_ITEM_COUNT_PER_PAGE * 5,
     }).sort().reverse()
@@ -140,8 +142,6 @@ class TabContentRepository extends Component {
     )
   }
 }
-
-export default TabContentRepository
 
 TabContentRepository.propTypes = {
   repositories: PropTypes.array.isRequired,
