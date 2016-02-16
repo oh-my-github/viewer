@@ -4,15 +4,15 @@ import Tab from 'material-ui/lib/tabs/tab'
 import FlatButton from 'material-ui/lib/flat-button'
 import FontIcon from 'material-ui/lib/font-icon'
 
-import { MainColors, } from '../../theme'
+import { MainColors, TabColors, } from '../../theme'
 import EmptyTabs from './EmptyTabs'
-import { LanguageTabLabel, RepositoryTabLabel, ActivityTabLabel, } from './MainTabLabel'
+import MainTabLabel from './MainTabLabel'
 import TabContentLanguage from './TabContentLanguage'
 import TabContentRepository from './TabContentRepository'
 import TabContentActivity from './TabContentActivity'
 
-const TAB_HEIGHT = '50px'
-const TAB_COLOR = MainColors[2]
+const TAB_HEIGHT = '60px'
+const TAB_COLOR = TabColors.BACKGROUND
 
 export const styles = {
   title: {
@@ -31,31 +31,59 @@ export const styles = {
     backgroundColor: TAB_COLOR,
     height: TAB_HEIGHT,
     verticalAlign: 'baseline',
+    //boxShadow: '0px 2px 1px -1px rgba(0, 0, 0, 0.12)',
+    borderBottom: '1px solid rgba(0, 0, 0, 0.05)',
   },
+
+  inkBar: {
+    backgroundColor: TabColors.INK_BAR,
+  }
 }
 
-
 class MainTabs extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      /** used to style the active tab label */
+      selectedTab: 0,
+    }
+  }
+
+  handleTabSelection(value) {
+    this.setState({selectedTab: value, })
+  }
+
   render() {
     const { languages, repositories, activities, } = this.props
+    const { selectedTab } = this.state
+    const activityTabIndex = 0
+    const languageTabIndex = 1
+    const repositoryTabIndex = 2
+
+    const activityTabLabel = (<MainTabLabel label='ACTIVITY' isActive={selectedTab === activityTabIndex} />)
+    const languageTabLabel = (<MainTabLabel label='LANGUAGE' isActive={selectedTab === languageTabIndex} />)
+    const repositoryTabLabel = (<MainTabLabel label='REPOSITORY' isActive={selectedTab === repositoryTabIndex} />)
+
+    const emptyTab = (<EmptyTabs gridClass='col s0 m1 l2' tabHeight={TAB_HEIGHT} tabColor={TAB_COLOR} />)
 
     return (
       <div className='row'>
-        <EmptyTabs tabHeight={TAB_HEIGHT} tabColor={TAB_COLOR} />
+        {emptyTab}
         <div className='col s12 m10 l8' style={styles.tabContainer}>
-          <Tabs>
-            <Tab style={styles.tab} label={<ActivityTabLabel />}>
+          <Tabs onChange={this.handleTabSelection.bind(this)} inkBarStyle={styles.inkBar}>
+            <Tab value={activityTabIndex} style={styles.tab} label={activityTabLabel}>
               <TabContentActivity activities={activities} />
             </Tab>
-            <Tab style={styles.tab} label={<LanguageTabLabel />}>
+            <Tab value={languageTabIndex} style={styles.tab} label={languageTabLabel}>
               <TabContentLanguage languages={languages} />
             </Tab>
-            <Tab style={styles.tab} label={<RepositoryTabLabel />}>
+            <Tab value={repositoryTabIndex} style={styles.tab} label={repositoryTabLabel}>
               <TabContentRepository languages={languages} repositories={repositories} />
             </Tab>
           </Tabs>
         </div>
-        <EmptyTabs tabHeight={TAB_HEIGHT} tabColor={TAB_COLOR} />
+        {emptyTab}
       </div>
     )
   }

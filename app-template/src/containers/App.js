@@ -23,8 +23,10 @@ class App extends React.Component {
     return (
       <div>
         <Header user={user} repositories={repositories} />
-        <MainTabs actions={actions} languages={languages} repositories={repositories} activities={activities}
-          />
+        <MainTabs actions={actions}
+                  languages={languages}
+                  repositories={repositories}
+                  activities={activities} />
         <Footer user={user} meta={_$meta} />
       </div>
     )

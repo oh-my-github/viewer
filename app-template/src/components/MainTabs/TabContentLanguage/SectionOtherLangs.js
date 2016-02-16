@@ -58,7 +58,7 @@ class SectionOtherLangs extends Component {
         continue
       }
 
-      if (lang.name.toLowerCase().startsWith(filterKeyword.toLowerCase())) {
+      if (lang.name.toLowerCase().startsWith(filterKeyword.trim().toLowerCase())) {
         progressBars.push(progressBar)
       }
     }

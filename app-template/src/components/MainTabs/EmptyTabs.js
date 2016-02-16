@@ -12,6 +12,8 @@ const styles = {
     padding: 0,
     margin: 0,
     border: 0,
+    //boxShadow: '0px 2px 1px -1px rgba(0, 0, 0, 0.12)',
+    borderBottom: '1px solid rgba(0, 0, 0, 0.05)',
     height: '50px', /** same as MainTab height */
     float: 'left',
     left: 0,
@@ -37,14 +39,14 @@ const styles = {
 
 export default class EmptyTabs extends Component {
   render() {
-    const { tabHeight, tabColor, } = this.props
+    const { tabHeight, tabColor, gridClass, } = this.props
 
     const tabContainerStyle = Object.assign({}, styles.tabContainer, { height: tabHeight, backgroundColor: tabColor, })
     const tabStyle = Object.assign({}, styles.tab, { backgroundColor: tabColor, })
     const inkBarStyle = Object.assign({}, styles.inkBar, { backgroundColor: tabColor, })
 
     return (
-      <div className='col s0 m1 l2' style={tabContainerStyle}>
+      <div className={gridClass} style={tabContainerStyle}>
         <Tabs inkBarStyle={inkBarStyle} style={styles.tabs}>
           <Tab style={tabStyle} />
         </Tabs>
@@ -55,5 +57,6 @@ export default class EmptyTabs extends Component {
 EmptyTabs.propTypes = {
   tabHeight: PropTypes.string.isRequired,
   tabColor: PropTypes.string.isRequired,
+  girdClass: PropTypes.string.isRequired,
 }
 

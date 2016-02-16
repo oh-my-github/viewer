@@ -1,3 +1,12 @@
+export const MainColors = [
+  '#00BCD4', /** cyan */
+  '#E0F7FA', /** cyan lighten-5 */
+  '#546E7A', /** blue-grey darken-1 */
+  '#F8F8F8', /** grey lighten-4 */
+  '#FFFFFF', /** white, RepositoryTile Title Section */
+  '#757575', /** grey, RepositoryTile RepoSection Icon, Desc */
+]
+
 export const BarChartColors = [
   '#70AFC4', /** top 1 */
   '#7AC1C4', /** top 2 */
@@ -15,22 +24,26 @@ export const BatteryColors = [
 ]
 
 export const HeaderColors = {
-  star: '#FFF59D', /** light yellow, star icon */
-  fork: '#B2DFDB', /** light green,  fork icon */
-  id: '#2196f3',
-  gist: '#ba68c8',
-  favorite: '#f44336',
+  STAR: '#FFF59D', /** light yellow, star icon */
+  FORK: '#B2DFDB', /** light green,  fork icon */
+  ID: '#2196f3',
+  GIST: '#ba68c8',
+  FAVORITE: '#f44336',
 }
 
-// TODO: named colors
-export const MainColors = [
-  '#00BCD4', /** cyan */
-  '#E0F7FA', /** cyan lighten-5 */
-  '#546E7A', /** blue-grey darken-1 */
-  '#F8F8F8', /** grey lighten-4 */
-  '#FFFFFF', /** white, RepositoryTile Title Section */
-  '#757575', /** grey, RepositoryTile RepoSection Icon, Desc */
-]
+export const TabColors = {
+  LABEL_ACTIVE: '#000000',
+  LABEL_DEFAULT: '#bdbdbd',
+  ICON_ACTIVE: MainColors[2],
+  ICON_DEFAULT: '#bdbdbd',
+  BACKGROUND: '#f5f5f5',
+  INK_BAR: MainColors[2],
+  //INK_BAR: '#f5f5f5',
+  //LABEL_ACTIVE: MainColors[2],
+  //ICON_ACTIVE: MainColors[0],
+  //BACKGROUND: MainColors[4],
+  //INK_BAR: MainColors[2],
+}
 
 export const SameColor = 'rgba(0, 0, 0, 0)'
 

@@ -22,7 +22,7 @@ import RaisedFontIconButton from './../RaisedFontIconButton'
 
 const styles = {
   title: {
-    fontSize: 23,
+    fontSize: 20,
     fontWeight: 200,
   },
 
@@ -32,10 +32,12 @@ const styles = {
   },
 
   appBarRightElementAvatar: {
-    borderRadius: '25%',
+    borderRadius: '35%',
+    width: 30,
+    height: 30,
     boxShadow: '0 0 2px rgba(0, 0, 0, .3)',
     float: 'left',
-    margin: '5px 20px 0 0',
+    margin: '8px 15px 0 0',
   },
 
   appBarRightElementText: {
@@ -44,8 +46,8 @@ const styles = {
 
   appBarRightElementButtons: {
     float: 'left',
-    marginRight: 0,
-    paddingTop: 6,
+    marginRight: 3,
+    paddingTop: 11,
   },
 }
 
@@ -56,12 +58,12 @@ export default class Header extends Component {
                 targetOrigin={{horizontal: 'right', vertical: 'top',}}
                 anchorOrigin={{horizontal: 'right', vertical: 'top',}} >
         <MenuItem linkButton target='_blank' href={`https://github.com/${user.login}`}
-                  primaryText={user.login} leftIcon={<SvgIconActionAccountCircle color={HeaderColors.id} />} />
+                  primaryText={user.login} leftIcon={<SvgIconActionAccountCircle color={HeaderColors.ID} />} />
         <Divider />
         <MenuItem linkButton target='_blank' href={`https://gist.github.com/${user.login}`}
-                  primaryText={`Gist`} leftIcon={<SvgIconActionCode color={HeaderColors.gist} />} />
+                  primaryText={`Gist`} leftIcon={<SvgIconActionCode color={HeaderColors.GIST} />} />
         <MenuItem linkButton target='_blank' href={`https://github.com/stars/${user.login}`}
-                  primaryText={`Favorite`} leftIcon={<SvgIconActionFavorite color={HeaderColors.favorite} />} />
+                  primaryText={`Favorite`} leftIcon={<SvgIconActionFavorite color={HeaderColors.FAVORITE} />} />
       </IconMenu>
     )
   }

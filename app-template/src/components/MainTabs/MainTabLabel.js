@@ -5,47 +5,57 @@ import ActivityTabLabelIcon from 'material-ui/lib/svg-icons/action/question-answ
 import LanguageTabLabelIcon from 'material-ui/lib/svg-icons/action/code'
 import RepositoryTabLabelIcon from 'material-ui/lib/svg-icons/social/poll'
 
-import { MainColors, SAME, } from '../../theme'
-
-const ICON_COLOR = '#F0F0F0'
+import { MainColors, SAME, TabColors, } from '../../theme'
 
 const styles = {
+  container: {
+    paddingTop: 3,
+  },
+
   icon: {
     verticalAlign: 'middle',
+    paddingBottom: 3,
   },
 
   label: {
-    fontWeight: 300,
+    fontWeight: 500,
     paddingLeft: 10,
+    marginRight: 15,
   },
 }
 
-class MainTabLabel extends Component {
+export default class MainTabLabel extends Component {
+  static createIcon(label, isActive) {
+    const iconStyle = Object.assign({}, styles.icon, {
+      fill: (isActive) ? TabColors.ICON_ACTIVE: TabColors.ICON_DEFAULT,
+    })
+
+    const icon =
+      (label === 'LANGUAGE') ?  (<LanguageTabLabelIcon style={iconStyle} />) :
+        (label === 'ACTIVITY') ? (<ActivityTabLabelIcon style={iconStyle} />) :
+          (<RepositoryTabLabelIcon style={iconStyle} />)
+
+    return icon
+  }
+
   render() {
-    const { icon, label, } = this.props
+    const { label, isActive, } = this.props
+    const icon = MainTabLabel.createIcon(label, isActive)
+
+    const labelStyle = Object.assign({}, styles.label, {
+      color: (isActive) ? TabColors.LABEL_ACTIVE: TabColors.LABEL_DEFAULT,
+    })
 
     return (
-      <div>
-        {icon}<span className='hide-on-small-only' style={styles.label}>{label}</span>
+      <div style={styles.container}>
+        {icon}<span className='hide-on-small-only' style={labelStyle}>{label}</span>
       </div>
     )
   }
 }
 
 MainTabLabel.propTypes = {
-  icon: PropTypes.object.isRequired,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.node.isRequired,
+  isActive: PropTypes.bool.isRequired,
 }
-
-
-const LanguageIcon = (<LanguageTabLabelIcon style={styles.icon} color={ICON_COLOR} />)
-const RepositoryIcon = (<RepositoryTabLabelIcon style={styles.icon} color={ICON_COLOR} />)
-const ActivityIcon = (<ActivityTabLabelIcon style={styles.icon} color={ICON_COLOR} />)
-
-export const LanguageTabLabel = () =>
-  (<MainTabLabel icon={LanguageIcon} label='LANGUAGE' />)
-export const RepositoryTabLabel = () =>
-  (<MainTabLabel icon={RepositoryIcon} label='REPOSITORY' />)
-export const ActivityTabLabel = () =>
-  (<MainTabLabel icon={ActivityIcon} label='ACTIVITY' />)
 

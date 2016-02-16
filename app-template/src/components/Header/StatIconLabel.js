@@ -18,7 +18,6 @@ const styles = {
 
   container: {
     float: 'left',
-    paddingTop: 6,
   },
 }
 
@@ -41,13 +40,13 @@ StatIconLabel.propTypes = {
   label: PropTypes.number.isRequired,
   style: PropTypes.object,
 }
-const StatIconStar = (<SvgIconActionGrade style={styles.icon} color={HeaderColors.star} />)
-const StatIconFork = (<SvgIconSocialShare style={styles.icon} color={HeaderColors.fork} />)
+const StatIconStar = (<SvgIconActionGrade style={styles.icon} color={HeaderColors.STAR} />)
+const StatIconFork = (<SvgIconSocialShare style={styles.icon} color={HeaderColors.FORK} />)
 
 export const StatLabelStarFactory = (label) => {
   return (<StatIconLabel style={{marginRight: 14,}} icon={StatIconStar} label={label} />)
 }
 
 export const StatLabelForkFactory = (label) => {
-  return (<StatIconLabel style={{marginRight: 3,}} icon={StatIconFork} label={label} />)
+  return (<StatIconLabel icon={StatIconFork} label={label} />)
 }
