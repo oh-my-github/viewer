@@ -38,11 +38,6 @@ export const TabColors = {
   ICON_DEFAULT: '#bdbdbd',
   BACKGROUND: '#f5f5f5',
   INK_BAR: MainColors[2],
-  //INK_BAR: '#f5f5f5',
-  //LABEL_ACTIVE: MainColors[2],
-  //ICON_ACTIVE: MainColors[0],
-  //BACKGROUND: MainColors[4],
-  //INK_BAR: MainColors[2],
 }
 
 export const SameColor = 'rgba(0, 0, 0, 0)'

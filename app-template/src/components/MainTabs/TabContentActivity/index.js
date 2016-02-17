@@ -2,7 +2,7 @@ import React, { PropTypes, Component, } from 'react'
 import Tabs from 'material-ui/lib/tabs/tabs'
 import Tab from 'material-ui/lib/tabs/tab'
 
-import ActionFlightTakeoff from 'material-ui/lib/svg-icons/action/flight-takeoff';
+import TimeLine from '../../TimeLine'
 
 const styles = {
   title: {
@@ -22,17 +22,7 @@ export default class TabContentActivity extends Component {
 
     return (
       <div className='container'>
-        <h2 style={styles.title}>Tab Three</h2>
-        <p>
-          This is a third example tab.
-        </p>
-
-        <div className='row'>
-          a
-        </div>
-        <div className='row'>
-          b
-        </div>
+        <TimeLine />
       </div>
     )
   }

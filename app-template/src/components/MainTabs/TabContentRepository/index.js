@@ -7,8 +7,11 @@ import ReactPaginate from 'react-paginate'
 import RandomColor from 'randomcolor'
 
 import RepositoryTile from './RepositoryTile'
-import RepositoryFilter from './RepositoryFilter'
-import RepositorySorter, { SORTER, } from './RepositorySorter'
+import Filter from './../../Filter'
+import Sorter, {compareByRecentDate, compareByLargeNumber,}  from './../../Sorter'
+
+/** since react-paginate support css style only, we need a stylesheet */
+import css from './index.css'
 
 const styles = {
   title: {
@@ -17,6 +20,24 @@ const styles = {
     fontWeight: 200,
   },
 }
+
+export const SORTING_STRATEGIES = [
+  { value: 'updated_at', text: 'Recently Updated', comparator: (repo1, repo2) => {
+    return compareByRecentDate(repo1.updated_at, repo2.updated_at)
+  }, },
+  { value: 'created_at', text: 'Recently Created', comparator: (repo1, repo2) => {
+    return compareByRecentDate(repo1.created_at, repo2.created_at)
+  }, },
+  { value: 'forks_count', text: 'Forks', comparator: (repo1, repo2) => {
+    return compareByLargeNumber(repo1.forks_count, repo2.forks_count)
+  }, },
+  { value: 'stargazers_count', text: 'Stargazers', comparator: (repo1, repo2) => {
+    return compareByLargeNumber(repo1.stargazers_count, repo2.stargazers_count)
+  }, },
+  { value: 'open_issues_count', text: 'Issues', comparator: (repo1, repo2) => {
+    return compareByLargeNumber(repo1.issues_count, repo2.issues_count)
+  }, },
+]
 
 const CONST_ITEM_COUNT_PER_PAGE = 4
 
@@ -28,7 +49,7 @@ export default class TabContentRepository extends Component {
       repositories: [],
 
       /** used to sort */
-      sortComparator: SORTER[0].comparator,
+      sortComparator: SORTING_STRATEGIES[0].comparator,
 
       /** used to paginate */
       totalPageCount: 0,
@@ -110,7 +131,7 @@ export default class TabContentRepository extends Component {
     const currentPage = Math.ceil(currentItemOffset/ CONST_ITEM_COUNT_PER_PAGE)
 
     return(
-      <ReactPaginate previousLabel={"previous"}
+      <ReactPaginate previousLabel={"prev"}
                      nextLabel={"next"}
                      breakLabel={<li className='break'><a href=''>...</a></li>}
                      forceSelected={currentPage}
@@ -120,7 +141,7 @@ export default class TabContentRepository extends Component {
                      clickCallback={this.handlePageChange.bind(this)}
                      containerClassName={"pagination"}
                      subContainerClassName={"pages pagination"}
-                     activeClassName={"active"} />
+                     activeClassName={css['paginator-active-label']} />
     )
   }
 
@@ -129,8 +150,8 @@ export default class TabContentRepository extends Component {
     return (
       <div className='container'>
         {this.renderTitle()}
-        <RepositoryFilter handleFilterChange={this.handleFilterChange.bind(this)} />
-        <RepositorySorter sortRepository={this.sortRepository.bind(this)} />
+        <Filter handler={this.handleFilterChange.bind(this)} />
+        <Sorter callback={this.sortRepository.bind(this)} sortingStrategies={SORTING_STRATEGIES} />
 
         <div className='row'>
           {this.renderPageItems()}

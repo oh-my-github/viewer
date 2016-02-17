@@ -18,7 +18,7 @@ const styles = {
   },
 
   label: {
-    fontWeight: 500,
+    fontWeight: 300,
     paddingLeft: 10,
     marginRight: 15,
   },
