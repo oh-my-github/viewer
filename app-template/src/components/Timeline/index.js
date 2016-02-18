@@ -74,8 +74,8 @@ export default class TimeLine extends React.Component {
   }
 }
 
-TimeLine.propTypes = propTypes({
-  containerStyle: t.Object,
-  tiles: t.Array,
-  badges: t.Array,
-})
+TimeLine.propTypes = {
+  containerStyle: React.PropTypes.object,
+  tiles: React.PropTypes.array,
+  badges: React.PropTypes.array,
+}

@@ -1,6 +1,5 @@
 import React from 'react'
 import Paper from 'material-ui/lib/paper'
-import { t, propTypes, } from 'tcomb-react'
 import moment from 'moment'
 
 import { ActivityBadgeColors, } from '../../../theme'

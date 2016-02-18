@@ -1,5 +1,4 @@
 import React, { PropTypes, Component, } from 'react'
-import createFragment from 'react-addons-create-fragment'
 import Tabs from 'material-ui/lib/tabs/tabs'
 import Tab from 'material-ui/lib/tabs/tab'
 
