@@ -1,58 +1,81 @@
-import React, { PropTypes, Component, } from 'react'
+import React from 'react'
+import { t, propTypes, } from 'tcomb-react'
 
 const styles = {
 
 }
 
-import style from './index.css'
+import css from './index.css'
 
-export default class TimeLine extends Component {
-  render() {
+export default class TimeLine extends React.Component {
+
+  createTimeLineEvent(tile, badge, index) {
     return (
-      <div className={style.container}>
-        <div className={style.timeline}>
-          <div className={style['timeline-event']}>
-            <div className={`card ${style['timeline-content']}`}>
-              <div className='card-content'>
-                <span className='card-title activator grey-text text-darken-4'>Tile<i className='material-icons right'>more_vert</i></span>
-                <p>Content <a href='#'>This is a link</a></p>
-              </div>
-              <div className='card-reveal'>
-                <span className='card-title grey-text text-darken-4'>Card Title<i className='material-icons right'>close</i></span>
-                <p>Here is some more information about this product that is only revealed once clicked on.</p>
-              </div>
-            </div>
-            <div className={`${style['timeline-badge']} blue white-text`}><i className='material-icons'>language</i></div>
+      <div className={css['timeline-event']} key={index}>
+        <div className={css['timeline-content']}>
+          {tile}
+        </div>
+        <div className={css['timeline-badge']}>
+          {badge}
+        </div>
+      </div>
+    )
+  }
+
+  renderTest() {
+    const events = []
+
+    events.push(
+      <div className={css['timeline-event']}>
+        <div className={css['timeline-content']}>
+          <div className='card-image waves-effect waves-block waves-light'>
           </div>
-          <div className={style['timeline-event']}>
-            <div className={`${style['timeline-content']} card`}>
-              <div className='card-content'>
-                <span className='card-title activator grey-text text-darken-4'>Tile<i className='material-icons right'>more_vert</i></span>
-                <p>Content <a href='#'>This is a link</a></p>
-              </div>
-              <div className='card-reveal'>
-                <span className='card-title grey-text text-darken-4'>Card Title<i className='material-icons right'>close</i></span>
-                <p>Here is some more information about this product that is only revealed once clicked on.</p>
-              </div>
-            </div>
-            <div className={`${style['timeline-badge']} red white-text`}><i className='material-icons'>work</i></div>
+          <div className='card-reveal'>
+            <span className='card-title grey-text text-darken-4'>Card Title</span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
           </div>
-          <div className={style['timeline-event']}>
-            <div className={`${style['timeline-content']} card`}>
-              <div className='card-content'>
-                <span className='card-title activator grey-text text-darken-4'>Tile<i className='material-icons right'>more_vert</i></span>
-                <p>Content <a href='#'>This is a link</a></p>
-              </div>
-              <div className='card-reveal'>
-                <span className='card-title grey-text text-darken-4'>Card Title<i className='material-icons right'>close</i></span>
-                <p>Here is some more information about this product that is only revealed once clicked on.</p>
-              </div>
-            </div>
-            <div className={`${style['timeline-badge']} green white-text`}><i className='material-icons'>person</i></div>
+        </div>
+        <div className={css['timeline-badge']}><i className='material-icons'>language</i></div>
+      </div>
+    )
+
+    events.push(
+      <div className={css['timeline-event']}>
+        <div className={css['timeline-content']}>
+          <div className='card-image waves-effect waves-block waves-light'>
           </div>
+          <div className='card-reveal'>
+            <span className='card-title grey-text text-darken-4'>Card Title</span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+        <div className={css['timeline-badge']}><i className='material-icons'>language</i></div>
+      </div>
+    )
+
+    return events
+  }
+
+  render() {
+    const { tiles, badges, containerStyle, } = this.props
+
+    const timelineEvents = tiles.map((tile, index) => {
+      return this.createTimeLineEvent(tile, badges[0], index)
+    })
+
+    return (
+      <div style={containerStyle}>
+        <div className={css.timeline}>
+
+          {timelineEvents}
         </div>
       </div>
     )
   }
 }
 
+TimeLine.propTypes = propTypes({
+  containerStyle: t.Object,
+  tiles: t.Array,
+  badges: t.Array,
+})

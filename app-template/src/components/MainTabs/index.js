@@ -1,4 +1,4 @@
-import React, { PropTypes, Component, } from 'react'
+import React from 'react'
 import Tabs from 'material-ui/lib/tabs/tabs'
 import Tab from 'material-ui/lib/tabs/tab'
 import FlatButton from 'material-ui/lib/flat-button'
@@ -40,7 +40,7 @@ export const styles = {
   }
 }
 
-class MainTabs extends Component {
+class MainTabs extends React.Component {
   constructor(props) {
     super(props)
 
@@ -92,7 +92,7 @@ class MainTabs extends Component {
 export default MainTabs
 
 MainTabs.propTypes = {
-  languages: PropTypes.array.isRequired,
-  repositories: PropTypes.array.isRequired,
-  activities: PropTypes.array.isRequired,
+  languages: React.PropTypes.array.isRequired,
+  repositories: React.PropTypes.array.isRequired,
+  activities: React.PropTypes.array.isRequired,
 }

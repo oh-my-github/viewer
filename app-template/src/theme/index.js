@@ -23,6 +23,17 @@ export const BatteryColors = [
   '#039be5', /** battery 4 */
 ]
 
+export const ActivityBadgeColors = {
+  PUSH: '#69D2E7',
+  PULL_REQUEST: '#A7DBD8',
+  ISSUE: '#E0E4CC',
+  ISSUE_COMMENT: '#F38630',
+  WATCH: '#FA6900',
+  FORK: '#E94E77',
+  RELEASE: '#D68189',
+  CREATE: '#C6A49A',
+}
+
 export const HeaderColors = {
   STAR: '#FFF59D', /** light yellow, star icon */
   FORK: '#B2DFDB', /** light green,  fork icon */

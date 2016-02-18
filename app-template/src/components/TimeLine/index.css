@@ -75,7 +75,7 @@
   line-height: 40px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .timeline .timeline-event .timeline-content {
     width: calc(100% - 70px);
   }

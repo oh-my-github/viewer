@@ -1,10 +1,9 @@
 import React, { PropTypes, Component, } from 'react'
-import AutoComplete from 'material-ui/lib/auto-complete'
-import TextField from 'material-ui/lib/text-field'
 
 import RandomColor from 'randomcolor'
 
 import ProgressBar from '../../ProgressBar'
+import Filter from '../../Filter'
 import { styles, } from './index'
 
 class SectionOtherLangs extends Component {
@@ -36,8 +35,7 @@ class SectionOtherLangs extends Component {
   renderFilter(langs) {
     if (langs.length > 0) {
       return (
-        <TextField onChange={this.handleFilterChange.bind(this)}
-                   floatingLabelText='Insert Language Which You Want To Find' />
+        <Filter handler={this.handleFilterChange.bind(this)} floatingLabel='INSERT LANGUAGE' />
       )
     }
   }

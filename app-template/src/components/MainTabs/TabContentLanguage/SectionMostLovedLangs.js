@@ -1,11 +1,11 @@
-import React, { PropTypes, Component, } from 'react'
+import React from 'react'
 
 import ProgressBar from '../../ProgressBar'
 import { BarChartColors, } from '../../../theme'
 
 import { styles, } from './index'
 
-class SectionMostLovedLangs extends Component {
+export default class SectionMostLovedLangs extends React.Component {
   constructor(props) {
     super(props)
   }
@@ -46,8 +46,6 @@ class SectionMostLovedLangs extends Component {
   }
 }
 
-export default SectionMostLovedLangs
-
 SectionMostLovedLangs.propTypes = {
-  mostLovedLangs: PropTypes.array.isRequired,
+  mostLovedLangs: React.PropTypes.array.isRequired,
 }

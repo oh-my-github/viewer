@@ -1,7 +1,6 @@
 import React, { PropTypes, Component, } from 'react'
 import Tabs from 'material-ui/lib/tabs/tabs'
 import Tab from 'material-ui/lib/tabs/tab'
-import TextField from 'material-ui/lib/text-field'
 
 import ReactPaginate from 'react-paginate'
 import RandomColor from 'randomcolor'
@@ -150,7 +149,7 @@ export default class TabContentRepository extends Component {
     return (
       <div className='container'>
         {this.renderTitle()}
-        <Filter handler={this.handleFilterChange.bind(this)} />
+        <Filter handler={this.handleFilterChange.bind(this)} floatingLabel='INSERT FILTER' />
         <Sorter callback={this.sortRepository.bind(this)} sortingStrategies={SORTING_STRATEGIES} />
 
         <div className='row'>

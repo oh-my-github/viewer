@@ -1,4 +1,4 @@
-import React, { PropTypes, Component, } from 'react'
+import React from 'react'
 import Tabs from 'material-ui/lib/tabs/tabs'
 import Tab from 'material-ui/lib/tabs/tab'
 import Tooltip from 'material-ui/lib/tooltip'
@@ -25,7 +25,7 @@ export const styles = {
   },
 }
 
-export default class TabContentLanguage extends Component {
+export default class TabContentLanguage extends React.Component {
 
   render() {
 
@@ -63,5 +63,5 @@ export default class TabContentLanguage extends Component {
 }
 
 TabContentLanguage.propTypes = {
-  languages: PropTypes.array.isRequired,
+  languages: React.PropTypes.array.isRequired,
 }
