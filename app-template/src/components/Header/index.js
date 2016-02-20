@@ -84,7 +84,7 @@ export default class Header extends Component {
 
     return (
       <div>
-        <Avatar className='hide-on-small-only' src={user.avatar_url} style={styles.appBarRightElementAvatar} />
+        <Avatar className='' src={user.avatar_url} style={styles.appBarRightElementAvatar} />
         <div style={styles.appBarRightElementButtons}>
           {starButton}
           {forkButton}
@@ -100,14 +100,12 @@ export default class Header extends Component {
     return (
       <AppBar
         style={styles.appBar}
-        title={<div className=''>Github Profile</div>}
+        title={<div className='hide-on-small-only'>Github Profile</div>}
         titleStyle={styles.title}
         iconElementLeft={
           <IconButton tooltip={`https://github.com/${user.login}`}
                       touch tooltipPosition='bottom-right'
-                      target='_blank'
-                      href={`https://github.com/${user.login}`}
-                      linkButton>
+                      linkButton target='_blank' href={`https://github.com/${user.login}`}>
             <FontIcon className='fa fa-github' />
           </IconButton>
           }

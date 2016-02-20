@@ -34,6 +34,10 @@ export const ActivityBadgeColors = {
   CREATE: '#C6A49A',
 }
 
+export const ActivityTileColors = {
+  linkItemText: '#2196f3',
+}
+
 export const HeaderColors = {
   STAR: '#FFF59D', /** light yellow, star icon */
   FORK: '#B2DFDB', /** light green,  fork icon */

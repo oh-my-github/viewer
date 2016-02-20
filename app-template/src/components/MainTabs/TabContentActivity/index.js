@@ -1,9 +1,10 @@
-import React, { PropTypes, Component, } from 'react'
+import React from 'react'
 import Tabs from 'material-ui/lib/tabs/tabs'
 import Tab from 'material-ui/lib/tabs/tab'
 
 import TimeLine from '../../TimeLine'
 import ActivityTile from './ActivityTile'
+import ActivityBadge from './ActivityBadge'
 import Filter from '../../Filter' // TODO convert autocomplete-filter
 
 const styles = {
@@ -23,7 +24,7 @@ const styles = {
   },
 }
 
-export default class TabContentActivity extends Component {
+export default class TabContentActivity extends React.Component {
 
   handleFilterChange() {
     console.log(`TODO: handleFilterChange`)
@@ -67,5 +68,5 @@ export default class TabContentActivity extends Component {
 }
 
 TabContentActivity.propTypes = {
-  activities: PropTypes.array.isRequired,
+  activities: React.PropTypes.array.isRequired,
 }
