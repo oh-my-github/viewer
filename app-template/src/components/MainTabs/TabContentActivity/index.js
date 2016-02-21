@@ -3,6 +3,8 @@ import Tabs from 'material-ui/lib/tabs/tabs'
 import Tab from 'material-ui/lib/tabs/tab'
 import LazyLoad from 'react-lazy-load'
 
+import moment from 'moment'
+
 import TimeLine from '../../TimeLine'
 import ActivityTile from './ActivityTile'
 import ActivityBadge from './ActivityBadge'
@@ -10,7 +12,7 @@ import Filter from '../../Filter'
 
 const styles = {
   title: {
-    fontSize: 20,
+    fontSize: 22,
     marginTop: 35,
     fontWeight: 200,
   },
@@ -39,7 +41,15 @@ export default class TabContentActivity extends React.Component {
   componentWillReceiveProps(nextProps) {
     const { activities, } = nextProps
 
-    this.setState({ activities: activities, })
+    /** recently occurred events first */
+
+    const sorted = activities.slice().sort((act1, act2) => { /** latest */
+      return moment(act2.created_at).valueOf() - moment(act1.created_at).valueOf()
+    })
+
+    // TODO sort activity
+
+    this.setState({ activities: sorted, })
   }
 
   handleFilterChange(event) {

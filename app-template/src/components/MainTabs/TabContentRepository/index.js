@@ -14,7 +14,7 @@ import css from './index.css'
 
 const styles = {
   title: {
-    fontSize: 20,
+    fontSize: 22,
     marginTop: 35,
     fontWeight: 200,
   },
