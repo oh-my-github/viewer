@@ -7,22 +7,22 @@ module.exports = yeoman.Base.extend({
   prompting: function () {
     var done = this.async();
 
-    // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the swell ' + chalk.red('generator-omg-basic') + ' generator!'
+      'oh-my-github template: ' + chalk.red('omg-basic')
     ));
 
-    var prompts = [{
-      type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
-    }];
+    // TODO: theme
+    var prompts = [
+    //{
+    //  type: 'confirm',
+    //  name: 'someOption',
+    //  message: 'Would you like to enable this option?',
+    //  default: true
+    //}
+    ];
 
     this.prompt(prompts, function (props) {
       this.props = props;
-      // To access props later use this.props.someOption;
-
       done();
     }.bind(this));
   },
@@ -32,9 +32,5 @@ module.exports = yeoman.Base.extend({
       this.templatePath(),
       this.destinationPath()
     );
-  },
-
-  install: function () {
-    this.installDependencies();
   }
 });

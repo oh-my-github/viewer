@@ -15,6 +15,7 @@ var bundler = webpack(webpackConfig)
 browserSync({
   server: {
     baseDir: ['src', 'resource'],
+    routes: { '/oh-my-github': 'resource' },
 
     middleware: [
       webpackDevMiddleware(bundler, {
@@ -38,12 +39,5 @@ browserSync({
 
   // no need to watch '*.js' here, webpack will take care of it for us,
   // including full page reloads if HMR won't work
-  files: [
-    'src/*.html',
-    'resource/oh-my-gtihub.json'
-  ],
-
-  routes: {
-    'oh-my-github.json': 'resource/oh-my-github.json'
-  }
+  files: [ 'src/*.html', 'resource/oh-my-gtihub.json' ],
 })

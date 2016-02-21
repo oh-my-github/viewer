@@ -54,7 +54,7 @@ export default class TabContentActivity extends React.Component {
     const allActivities = this.props.activities
 
     const filtered = allActivities.filter(activity => {
-      (activity.repo.toLowerCase().includes(filterKeyword)
+      return (activity.repo.toLowerCase().includes(filterKeyword)
         || activity.type.toLowerCase().includes(filterKeyword))
     })
 

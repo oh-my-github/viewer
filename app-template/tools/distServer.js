@@ -9,16 +9,8 @@ browserSync({
   ui: {
     port: 3001
   },
-  server: {
-    baseDir: ['dist', 'resource']
-  },
-
-  files: [
-    'src/*.html',
-    'resource/oh-my-gtihub.json'
-  ],
-
-  routes: {
-    'oh-my-github.json': '../resource/oh-my-github.json'
-  }
+  server: { baseDir: ['dist', 'resource'] },
+  // TODO: routes dose't work
+  routes: { '/oh-my-github': 'resource' },
+  files: [ 'src/*.html', 'resource/oh-my-gtihub.json' ],
 })

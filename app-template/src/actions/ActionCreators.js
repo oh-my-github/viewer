@@ -16,7 +16,13 @@ function parseJSON(response) {
 }
 
 export const fetchProfile = createAction(ActionTypes.FETCH_PROFILE, () => {
-  return fetch('/oh-my-github.json')
+  /**
+   * since we are have no meta at this point, (we are trying to fetch the meta)
+   * we assume that the meta resource is in `${user}.github.com/oh-my-github/oh-my-github.json`
+   *
+   * further modification will include replacing the path with user input (yeoman options)
+   */
+  return fetch('/oh-my-github/oh-my-github.json')
     .then(checkStatus)
     .then(parseJSON)
     .then(data => data)
