@@ -3,6 +3,8 @@ import Tabs from 'material-ui/lib/tabs/tabs'
 import Tab from 'material-ui/lib/tabs/tab'
 import Tooltip from 'material-ui/lib/tooltip'
 
+import Humanize from 'humanize-plus'
+
 import SectionMostLovedLangs from './SectionMostLovedLangs'
 import SectionOtherLangs from './SectionOtherLangs'
 
@@ -49,6 +51,12 @@ export default class TabContentLanguage extends React.Component {
       .map(arraized => {
         return {name: arraized[0], line: arraized[1],}
       })
+
+    /** add humanized labels */
+    sortedRepoLangs = sortedRepoLangs.map(lang => {
+      lang.label = Humanize.compactInteger(lang.line, 1)
+      return lang
+    })
 
     const mostLovedLangs = sortedRepoLangs.slice(0, mostLovedLangCount)
     const otherLangs = sortedRepoLangs.slice(mostLovedLangCount)

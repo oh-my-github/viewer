@@ -17,7 +17,7 @@ export default class SectionMostLovedLangs extends React.Component {
       const lang = langs[i]
       const percent = (lang.line / langs[0].line * 100) /** based on the largest */
       progressBars.push(<ProgressBar width={`${percent}%`} color={BarChartColors[i]}
-                                     key={lang.name} label={lang.name} tooltipLabel={`${lang.line}  LINEs`} />)
+                                     key={lang.name} label={lang.name} tooltipLabel={`${lang.label} lines`} />)
     }
 
     /** if no languages provided: Use an empty progress bar */

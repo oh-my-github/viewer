@@ -49,7 +49,7 @@ class SectionOtherLangs extends Component {
       const lang = langs[i]
       const progressBar = (<ProgressBar width='100%' color={progressBarColors[i]}
                                        key={lang.name} label={lang.name}
-                                       tooltipLabel={`${lang.line}  LINEs`} />)
+                                       tooltipLabel={`${lang.label} lines`} />)
 
       if ('' === filterKeyword) { /** if no filter provided, put all progress bars */
         progressBars.push(progressBar)
