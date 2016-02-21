@@ -22,8 +22,8 @@ export const styles = {
   },
 
   containerProgressBar: {
-  marginTop: '25px',
-  marginBottom: '15px',
+    marginTop: '25px',
+    marginBottom: '15px',
   },
 }
 

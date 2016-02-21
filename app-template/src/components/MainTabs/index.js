@@ -31,7 +31,6 @@ export const styles = {
     backgroundColor: TAB_COLOR,
     height: TAB_HEIGHT,
     verticalAlign: 'baseline',
-    //boxShadow: '0px 2px 1px -1px rgba(0, 0, 0, 0.12)',
     borderBottom: '1px solid rgba(0, 0, 0, 0.05)',
   },
 
@@ -65,8 +64,6 @@ class MainTabs extends React.Component {
     const activityTabLabel = (<MainTabLabel label='ACTIVITY' isActive={selectedTab === activityTabIndex} />)
     const languageTabLabel = (<MainTabLabel label='LANGUAGE' isActive={selectedTab === languageTabIndex} />)
     const repositoryTabLabel = (<MainTabLabel label='REPOSITORY' isActive={selectedTab === repositoryTabIndex} />)
-
-    console.log(selectedTab)
 
     const emptyTab = (<EmptyTabs gridClass='col s0 m1 l2' tabHeight={TAB_HEIGHT} tabColor={TAB_COLOR} />)
 

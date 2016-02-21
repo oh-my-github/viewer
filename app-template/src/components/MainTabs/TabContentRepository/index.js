@@ -45,6 +45,7 @@ export default class TabContentRepository extends Component {
     super(props)
 
     this.state = {
+      /** filtered repositories */
       repositories: [],
 
       /** used to sort */
@@ -71,16 +72,16 @@ export default class TabContentRepository extends Component {
   }
 
   handleFilterChange(event) {
-    const filterKeyword = event.target.value
+    const filterKeyword = event.target.value.trim().toLowerCase()
     const allRepos = this.props.repositories
     const { sortComparator, } = this.state
 
     const filtered = allRepos
       .filter(repo => { /** return true if keyword is included in name or lang of repo */
-        if (repo.name.toLowerCase().includes(filterKeyword.toLowerCase())) return true
+        if (repo.name.toLowerCase().includes(filterKeyword)) return true
 
         const lang = repo.language
-        if (lang && lang.toLowerCase().includes(filterKeyword.trim().toLowerCase())) return true
+        if (lang && lang.toLowerCase().includes(filterKeyword)) return true
 
         return false
       })

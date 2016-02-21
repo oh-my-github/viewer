@@ -6,14 +6,13 @@ import LazyLoad from 'react-lazy-load'
 import TimeLine from '../../TimeLine'
 import ActivityTile from './ActivityTile'
 import ActivityBadge from './ActivityBadge'
-import Filter from '../../Filter' // TODO convert autocomplete-filter
+import Filter from '../../Filter'
 
 const styles = {
   title: {
-    fontSize: 24,
-    paddingTop: 16,
-    marginBottom: 12,
-    fontWeight: 400,
+    fontSize: 20,
+    marginTop: 35,
+    fontWeight: 200,
   },
 
   container: {
@@ -29,20 +28,54 @@ const lazyLoadOffsetVertical = 1000
 
 export default class TabContentActivity extends React.Component {
 
-  handleFilterChange() {
-    console.log(`TODO: handleFilterChange`)
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      activities: [],
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { activities, } = nextProps
+
+    this.setState({ activities: activities, })
+  }
+
+  handleFilterChange(event) {
+    const filterKeyword = event.target.value.trim().toLowerCase()
+    const allActivities = this.props.activities
+
+    const filtered = allActivities.filter(activity => {
+      if (activity.repo.toLowerCase().includes(filterKeyword)
+        || activity.type.toLowerCase().includes(filterKeyword)) return true
+      else return false
+    })
+
+    this.setState({ activities: filtered, })
+  }
+
+  renderTitle() {
+    const { activities, } = this.state
+
+    const titleText = (activities === void 0) ? 'No Activity' :
+      (activities.length < 2) ? `${activities.length} Activity` :
+        `${activities.length} Activities`
+
+
+    return (
+      <div style={styles.title}>{titleText}</div>
+    )
   }
 
   render() {
-
-    const { activities, } = this.props
-
     /**
-     * since React doesn't support an object as the ReactElement,
+     * since React doesn't support to passing an object as the ReactElement,
      * we should split TimeLine events to separated arrays (contents, badges)
      */
     const tiles = []
     const badges = []
+    const { activities, } = this.state
 
     activities.map((activity, index) => {
       tiles.push(
@@ -59,6 +92,7 @@ export default class TabContentActivity extends React.Component {
 
     return (
       <div className='container' style={styles.container}>
+        {this.renderTitle()}
         <Filter handler={this.handleFilterChange.bind(this)} floatingLabel='INSERT FILTER' />
         <TimeLine containerStyle={styles.timelineContainer} tiles={tiles} badges={badges} />
       </div>
