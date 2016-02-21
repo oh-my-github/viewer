@@ -5,6 +5,8 @@ import Tab from 'material-ui/lib/tabs/tab'
 import ReactPaginate from 'react-paginate'
 import RandomColor from 'randomcolor'
 
+import Color from 'color-js'
+
 import RepositoryTile from './RepositoryTile'
 import Filter from './../../Filter'
 import Sorter, {compareByRecentDate, compareByLargeNumber,}  from './../../Sorter'
@@ -48,6 +50,9 @@ export default class TabContentRepository extends Component {
       /** filtered repositories */
       repositories: [],
 
+      /** color per language */
+      languageToColor: {},
+
       /** used to sort */
       sortComparator: SORTING_STRATEGIES[0].comparator,
 
@@ -63,7 +68,18 @@ export default class TabContentRepository extends Component {
 
     const sorted = repositories.slice().sort(this.state.sortComparator)
 
-    this.setState({totalPageCount: totalPageCount, repositories: sorted, })
+    /** color per language */
+    const languageToColor = {}
+    const languages = Array.from(new Set(sorted.map(repo => repo.language)))
+    const colors = RandomColor({
+      luminosity: 'dark', format: 'rgba', count: languages.length,
+    }).map(rgbString => { return Color(rgbString).setAlpha(0.60).toString() })
+
+    for (let index = 0; index < languages.length; index++) {
+      languageToColor[languages[index]] = colors[index]
+    }
+
+    this.setState({totalPageCount: totalPageCount, repositories: sorted, languageToColor: languageToColor, })
   }
 
   handlePageChange(data) {
@@ -107,18 +123,13 @@ export default class TabContentRepository extends Component {
   }
 
   renderPageItems() {
-
-    const { repositories, currentItemOffset, } = this.state
+    const { languageToColor, repositories, currentItemOffset, } = this.state
     const sliced = repositories.slice(currentItemOffset, currentItemOffset + CONST_ITEM_COUNT_PER_PAGE)
-
-    const colors = RandomColor({
-      hue: 'blue', count: CONST_ITEM_COUNT_PER_PAGE * 5,
-    }).sort().reverse()
 
     const items = sliced.map((repo, index) => {
       return (<RepositoryTile key={index}
                               repository={repo}
-                              languageColor={colors[index % CONST_ITEM_COUNT_PER_PAGE + CONST_ITEM_COUNT_PER_PAGE]} />
+                              languageColor={languageToColor[repo.language]} />
       )
     })
 

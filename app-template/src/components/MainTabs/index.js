@@ -39,13 +39,17 @@ export const styles = {
   }
 }
 
+const TAB_INDEX_LANGUAGE = 0
+const TAB_INDEX_REPOSITORY = 1
+const TAB_INDEX_ACTIVITY = 2
+
 class MainTabs extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
       /** used to style the active tab label */
-      selectedTab: 0,
+      selectedTab: TAB_INDEX_LANGUAGE,
     }
   }
 
@@ -57,13 +61,10 @@ class MainTabs extends React.Component {
   render() {
     const { languages, repositories, activities, } = this.props
     const { selectedTab } = this.state
-    const activityTabIndex = 0
-    const languageTabIndex = 1
-    const repositoryTabIndex = 2
 
-    const activityTabLabel = (<MainTabLabel label='ACTIVITY' isActive={selectedTab === activityTabIndex} />)
-    const languageTabLabel = (<MainTabLabel label='LANGUAGE' isActive={selectedTab === languageTabIndex} />)
-    const repositoryTabLabel = (<MainTabLabel label='REPOSITORY' isActive={selectedTab === repositoryTabIndex} />)
+    const activityTabLabel = (<MainTabLabel label='ACTIVITY' isActive={selectedTab === TAB_INDEX_ACTIVITY} />)
+    const languageTabLabel = (<MainTabLabel label='LANGUAGE' isActive={selectedTab === TAB_INDEX_LANGUAGE} />)
+    const repositoryTabLabel = (<MainTabLabel label='REPOSITORY' isActive={selectedTab === TAB_INDEX_REPOSITORY} />)
 
     const emptyTab = (<EmptyTabs gridClass='col s0 m1 l2' tabHeight={TAB_HEIGHT} tabColor={TAB_COLOR} />)
 
@@ -72,14 +73,14 @@ class MainTabs extends React.Component {
         {emptyTab}
         <div className='col s12 m10 l8' style={styles.tabContainer}>
           <Tabs onChange={this.handleTabSelection.bind(this)} inkBarStyle={styles.inkBar}>
-            <Tab value={activityTabIndex} style={styles.tab} label={activityTabLabel}>
-              <TabContentActivity activities={activities} />
-            </Tab>
-            <Tab value={languageTabIndex} style={styles.tab} label={languageTabLabel}>
+            <Tab value={TAB_INDEX_LANGUAGE} style={styles.tab} label={languageTabLabel}>
               <TabContentLanguage languages={languages} />
             </Tab>
-            <Tab value={repositoryTabIndex} style={styles.tab} label={repositoryTabLabel}>
+            <Tab value={TAB_INDEX_REPOSITORY} style={styles.tab} label={repositoryTabLabel}>
               <TabContentRepository languages={languages} repositories={repositories} />
+            </Tab>
+            <Tab value={TAB_INDEX_ACTIVITY} style={styles.tab} label={activityTabLabel}>
+              <TabContentActivity activities={activities} />
             </Tab>
           </Tabs>
         </div>

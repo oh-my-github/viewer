@@ -42,12 +42,9 @@ export default class TabContentActivity extends React.Component {
     const { activities, } = nextProps
 
     /** recently occurred events first */
-
     const sorted = activities.slice().sort((act1, act2) => { /** latest */
       return moment(act2.created_at).valueOf() - moment(act1.created_at).valueOf()
     })
-
-    // TODO sort activity
 
     this.setState({ activities: sorted, })
   }
@@ -57,9 +54,8 @@ export default class TabContentActivity extends React.Component {
     const allActivities = this.props.activities
 
     const filtered = allActivities.filter(activity => {
-      if (activity.repo.toLowerCase().includes(filterKeyword)
-        || activity.type.toLowerCase().includes(filterKeyword)) return true
-      else return false
+      (activity.repo.toLowerCase().includes(filterKeyword)
+        || activity.type.toLowerCase().includes(filterKeyword))
     })
 
     this.setState({ activities: filtered, })
@@ -89,12 +85,12 @@ export default class TabContentActivity extends React.Component {
 
     activities.map((activity, index) => {
       tiles.push(
-        <LazyLoad offsetVertical={1500}>
+        <LazyLoad offsetVertical={lazyLoadOffsetVertical}>
           <ActivityTile activity={activity} key={index} />
         </LazyLoad>
       )
       badges.push(
-        <LazyLoad offsetVertical={1500}>
+        <LazyLoad offsetVertical={lazyLoadOffsetVertical}>
           <ActivityBadge eventType={activity.type} key={index} />
         </LazyLoad>
       )
