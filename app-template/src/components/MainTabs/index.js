@@ -51,7 +51,8 @@ class MainTabs extends React.Component {
   }
 
   handleTabSelection(value) {
-    this.setState({selectedTab: value, })
+    if (Number.isInteger(value)) /** to avoid SyntheticEvent */
+      this.setState({selectedTab: value, })
   }
 
   render() {
@@ -64,6 +65,8 @@ class MainTabs extends React.Component {
     const activityTabLabel = (<MainTabLabel label='ACTIVITY' isActive={selectedTab === activityTabIndex} />)
     const languageTabLabel = (<MainTabLabel label='LANGUAGE' isActive={selectedTab === languageTabIndex} />)
     const repositoryTabLabel = (<MainTabLabel label='REPOSITORY' isActive={selectedTab === repositoryTabIndex} />)
+
+    console.log(selectedTab)
 
     const emptyTab = (<EmptyTabs gridClass='col s0 m1 l2' tabHeight={TAB_HEIGHT} tabColor={TAB_COLOR} />)
 
