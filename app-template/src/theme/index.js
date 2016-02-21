@@ -24,14 +24,14 @@ export const BatteryColors = [
 ]
 
 export const ActivityBadgeColors = {
-  PUSH: '#69D2E7',
-  PULL_REQUEST: '#A7DBD8',
-  ISSUE: '#E0E4CC',
-  ISSUE_COMMENT: '#F38630',
-  WATCH: '#FA6900',
-  FORK: '#E94E77',
-  RELEASE: '#D68189',
-  CREATE: '#C6A49A',
+  PushEvent: '#4ABABB', /** mint */
+  PullRequestEvent: '#A985F1', /** purple */
+  IssuesEvent: '#FF9900', /** orange */
+  WatchEvent: '#3299BB', /** blue */
+  IssueCommentEvent: '#E94E77', /** pink */
+  ForkEvent: '#986493', /** deep purple */
+  ReleaseEvent: '#FF5959', /** red */
+  CreateEvent: '#79BD9A', /** blue */
 }
 
 export const ActivityTileColors = {

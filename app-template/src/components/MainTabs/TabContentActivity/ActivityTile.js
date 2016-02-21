@@ -62,35 +62,38 @@ const styles = {
     itemLinkContent: {
       color: ActivityTileColors.linkItemText,
       cursor: 'pointer',
-      padding: '4px 0px 6px 14px',
+      padding: '10px 0px 6px 25px',
       fontSize: 14,
       fontWeight: 300,
     },
 
     itemContent: {
-      padding: '4px 0px 6px 14px',
+      padding: '10px 0px 6px 25px',
       cursor: 'default',
       fontSize: 14,
       fontWeight: 300,
     },
+
+    divider: {
+      margin: 0,
+      marginTop: '-1px',
+      marginLeft: 25,
+      marginRight: 50,
+      height: 1,
+      border: 'none',
+      backgroundColor: '#e0e0e0',
+    },
   },
 }
+
+const defaultBadgeColor = '#000000'
 
 export default class ActivityTile extends React.Component {
 
   getColor(eventType) {
+    let color = ActivityBadgeColors[eventType]
 
-    const defaultColor = '#000000'
-    let color = defaultColor
-
-    if ('PushEvent' === eventType) color = ActivityBadgeColors.PUSH
-    else if ('PullRequestEvent' === eventType) color = ActivityBadgeColors.PULL_REQUEST
-    else if ('IssuesEvent' === eventType) color = ActivityBadgeColors.ISSUE
-    else if ('IssueCommentEvent' === eventType) color = ActivityBadgeColors.ISSUE_COMMENT
-    else if ('WatchEvent' === eventType) color = ActivityBadgeColors.WATCH
-    else if ('ForkEvent' === eventType) color = ActivityBadgeColors.FORK
-    else if ('ReleaseEvent' === eventType) color = ActivityBadgeColors.RELEASE
-    else if ('CreateEvent' === eventType) color = ActivityBadgeColors.CREATE
+    color = color || defaultBadgeColor
 
     return color
   }
@@ -146,7 +149,9 @@ export default class ActivityTile extends React.Component {
                               key={index} primaryText={item.value} secondaryText={item.key} />)
       }
 
+      const divider = (<hr key={`${index}-hr`} style={styles.sectionPayload.divider}></hr>)
       payloadItems.push(listItem)
+      payloadItems.push(divider)
     })
 
     return payloadItems

@@ -1,6 +1,7 @@
 import React from 'react'
 import Tabs from 'material-ui/lib/tabs/tabs'
 import Tab from 'material-ui/lib/tabs/tab'
+import LazyLoad from 'react-lazy-load'
 
 import TimeLine from '../../TimeLine'
 import ActivityTile from './ActivityTile'
@@ -24,22 +25,12 @@ const styles = {
   },
 }
 
+const lazyLoadOffsetVertical = 1000
+
 export default class TabContentActivity extends React.Component {
 
   handleFilterChange() {
     console.log(`TODO: handleFilterChange`)
-  }
-
-  createActivityTile(activity, index) {
-    return (
-      <ActivityTile activity={activity} key={index} />
-    )
-  }
-
-  createActivityBadge(activity, index) {
-    return (
-      <div key={index}>{activity.type}</div>
-    )
   }
 
   render() {
@@ -54,8 +45,16 @@ export default class TabContentActivity extends React.Component {
     const badges = []
 
     activities.map((activity, index) => {
-      tiles.push(this.createActivityTile(activity, index))
-      badges.push(this.createActivityBadge(activity, index))
+      tiles.push(
+        <LazyLoad offsetVertical={1500}>
+          <ActivityTile activity={activity} key={index} />
+        </LazyLoad>
+      )
+      badges.push(
+        <LazyLoad offsetVertical={1500}>
+          <ActivityBadge eventType={activity.type} key={index} />
+        </LazyLoad>
+      )
     })
 
     return (

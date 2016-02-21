@@ -1,5 +1,4 @@
 import React from 'react'
-import { t, propTypes, } from 'tcomb-react'
 
 const styles = {
 
@@ -60,7 +59,7 @@ export default class TimeLine extends React.Component {
     const { tiles, badges, containerStyle, } = this.props
 
     const timelineEvents = tiles.map((tile, index) => {
-      return this.createTimeLineEvent(tile, badges[0], index)
+      return this.createTimeLineEvent(tile, badges[index], index)
     })
 
     return (
