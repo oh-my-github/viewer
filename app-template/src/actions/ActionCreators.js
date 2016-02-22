@@ -1,5 +1,7 @@
-import * as ActionTypes from './ActionTypes'
 import { createAction, } from 'redux-actions'
+
+import * as ActionTypes from './ActionTypes'
+import { DEFAULT_REPOSITORY, } from '../constants'
 
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
@@ -22,7 +24,7 @@ export const fetchProfile = createAction(ActionTypes.FETCH_PROFILE, () => {
    *
    * further modification will include replacing the path with user input (yeoman options)
    */
-  return fetch('/oh-my-github/oh-my-github.json')
+  return fetch(`/${DEFAULT_REPOSITORY}/oh-my-github.json`)
     .then(checkStatus)
     .then(parseJSON)
     .then(data => data)

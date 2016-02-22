@@ -23,7 +23,7 @@ const styles = {
 
 class StatIconLabel extends Component {
   render() {
-    const { icon, label, style } = this.props
+    const { icon, label, style, } = this.props
 
     const containerStyle = Object.assign({}, styles.container, style)
 

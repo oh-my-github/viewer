@@ -73,7 +73,7 @@ export default class TabContentRepository extends Component {
     const languages = Array.from(new Set(sorted.map(repo => repo.language)))
     const colors = RandomColor({
       luminosity: 'dark', format: 'rgba', count: languages.length,
-    }).map(rgbString => { return Color(rgbString).setAlpha(0.40).toString() })
+    }).map(rgbString => { return Color(rgbString).setAlpha(0.60).toString() })
 
     for (let index = 0; index < languages.length; index++) {
       languageToColor[languages[index]] = colors[index]

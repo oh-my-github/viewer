@@ -26,7 +26,7 @@ const styles = {
   },
 }
 
-const lazyLoadOffsetVertical = 1000
+const lazyLoadOffsetVertical = 2000
 
 export default class TabContentActivity extends React.Component {
 
@@ -46,7 +46,10 @@ export default class TabContentActivity extends React.Component {
       return moment(act2.created_at).valueOf() - moment(act1.created_at).valueOf()
     })
 
-    this.setState({ activities: sorted, })
+    /** filter out useless WatchEvents */
+    const filtered = sorted.filter(activity => (activity.type != 'WatchEvent'))
+
+    this.setState({ activities: filtered, })
   }
 
   handleFilterChange(event) {
@@ -74,6 +77,17 @@ export default class TabContentActivity extends React.Component {
     )
   }
 
+  renderLazily(element, index) {
+    if (index < 10) return element
+
+    return (
+      <LazyLoad offsetVertical={lazyLoadOffsetVertical}>
+        {element}
+      </LazyLoad>
+    )
+  }
+
+
   render() {
     /**
      * since React doesn't support to passing an object as the ReactElement,
@@ -85,14 +99,10 @@ export default class TabContentActivity extends React.Component {
 
     activities.map((activity, index) => {
       tiles.push(
-        <LazyLoad offsetVertical={lazyLoadOffsetVertical}>
-          <ActivityTile activity={activity} key={index} />
-        </LazyLoad>
+        this.renderLazily(<ActivityTile activity={activity} key={index} />, index)
       )
       badges.push(
-        <LazyLoad offsetVertical={lazyLoadOffsetVertical}>
-          <ActivityBadge eventType={activity.type} key={index} />
-        </LazyLoad>
+        this.renderLazily(<ActivityBadge eventType={activity.type} key={index} />, index)
       )
     })
 

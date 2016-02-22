@@ -17,6 +17,8 @@ import SvgIconActionAccountCircle from 'material-ui/lib/svg-icons/action/account
 
 import { StatLabelStarFactory, StatLabelForkFactory, } from './StatIconLabel'
 
+import { DEFAULT_REPOSITORY, } from '../../constants'
+
 import { MainColors, HeaderColors, } from '../../theme'
 import RaisedFontIconButton from './../RaisedFontIconButton'
 
@@ -76,15 +78,15 @@ export default class Header extends Component {
       return stat
     }, {starCount: 0, forkCount: 0,})
 
-    //const starButton = this.createAppBarStatIcon(repoStat.starCount, 'fa fa-star', HeaderColors.star)
-    //const forkButton = this.createAppBarStatIcon(repoStat.forkCount, 'fa fa-share-alt', HeaderColors.fork)
     const starButton = StatLabelStarFactory(repoStat.starCount)
     const forkButton = StatLabelForkFactory(repoStat.forkCount)
     const iconMenu = this.createIconMenu(user)
 
     return (
       <div>
-        <Avatar className='' src={user.avatar_url} style={styles.appBarRightElementAvatar} />
+        <a href={`https://github.com/${user.login}`} target='_blank'>
+          <Avatar src={user.avatar_url} style={styles.appBarRightElementAvatar} />
+        </a>
         <div style={styles.appBarRightElementButtons}>
           {starButton}
           {forkButton}
@@ -103,9 +105,8 @@ export default class Header extends Component {
         title={<div className='hide-on-small-only'>Github Profile</div>}
         titleStyle={styles.title}
         iconElementLeft={
-          <IconButton tooltip={`https://github.com/${user.login}`}
-                      touch tooltipPosition='bottom-right'
-                      linkButton target='_blank' href={`https://github.com/${user.login}`}>
+          <IconButton touch tooltipPosition='bottom-right'
+                      linkButton target='_blank' href={`https://${user.login}.github.io/${DEFAULT_REPOSITORY}`}>
             <FontIcon className='fa fa-github' />
           </IconButton>
           }
