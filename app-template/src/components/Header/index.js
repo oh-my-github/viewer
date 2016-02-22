@@ -106,7 +106,7 @@ export default class Header extends Component {
         titleStyle={styles.title}
         iconElementLeft={
           <IconButton touch tooltipPosition='bottom-right'
-                      linkButton target='_blank' href={`https://${user.login}.github.io/${DEFAULT_REPOSITORY}`}>
+                      linkButton href={`https://${user.login}.github.io/${DEFAULT_REPOSITORY}`}>
             <FontIcon className='fa fa-github' />
           </IconButton>
           }

@@ -1,6 +1,6 @@
 {
   "name": "generator-omg-basic",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "homepage": "https://github.com/oh-my-github/yo-omg-basic",
   "author": {
@@ -12,9 +12,7 @@
     "generators"
   ],
   "main": "generators/index.js",
-  "keywords": [
-    "oh-my-github"
-  ],
+  "keywords": ["oh-my-github", "yeoman-generator"],
   "license": "Apache-2.0",
   "dependencies": {},
   "devDependencies": {
