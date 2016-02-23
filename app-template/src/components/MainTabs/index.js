@@ -21,12 +21,15 @@ export const styles = {
     marginBottom: 12,
     fontWeight: 400,
   },
+
   tabContainer: {
     paddingLeft: 0,
     paddingRight: 0,
     border: 0,
   },
-
+  tabBg: {
+    backgroundColor: TAB_COLOR,
+  },
   tab: {
     backgroundColor: TAB_COLOR,
     height: TAB_HEIGHT,
@@ -72,7 +75,7 @@ class MainTabs extends React.Component {
       <main className='row'>
         {emptyTab}
         <div className='col s12 m10 l8' style={styles.tabContainer}>
-          <Tabs onChange={this.handleTabSelection.bind(this)} inkBarStyle={styles.inkBar}>
+          <Tabs onChange={this.handleTabSelection.bind(this)} inkBarStyle={styles.inkBar} tabItemContainerStyle={styles.tabBg}>
             <Tab value={TAB_INDEX_LANGUAGE} style={styles.tab} label={languageTabLabel}>
               <TabContentLanguage languages={languages} />
             </Tab>
