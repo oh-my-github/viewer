@@ -8,7 +8,7 @@ module.exports = yeoman.Base.extend({
     var done = this.async();
 
     this.log(yosay(
-      'oh-my-github template: ' + chalk.red('omg-basic')
+      'oh-my-github: ' + chalk.red('default viewer')
     ));
 
     // TODO: theme

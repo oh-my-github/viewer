@@ -1,5 +1,4 @@
 {
-  "name": "yo-omg-basic-app-template",
   "scripts": {
     "prestart": "npm run remove-dist",
     "start": "parallelshell \"npm run test:watch\" \"npm run open:src\"",
