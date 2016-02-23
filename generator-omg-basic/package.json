@@ -1,6 +1,6 @@
 {
   "name": "generator-omg-basic",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "",
   "homepage": "https://github.com/oh-my-github/yo-omg-basic",
   "author": {
@@ -12,9 +12,16 @@
     "generators"
   ],
   "main": "generators/index.js",
-  "keywords": ["oh-my-github", "yeoman-generator"],
+  "keywords": [
+    "oh-my-github",
+    "yeoman-generator"
+  ],
   "license": "Apache-2.0",
-  "dependencies": {},
+  "dependencies": {
+    "yeoman-generator": "^0.22.5",
+    "yeoman-assert": "^2.1.1",
+    "yosay": "^1.1.0"
+  },
   "devDependencies": {
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
@@ -23,9 +30,7 @@
     "eslint": "^1.10.3",
     "eslint-config-xo-space": "^0.8.0",
     "mocha": "^2.3.4",
-    "yeoman-assert": "^2.1.1",
-    "yeoman-test": "^1.0.0",
-    "yosay": "^1.1.0"
+    "yeoman-test": "^1.0.0"
   },
   "scripts": {
     "test": "mocha --compilers js:babel-core/register generators/**/*.spec.js"
