@@ -1,8 +1,15 @@
 {
   "name": "generator-oh-my-github",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "",
-  "homepage": "https://github.com/oh-my-github/generator-oh-my-github",
+  "homepage": "https://github.com/oh-my-github/generator-oh-my-github#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oh-my-github/generator-oh-my-github.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oh-my-github/generator-oh-my-github/issues"
+  },
   "author": {
     "name": "1ambda",
     "email": "1amb4a@gmail.com",
