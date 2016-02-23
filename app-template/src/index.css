@@ -1,6 +1,11 @@
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
+
+  /** sticky footer */
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 /** disable materialize input box-shadow */
@@ -8,6 +13,3 @@ input[type=text]:focus:not:([readonly]) {
   box-shadow: none;
 }
 
-label {
-
-}

@@ -157,7 +157,6 @@ export default class TabContentRepository extends Component {
   }
 
   render() {
-
     return (
       <div className='container'>
         {this.renderTitle()}

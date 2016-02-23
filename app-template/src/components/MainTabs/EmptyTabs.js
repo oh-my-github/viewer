@@ -12,7 +12,6 @@ const styles = {
     padding: 0,
     margin: 0,
     border: 0,
-    //boxShadow: '0px 2px 1px -1px rgba(0, 0, 0, 0.12)',
     borderBottom: '1px solid rgba(0, 0, 0, 0.05)',
     height: '50px', /** same as MainTab height */
     float: 'left',
@@ -57,6 +56,6 @@ export default class EmptyTabs extends Component {
 EmptyTabs.propTypes = {
   tabHeight: PropTypes.string.isRequired,
   tabColor: PropTypes.string.isRequired,
-  girdClass: PropTypes.string.isRequired,
+  gridClass: PropTypes.string.isRequired,
 }
 

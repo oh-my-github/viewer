@@ -10,6 +10,7 @@ const styles = {
   footer: {
     backgroundColor: MainColors[3],
     color: MainColors[2],
+    borderTop: '1px solid rgba(0, 0, 0, 0.05)',
   },
 
   aboutProfile: {

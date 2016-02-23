@@ -3,8 +3,6 @@ import Tabs from 'material-ui/lib/tabs/tabs'
 import Tab from 'material-ui/lib/tabs/tab'
 import LazyLoad from 'react-lazy-load'
 
-import moment from 'moment'
-
 import TimeLine from '../../TimeLine'
 import ActivityTile from './ActivityTile'
 import ActivityBadge from './ActivityBadge'
@@ -41,15 +39,7 @@ export default class TabContentActivity extends React.Component {
   componentWillReceiveProps(nextProps) {
     const { activities, } = nextProps
 
-    /** recently occurred events first */
-    const sorted = activities.slice().sort((act1, act2) => { /** latest */
-      return moment(act2.created_at).valueOf() - moment(act1.created_at).valueOf()
-    })
-
-    /** filter out useless WatchEvents */
-    const filtered = sorted.filter(activity => (activity.type != 'WatchEvent'))
-
-    this.setState({ activities: filtered, })
+    this.setState({ activities: activities, })
   }
 
   handleFilterChange(event) {

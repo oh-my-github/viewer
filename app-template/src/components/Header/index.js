@@ -100,18 +100,20 @@ export default class Header extends Component {
     const { user, repositories, } = this.props
 
     return (
-      <AppBar
-        style={styles.appBar}
-        title={<div className='hide-on-small-only'>Github Profile</div>}
-        titleStyle={styles.title}
-        iconElementLeft={
+      <header>
+        <AppBar
+          style={styles.appBar}
+          title={<div className='hide-on-small-only'>Github Profile</div>}
+          titleStyle={styles.title}
+          iconElementLeft={
           <IconButton touch tooltipPosition='bottom-right'
                       linkButton href={`https://${user.login}.github.io/${DEFAULT_REPOSITORY}`}>
             <FontIcon className='fa fa-github' />
           </IconButton>
           }
-        iconElementRight={this.renderElementRight(user, repositories)}
-        />
+          iconElementRight={this.renderElementRight(user, repositories)}
+          />
+      </header>
     )
   }
 }

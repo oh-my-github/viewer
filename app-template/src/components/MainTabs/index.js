@@ -69,7 +69,7 @@ class MainTabs extends React.Component {
     const emptyTab = (<EmptyTabs gridClass='col s0 m1 l2' tabHeight={TAB_HEIGHT} tabColor={TAB_COLOR} />)
 
     return (
-      <div className='row'>
+      <main className='row'>
         {emptyTab}
         <div className='col s12 m10 l8' style={styles.tabContainer}>
           <Tabs onChange={this.handleTabSelection.bind(this)} inkBarStyle={styles.inkBar}>
@@ -85,7 +85,7 @@ class MainTabs extends React.Component {
           </Tabs>
         </div>
         {emptyTab}
-      </div>
+      </main>
     )
   }
 }

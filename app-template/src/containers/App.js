@@ -9,6 +9,8 @@ import Header from '../components/Header'
 import MainTabs from '../components/MainTabs'
 import Footer from '../components/Footer'
 
+import css from './index.css' /** for sticky footer */
+
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -21,12 +23,15 @@ class App extends React.Component {
     const { user, languages, repositories, activities, _$meta, } = profile
 
     return (
-      <div>
-        <Header user={user} repositories={repositories} />
-        <MainTabs actions={actions}
-                  languages={languages}
-                  repositories={repositories}
-                  activities={activities} />
+      <div className={css.container}>
+        <div className={css.content}>
+          <Header user={user} repositories={repositories} />
+          <MainTabs
+                    actions={actions}
+                    languages={languages}
+                    repositories={repositories}
+                    activities={activities} />
+        </div>
         <Footer user={user} meta={_$meta} />
       </div>
     )
