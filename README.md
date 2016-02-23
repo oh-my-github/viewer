@@ -1,3 +1,5 @@
-# yo-omg-basic 
+# oh-my-github basic template
+
+
 
 

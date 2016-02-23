@@ -104,7 +104,8 @@ class RepositoryTile extends Component {
 
   renderLangSection(repository, color) {
     const style = Object.assign({}, styles.sectionLang, {
-      backgroundColor: color,
+      backgroundColor: MainColors[2],
+      //backgroundColor: color,
     })
 
     return (

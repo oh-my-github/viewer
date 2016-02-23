@@ -39,7 +39,7 @@ export const styles = {
 
   inkBar: {
     backgroundColor: TabColors.INK_BAR,
-  }
+  },
 }
 
 const TAB_INDEX_LANGUAGE = 0
@@ -51,7 +51,6 @@ class MainTabs extends React.Component {
     super(props)
 
     this.state = {
-      /** used to style the active tab label */
       selectedTab: TAB_INDEX_LANGUAGE,
     }
   }
@@ -63,7 +62,7 @@ class MainTabs extends React.Component {
 
   render() {
     const { languages, repositories, activities, } = this.props
-    const { selectedTab } = this.state
+    const { selectedTab, } = this.state
 
     const activityTabLabel = (<MainTabLabel label='ACTIVITY' isActive={selectedTab === TAB_INDEX_ACTIVITY} />)
     const languageTabLabel = (<MainTabLabel label='LANGUAGE' isActive={selectedTab === TAB_INDEX_LANGUAGE} />)
