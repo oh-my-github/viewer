@@ -13,19 +13,22 @@ And follow instruction in [oh-my-github](https://github.com/oh-my-github/oh-my-g
 
 ## Customization
 
+1. Edit `app/src`
+
 ```
 $ cd app
 $ npm install
 $ npm start -s
+```
 
-# edit app in `src/`
+2. Build src and Run it on localhost
 
+```
 $ npm run build
-$ npm run dist
 $ npm run open:dist
 ```
 
-## Publish Customized Viewer to NPM and Yeoman
+## Register your customized viewer to Yeoman
 
 Modify theses fields in `app/package.json`.
  
@@ -50,11 +53,10 @@ Modify theses fields in `app/package.json`.
 }
 ```
 
-Then publish to npmjs
+Then publish it to NPM (See Also, [Publishing NPM packages](https://docs.npmjs.com/getting-started/publishing-npm-packages))
 
 ```
 $ cd app
-$ npm login
 $ npm publish
 ```
 
