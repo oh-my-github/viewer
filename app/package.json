@@ -1,6 +1,5 @@
 {
   "scripts": {
-    "prestart": "npm run clean:dist",
     "start": "parallelshell \"npm run test:watch\" \"npm run open:src\"",
     "open:src": "node tools/srcServer.js",
     "open:dist": "node tools/distServer.js",
