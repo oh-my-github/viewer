@@ -1,6 +1,3 @@
-// For info about this file refer to webpack and webpack-hot-middleware documentation
-// Rather than having hard coded webpack.config.js for each environment, this
-// file generates a webpack config for the environment passed to the getConfig method.
 var webpack = require('webpack');
 var path = require('path');
 
@@ -12,7 +9,7 @@ var getPlugins = function(env) {
 
   var plugins = [
     new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.DefinePlugin(GLOBALS) //Tells React to build in prod mode. https://facebook.github.io/react/downloads.html
+    new webpack.DefinePlugin(GLOBALS)
   ];
 
   switch(env) {
@@ -89,10 +86,10 @@ function getPostcssPlugins(env) {
     require('postcss-url')({
       copy: 'rebase'
     }),
-    require('postcss-cssnext')({ // Allow future CSS features to be used, also auto-prefixes the CSS...
+    require('postcss-cssnext')({
       browsers: ['last 2 version', '> 5%', 'ie >= 8']
     }),
-    require('postcss-reporter')({ // Posts messages from plugins to the terminal
+    require('postcss-reporter')({
       clearMessages: true
     }),
     require('autoprefixer')({
@@ -105,16 +102,20 @@ function getPostcssPlugins(env) {
 }
 
 module.exports = function getConfig(env) {
+
+  var DIST_DIR = path.join(__dirname, '../')
+  var DIST_FILE = 'bundle.js'
+
   return {
     debug: true,
-    devtool: env == 'production' ? 'source-map' : 'eval-source-map', //more info:https://webpack.github.io/docs/build-performance.html#sourcemaps and https://webpack.github.io/docs/configuration.html#devtool
-    noInfo: true, //set to false to see a list of every file being bundled.
+    devtool: env == 'production' ? 'source-map' : 'eval-source-map',
+    noInfo: true,
     entry: getEntry(env),
-    target: env == 'test' ? 'node' : 'web', //necessary per https://webpack.github.io/docs/testing.html#compile-and-test
+    target: env == 'test' ? 'node' : 'web',
     output: {
-      path: __dirname + '/dist', //Note: Physical files are only output by the production build task `npm run build`.
+      path: DIST_DIR,
       publicPath: '',
-      filename: 'bundle.js'
+      filename: DIST_FILE
     },
     plugins: getPlugins(env),
     module: {

@@ -1,21 +1,35 @@
 {
   "scripts": {
-    "prestart": "npm run remove-dist",
+    "prestart": "npm run clean:dist",
     "start": "parallelshell \"npm run test:watch\" \"npm run open:src\"",
     "open:src": "node tools/srcServer.js",
     "open:dist": "node tools/distServer.js",
     "lint": "eslint src",
     "lint:watch": "watch 'npm run lint' src",
-    "clean-dist": "npm run remove-dist && mkdir dist",
-    "remove-dist": "node_modules/.bin/rimraf ./dist",
+    "clean:dist": "node tools/clean.js",
     "build:html": "node tools/buildHtml.js",
-    "prebuild": "npm run clean-dist && npm run build:html",
+    "prebuild": "npm run clean:dist && npm run build:html",
     "build": "npm run test && node tools/build.js",
-    "dist": "node tools/dist.js",
     "test": "cross-env NODE_ENV=test mocha --reporter progress --compilers js:babel/register --recursive \"./src/**/*.spec.js\"",
     "test:watch": "npm run test -- --watch"
   },
-  "author": "1amb4a@gmail.com",
+  "name": "oh-my-github-viewer-default",
+  "version": "0.0.1",
+  "author": "1ambda",
+  "description": "",
+  "homepage": "https://github.com/oh-my-github/viewer-default#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oh-my-github/viewer-default.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oh-my-github/viewer-default/issues"
+  },
+  "keywords": [
+    "viewer",
+    "oh-my-github",
+    "yeoman-generator"
+  ],
   "license": "Apache-2.0",
   "dependencies": {},
   "devDependencies": {
@@ -67,7 +81,7 @@
     "redux-logger": "^2.4.0",
     "redux-promise": "^0.5.1",
     "redux-thunk": "^1.0.3",
-    "rimraf": "2.5.0",
+    "rimraf": "^2.5.0",
     "style-loader": "0.13.0",
     "url-loader": "0.5.7",
     "watch": "0.17.1",

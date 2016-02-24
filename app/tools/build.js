@@ -29,7 +29,5 @@ webpack(webpackConfig).run(function(err, stats) {
 
   if (!inSilentMode) console.log('Webpack stats: ' + stats.toString())
 
-  //if we got this far, the build succeeded.
-  console.log('Your app has been compiled in production mode and written to /dist. It\'s ready to roll!'.green.bold)
   return 0
 })
