@@ -4,12 +4,8 @@ Default Viewer for [oh-my-github](https://github.com/oh-my-github/oh-my-github)
 
 ## Usage
 
-```
-$ git clone https://github.com/oh-my-github/viewer-default.git oh-my-github && cd oh-my-github
-$ rm -rf .git
-```
-
-And follow instruction in [oh-my-github](https://github.com/oh-my-github/oh-my-github) to create `oh-my-github.json` and publish it
+1. Fork [https://github.com/oh-my-github/viewer-default] to your repository
+2. Follow README.md in [oh-my-github](https://github.com/oh-my-github/oh-my-github)
 
 ## Customization
 
