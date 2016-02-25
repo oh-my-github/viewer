@@ -4,8 +4,7 @@ Default Viewer for [oh-my-github](https://github.com/oh-my-github/oh-my-github)
 
 ## Usage
 
-1. Fork [viewer-default](https://github.com/oh-my-github/viewer-default) to your repository
-2. Follow [README: oh-my-github](https://github.com/oh-my-github/oh-my-github)
+See [oh-my-github](https://github.com/oh-my-github/oh-my-github)
 
 ## Customization
 
@@ -24,7 +23,7 @@ $ npm run build
 $ npm run open:dist
 ```
 
-## Register your customized viewer to Yeoman
+## Register your customized viewer to NPM
 
 Modify theses fields in `app/package.json`.
  
