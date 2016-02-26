@@ -127,7 +127,7 @@ export default class ActivityTile extends React.Component {
           style={styles.sectionRepo.labels}
           leftIcon={<FontIcon style={styles.sectionRepo.icon} className='fa fa-github' />}
           primaryText={repo} secondaryText={owner}
-          linkButton href={`htps://github.com/${fullRepoName}`} target='_blank'
+          linkButton href={`https://github.com/${fullRepoName}`} target='_blank'
           />
       </div>
     )
