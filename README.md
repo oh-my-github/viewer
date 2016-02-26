@@ -1,4 +1,4 @@
-# viewer-default
+# Viewer
 
 Default Viewer for [oh-my-github](https://github.com/oh-my-github/oh-my-github)
 
@@ -35,13 +35,13 @@ Modify theses fields in `app/package.json`.
   "version": "0.0.1",
   "author": "1ambda",
   "description": "",
-  "homepage": "https://github.com/oh-my-github/viewer-default#readme",
+  "homepage": "https://github.com/oh-my-github/viewer#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oh-my-github/viewer-default.git"
+    "url": "git+https://github.com/oh-my-github/viewer.git"
   },
   "bugs": {
-    "url": "https://github.com/oh-my-github/viewer-default/issues"
+    "url": "https://github.com/oh-my-github/viewer/issues"
   },
   
   ...

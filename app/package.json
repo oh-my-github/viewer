@@ -16,13 +16,13 @@
   "version": "0.0.2",
   "author": "1ambda",
   "description": "",
-  "homepage": "https://github.com/oh-my-github/viewer-default#readme",
+  "homepage": "https://github.com/oh-my-github/viewer#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oh-my-github/viewer-default.git"
+    "url": "git+https://github.com/oh-my-github/viewer.git"
   },
   "bugs": {
-    "url": "https://github.com/oh-my-github/viewer-default/issues"
+    "url": "https://github.com/oh-my-github/viewer/issues"
   },
   "keywords": [
     "viewer",
