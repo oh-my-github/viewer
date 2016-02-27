@@ -1,6 +1,5 @@
-import moment from 'moment'
-
 import * as ActionTypes from '../actions/ActionTypes'
+import { sortRecentItemByDate, } from '../util'
 
 const initialState = {
   user: {},
@@ -18,9 +17,7 @@ export default function profileReducer(state = initialState, action = null) {
   if (error) return state
 
   /** recently occurred events first */
-  const sorted = payload.activities.slice().sort((act1, act2) => {
-    return moment(act2.created_at).valueOf() - moment(act1.created_at).valueOf()
-  })
+  const sorted = payload.activities.slice().sort(sortRecentItemByDate)
 
   /** filter out useless WatchEvents */
   const filteredActivities = sorted.filter(activity => (activity.type != 'WatchEvent'))

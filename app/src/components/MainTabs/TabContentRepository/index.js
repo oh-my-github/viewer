@@ -1,11 +1,7 @@
-import React, { PropTypes, Component, } from 'react'
-import Tabs from 'material-ui/lib/tabs/tabs'
-import Tab from 'material-ui/lib/tabs/tab'
+import React from 'react'
 
 import ReactPaginate from 'react-paginate'
 import RandomColor from 'randomcolor'
-
-import Color from 'color-js'
 
 import RepositoryTile from './RepositoryTile'
 import Filter from './../../Filter'
@@ -42,7 +38,7 @@ export const SORTING_STRATEGIES = [
 
 const CONST_ITEM_COUNT_PER_PAGE = 4
 
-export default class TabContentRepository extends Component {
+export default class TabContentRepository extends React.Component {
   constructor(props) {
     super(props)
 
@@ -153,6 +149,6 @@ export default class TabContentRepository extends Component {
 }
 
 TabContentRepository.propTypes = {
-  repositories: PropTypes.array.isRequired,
-  languages: PropTypes.array.isRequired,
+  repositories: React.PropTypes.array.isRequired,
+  languages: React.PropTypes.array.isRequired,
 }

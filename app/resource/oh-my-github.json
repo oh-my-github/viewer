@@ -7,7 +7,7 @@
       "2016-02-24T15:53:31.929Z",
       "2016-02-24T15:53:34.752Z"
     ],
-    "agent": "cli-generator",
+    "agent": "cli-oh-my-github",
     "github_user": "1ambda",
     "github_repository": "oh-my-github"
   },
@@ -28,21 +28,21 @@
       "type": "PushEvent",
       "created_at": "2016-02-24T15:31:55Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/viewer-default"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
         "action": "closed",
         "issue_id": 135788100,
         "issue_number": 19,
-        "issue_title": "Remove Yeoman generator",
-        "issue_url": "https://github.com/oh-my-github/viewer-default/issues/19"
+        "issue_title": "Remove Yeoman oh-my-github",
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/19"
       },
       "event_id": "3683795254",
       "type": "IssuesEvent",
       "created_at": "2016-02-24T15:18:51Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/viewer-default"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -60,7 +60,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-24T15:18:37Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/viewer-default"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -68,13 +68,13 @@
         "issue_id": 136074159,
         "issue_number": 20,
         "issue_title": "Implement CONTRIB tab",
-        "issue_url": "https://github.com/oh-my-github/viewer-default/issues/20"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/20"
       },
       "event_id": "3683496719",
       "type": "IssuesEvent",
       "created_at": "2016-02-24T14:18:58Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/viewer-default"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -101,14 +101,14 @@
         "action": "opened",
         "issue_id": 135788100,
         "issue_number": 19,
-        "issue_title": "Remove Yeoman generator",
-        "issue_url": "https://github.com/oh-my-github/generator-oh-my-github/issues/19"
+        "issue_title": "Remove Yeoman oh-my-github",
+        "issue_url": "https://github.com/oh-my-github/oh-my-github-oh-my-github/issues/19"
       },
       "event_id": "3678822884",
       "type": "IssuesEvent",
       "created_at": "2016-02-23T16:33:17Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator-oh-my-github"
+      "repo": "oh-my-github/oh-my-github-oh-my-github"
     },
     {
       "payload": {
@@ -126,7 +126,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-23T15:41:16Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator-oh-my-github"
+      "repo": "oh-my-github/oh-my-github-oh-my-github"
     },
     {
       "payload": {
@@ -144,7 +144,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-23T15:39:44Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator-oh-my-github"
+      "repo": "oh-my-github/oh-my-github-oh-my-github"
     },
     {
       "payload": {
@@ -162,7 +162,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-23T15:27:08Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator-oh-my-github"
+      "repo": "oh-my-github/oh-my-github-oh-my-github"
     },
     {
       "payload": {
@@ -180,7 +180,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-23T15:25:49Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -198,7 +198,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-23T11:57:58Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -212,7 +212,7 @@
       "type": "CreateEvent",
       "created_at": "2016-02-23T11:32:28Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -230,7 +230,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-23T11:31:45Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -266,7 +266,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-23T11:20:24Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -280,7 +280,7 @@
       "type": "CreateEvent",
       "created_at": "2016-02-23T11:20:16Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -298,7 +298,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-23T10:56:10Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -317,7 +317,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-23T10:43:15Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -325,7 +325,7 @@
         "number": 18,
         "pull_request_id": 60291800,
         "pull_request_title": "fix: MainTab background coloring",
-        "pull_request_url": "https://api.github.com/repos/oh-my-github/yo-omg-basic/pulls/18",
+        "pull_request_url": "https://api.github.com/repos/oh-my-github/viewer/pulls/18",
         "pull_request_merged": true,
         "pull_request_commits": 1,
         "pull_request_additions": 5,
@@ -336,7 +336,7 @@
       "type": "PullRequestEvent",
       "created_at": "2016-02-23T10:43:15Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -354,13 +354,13 @@
         "issue_id": 135643298,
         "issue_number": 18,
         "issue_title": "fix: MainTab background coloring",
-        "comment_url": "https://github.com/oh-my-github/yo-omg-basic/pull/18#issuecomment-187559314"
+        "comment_url": "https://github.com/oh-my-github/viewer/pull/18#issuecomment-187559314"
       },
       "event_id": "3676471484",
       "type": "IssueCommentEvent",
       "created_at": "2016-02-23T06:14:09Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -368,13 +368,13 @@
         "issue_id": 135442754,
         "issue_number": 17,
         "issue_title": "Sticky Footer",
-        "issue_url": "https://github.com/oh-my-github/yo-omg-basic/issues/17"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/17"
       },
       "event_id": "3675745401",
       "type": "IssuesEvent",
       "created_at": "2016-02-23T01:07:58Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -392,7 +392,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-23T01:07:52Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -400,13 +400,13 @@
         "issue_id": 135442754,
         "issue_number": 17,
         "issue_title": "Sticky Footer",
-        "issue_url": "https://github.com/oh-my-github/yo-omg-basic/issues/17"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/17"
       },
       "event_id": "3673006634",
       "type": "IssuesEvent",
       "created_at": "2016-02-22T14:55:59Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -461,7 +461,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-22T14:23:37Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -475,7 +475,7 @@
       "type": "CreateEvent",
       "created_at": "2016-02-22T14:23:31Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -483,13 +483,13 @@
         "issue_id": 130131540,
         "issue_number": 16,
         "issue_title": "Adopt yo-omg-template as a preveiw template",
-        "issue_url": "https://github.com/oh-my-github/generator/issues/16"
+        "issue_url": "https://github.com/oh-my-github/oh-my-github/issues/16"
       },
       "event_id": "3672802389",
       "type": "IssuesEvent",
       "created_at": "2016-02-22T14:14:07Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -497,13 +497,13 @@
         "issue_id": 128171026,
         "issue_number": 15,
         "issue_title": "Remove react dependencies",
-        "issue_url": "https://github.com/oh-my-github/generator/issues/15"
+        "issue_url": "https://github.com/oh-my-github/oh-my-github/issues/15"
       },
       "event_id": "3672802109",
       "type": "IssuesEvent",
       "created_at": "2016-02-22T14:14:03Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -521,7 +521,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-22T14:13:42Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -539,7 +539,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-22T12:09:13Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -593,7 +593,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-22T11:07:07Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -611,7 +611,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-21T16:21:05Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -629,7 +629,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-21T16:11:53Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -655,13 +655,13 @@
         "issue_id": 135222230,
         "issue_number": 16,
         "issue_title": "Add favicon",
-        "issue_url": "https://github.com/oh-my-github/yo-omg-basic/issues/16"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/16"
       },
       "event_id": "3670002813",
       "type": "IssuesEvent",
       "created_at": "2016-02-21T16:03:35Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -741,13 +741,13 @@
         "issue_id": 135159158,
         "issue_number": 15,
         "issue_title": "Implement Footer",
-        "issue_url": "https://github.com/oh-my-github/yo-omg-basic/issues/15"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/15"
       },
       "event_id": "3669911499",
       "type": "IssuesEvent",
       "created_at": "2016-02-21T14:54:55Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -755,13 +755,13 @@
         "issue_id": 135159158,
         "issue_number": 15,
         "issue_title": "Implement Footer",
-        "comment_url": "https://github.com/oh-my-github/yo-omg-basic/issues/15#issuecomment-186834826"
+        "comment_url": "https://github.com/oh-my-github/viewer/issues/15#issuecomment-186834826"
       },
       "event_id": "3669911497",
       "type": "IssueCommentEvent",
       "created_at": "2016-02-21T14:54:55Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -779,7 +779,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-21T14:54:21Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -797,7 +797,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-21T12:28:32Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -825,7 +825,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-21T04:52:29Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -833,13 +833,13 @@
         "issue_id": 135159158,
         "issue_number": 15,
         "issue_title": "Implement Footer",
-        "issue_url": "https://github.com/oh-my-github/yo-omg-basic/issues/15"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/15"
       },
       "event_id": "3669303108",
       "type": "IssuesEvent",
       "created_at": "2016-02-21T04:44:15Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -847,13 +847,13 @@
         "issue_id": 133597156,
         "issue_number": 13,
         "issue_title": "Vertical Timeline for Contribution (Activity) Tab",
-        "issue_url": "https://github.com/oh-my-github/yo-omg-basic/issues/13"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/13"
       },
       "event_id": "3669302206",
       "type": "IssuesEvent",
       "created_at": "2016-02-21T04:43:07Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -871,7 +871,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-21T04:40:58Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -879,13 +879,13 @@
         "issue_id": 135155927,
         "issue_number": 14,
         "issue_title": "Loose focus on the selected tab when inserting filter keyword",
-        "issue_url": "https://github.com/oh-my-github/yo-omg-basic/issues/14"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/14"
       },
       "event_id": "3669275091",
       "type": "IssuesEvent",
       "created_at": "2016-02-21T04:09:57Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -893,13 +893,13 @@
         "issue_id": 135155927,
         "issue_number": 14,
         "issue_title": "Loose focus on the selected tab when inserting filter keyword",
-        "comment_url": "https://github.com/oh-my-github/yo-omg-basic/issues/14#issuecomment-186737320"
+        "comment_url": "https://github.com/oh-my-github/viewer/issues/14#issuecomment-186737320"
       },
       "event_id": "3669275090",
       "type": "IssueCommentEvent",
       "created_at": "2016-02-21T04:09:57Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -917,7 +917,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-21T04:08:26Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -935,7 +935,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-21T04:01:12Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -943,13 +943,13 @@
         "issue_id": 135155927,
         "issue_number": 14,
         "issue_title": "Loose focus on the selected tab when inserting filter keyword",
-        "issue_url": "https://github.com/oh-my-github/yo-omg-basic/issues/14"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/14"
       },
       "event_id": "3669261217",
       "type": "IssuesEvent",
       "created_at": "2016-02-21T03:55:18Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -967,7 +967,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-21T03:53:44Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -975,13 +975,13 @@
         "issue_id": 133597156,
         "issue_number": 13,
         "issue_title": "Vertical Timeline for Contribution (Activity) Tab",
-        "comment_url": "https://github.com/oh-my-github/yo-omg-basic/issues/13#issuecomment-186717251"
+        "comment_url": "https://github.com/oh-my-github/viewer/issues/13#issuecomment-186717251"
       },
       "event_id": "3669144660",
       "type": "IssueCommentEvent",
       "created_at": "2016-02-21T01:46:48Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -1009,13 +1009,13 @@
         "issue_id": 133597156,
         "issue_number": 13,
         "issue_title": "Vertical Timeline for Contribution (Activity) Tab",
-        "comment_url": "https://github.com/oh-my-github/yo-omg-basic/issues/13#issuecomment-186528858"
+        "comment_url": "https://github.com/oh-my-github/viewer/issues/13#issuecomment-186528858"
       },
       "event_id": "3667880276",
       "type": "IssueCommentEvent",
       "created_at": "2016-02-20T06:54:42Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -1033,7 +1033,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-20T06:53:43Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -1041,13 +1041,13 @@
         "issue_id": 135036223,
         "issue_number": 17,
         "issue_title": "Remove hard coded PREFIX in PullRequestEventPayload",
-        "issue_url": "https://github.com/oh-my-github/generator/issues/17"
+        "issue_url": "https://github.com/oh-my-github/oh-my-github/issues/17"
       },
       "event_id": "3667809163",
       "type": "IssuesEvent",
       "created_at": "2016-02-20T05:37:33Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -1055,13 +1055,13 @@
         "issue_id": 133597156,
         "issue_number": 13,
         "issue_title": "Vertical Timeline for Contribution (Activity) Tab",
-        "comment_url": "https://github.com/oh-my-github/yo-omg-basic/issues/13#issuecomment-186505255"
+        "comment_url": "https://github.com/oh-my-github/viewer/issues/13#issuecomment-186505255"
       },
       "event_id": "3667759950",
       "type": "IssueCommentEvent",
       "created_at": "2016-02-20T04:44:13Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -1079,7 +1079,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-18T23:49:13Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -1097,7 +1097,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-18T14:15:05Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -1155,7 +1155,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-17T00:52:01Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -1163,13 +1163,13 @@
         "issue_id": 133597156,
         "issue_number": 13,
         "issue_title": "Vertical Timeline for Contribution (Activity) Tab",
-        "comment_url": "https://github.com/oh-my-github/yo-omg-basic/issues/13#issuecomment-184934870"
+        "comment_url": "https://github.com/oh-my-github/viewer/issues/13#issuecomment-184934870"
       },
       "event_id": "3652387924",
       "type": "IssueCommentEvent",
       "created_at": "2016-02-17T00:09:54Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -1187,13 +1187,13 @@
         "issue_id": 133597156,
         "issue_number": 13,
         "issue_title": "Vertical Timeline for Contribution (Activity) Tab",
-        "comment_url": "https://github.com/oh-my-github/yo-omg-basic/issues/13#issuecomment-184665162"
+        "comment_url": "https://github.com/oh-my-github/viewer/issues/13#issuecomment-184665162"
       },
       "event_id": "3649327074",
       "type": "IssueCommentEvent",
       "created_at": "2016-02-16T12:34:03Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -1222,7 +1222,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-16T11:18:00Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -1260,7 +1260,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-15T12:03:47Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -1268,13 +1268,13 @@
         "issue_id": 133597156,
         "issue_number": 13,
         "issue_title": "Vertical Timeline for Contribution (Activity) Tab",
-        "comment_url": "https://github.com/oh-my-github/yo-omg-basic/issues/13#issuecomment-184161336"
+        "comment_url": "https://github.com/oh-my-github/viewer/issues/13#issuecomment-184161336"
       },
       "event_id": "3644603849",
       "type": "IssueCommentEvent",
       "created_at": "2016-02-15T10:41:14Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -1352,13 +1352,13 @@
         "issue_id": 133597156,
         "issue_number": 13,
         "issue_title": "Vertical Timeline for Contribution (Activity) Tab",
-        "comment_url": "https://github.com/oh-my-github/yo-omg-basic/issues/13#issuecomment-184012686"
+        "comment_url": "https://github.com/oh-my-github/viewer/issues/13#issuecomment-184012686"
       },
       "event_id": "3643392040",
       "type": "IssueCommentEvent",
       "created_at": "2016-02-15T00:43:14Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -1376,13 +1376,13 @@
         "issue_id": 133597156,
         "issue_number": 13,
         "issue_title": "Vertical Timeline for Contribution (Activity) Tab",
-        "issue_url": "https://github.com/oh-my-github/yo-omg-basic/issues/13"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/13"
       },
       "event_id": "3643387278",
       "type": "IssuesEvent",
       "created_at": "2016-02-15T00:39:02Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -1390,13 +1390,13 @@
         "issue_id": 133551691,
         "issue_number": 12,
         "issue_title": "Implement Header (AppBar)",
-        "issue_url": "https://github.com/oh-my-github/yo-omg-basic/issues/12"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/12"
       },
       "event_id": "3643365186",
       "type": "IssuesEvent",
       "created_at": "2016-02-15T00:20:02Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -1404,13 +1404,13 @@
         "issue_id": 133551691,
         "issue_number": 12,
         "issue_title": "Implement Header (AppBar)",
-        "comment_url": "https://github.com/oh-my-github/yo-omg-basic/issues/12#issuecomment-184010898"
+        "comment_url": "https://github.com/oh-my-github/viewer/issues/12#issuecomment-184010898"
       },
       "event_id": "3643365110",
       "type": "IssueCommentEvent",
       "created_at": "2016-02-15T00:19:57Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -1430,7 +1430,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-15T00:19:36Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -1438,13 +1438,13 @@
         "issue_id": 133551691,
         "issue_number": 12,
         "issue_title": "Implement Header (AppBar)",
-        "issue_url": "https://github.com/oh-my-github/yo-omg-basic/issues/12"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/12"
       },
       "event_id": "3642792295",
       "type": "IssuesEvent",
       "created_at": "2016-02-14T16:23:10Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -1452,13 +1452,13 @@
         "issue_id": 133544474,
         "issue_number": 11,
         "issue_title": "Use redux router",
-        "issue_url": "https://github.com/oh-my-github/yo-omg-basic/issues/11"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/11"
       },
       "event_id": "3642673668",
       "type": "IssuesEvent",
       "created_at": "2016-02-14T14:31:04Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -1516,13 +1516,13 @@
         "issue_id": 132589868,
         "issue_number": 10,
         "issue_title": "Grid Tiles for Repository Tab",
-        "issue_url": "https://github.com/oh-my-github/yo-omg-basic/issues/10"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/10"
       },
       "event_id": "3641273946",
       "type": "IssuesEvent",
       "created_at": "2016-02-13T14:17:52Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -1530,13 +1530,13 @@
         "issue_id": 132589868,
         "issue_number": 10,
         "issue_title": "Grid Tiles for Repository Tab",
-        "comment_url": "https://github.com/oh-my-github/yo-omg-basic/issues/10#issuecomment-183676142"
+        "comment_url": "https://github.com/oh-my-github/viewer/issues/10#issuecomment-183676142"
       },
       "event_id": "3641273945",
       "type": "IssueCommentEvent",
       "created_at": "2016-02-13T14:17:52Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -1675,7 +1675,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-12T15:46:47Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -1935,7 +1935,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-11T10:03:40Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -1949,7 +1949,7 @@
       "type": "CreateEvent",
       "created_at": "2016-02-11T10:02:58Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -1987,7 +1987,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-10T14:43:16Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -2005,13 +2005,13 @@
         "issue_id": 132589868,
         "issue_number": 10,
         "issue_title": "Grid Tiles for Repository Tab",
-        "comment_url": "https://github.com/oh-my-github/yo-omg-basic/issues/10#issuecomment-182205056"
+        "comment_url": "https://github.com/oh-my-github/viewer/issues/10#issuecomment-182205056"
       },
       "event_id": "3626997042",
       "type": "IssueCommentEvent",
       "created_at": "2016-02-10T05:27:59Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -2039,13 +2039,13 @@
         "issue_id": 132589868,
         "issue_number": 10,
         "issue_title": "Grid Tiles for Repository Tab",
-        "comment_url": "https://github.com/oh-my-github/yo-omg-basic/issues/10#issuecomment-182172870"
+        "comment_url": "https://github.com/oh-my-github/viewer/issues/10#issuecomment-182172870"
       },
       "event_id": "3626695812",
       "type": "IssueCommentEvent",
       "created_at": "2016-02-10T02:36:56Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -2063,13 +2063,13 @@
         "issue_id": 132589868,
         "issue_number": 10,
         "issue_title": "Grid Tiles for Repository Tab",
-        "issue_url": "https://github.com/oh-my-github/yo-omg-basic/issues/10"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/10"
       },
       "event_id": "3626630755",
       "type": "IssuesEvent",
       "created_at": "2016-02-10T02:06:49Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -2099,7 +2099,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-09T14:19:21Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -2137,13 +2137,13 @@
         "issue_id": 131860821,
         "issue_number": 9,
         "issue_title": "Custom Progress Bar",
-        "issue_url": "https://github.com/oh-my-github/yo-omg-basic/issues/9"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/9"
       },
       "event_id": "3617458063",
       "type": "IssuesEvent",
       "created_at": "2016-02-08T03:55:58Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -2161,7 +2161,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-08T03:55:53Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -2169,13 +2169,13 @@
         "issue_id": 131860821,
         "issue_number": 9,
         "issue_title": "Custom Progress Bar",
-        "comment_url": "https://github.com/oh-my-github/yo-omg-basic/issues/9#issuecomment-181184646"
+        "comment_url": "https://github.com/oh-my-github/viewer/issues/9#issuecomment-181184646"
       },
       "event_id": "3617453073",
       "type": "IssueCommentEvent",
       "created_at": "2016-02-08T03:51:27Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -2221,13 +2221,13 @@
         "issue_id": 131860821,
         "issue_number": 9,
         "issue_title": "Custom Progress Bar",
-        "issue_url": "https://github.com/oh-my-github/yo-omg-basic/issues/9"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/9"
       },
       "event_id": "3615111696",
       "type": "IssuesEvent",
       "created_at": "2016-02-06T14:31:48Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -2235,13 +2235,13 @@
         "issue_id": 131654390,
         "issue_number": 8,
         "issue_title": "Support multiple themes",
-        "issue_url": "https://github.com/oh-my-github/yo-omg-basic/issues/8"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/8"
       },
       "event_id": "3611867138",
       "type": "IssuesEvent",
       "created_at": "2016-02-05T14:10:02Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -2279,7 +2279,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-04T14:56:54Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -2297,7 +2297,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-04T00:48:35Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -2326,7 +2326,7 @@
       "type": "PushEvent",
       "created_at": "2016-02-02T17:29:12Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -2362,13 +2362,13 @@
         "issue_id": 130131540,
         "issue_number": 16,
         "issue_title": "Adopt yo-omg-template as a preveiw template",
-        "issue_url": "https://github.com/oh-my-github/generator/issues/16"
+        "issue_url": "https://github.com/oh-my-github/oh-my-github/issues/16"
       },
       "event_id": "3589120784",
       "type": "IssuesEvent",
       "created_at": "2016-01-31T14:20:36Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -2376,13 +2376,13 @@
         "issue_id": 129666063,
         "issue_number": 7,
         "issue_title": "fix: MainTab background coloring",
-        "comment_url": "https://github.com/oh-my-github/yo-omg-basic/pull/7#issuecomment-176840460"
+        "comment_url": "https://github.com/oh-my-github/viewer/pull/7#issuecomment-176840460"
       },
       "event_id": "3585041619",
       "type": "IssueCommentEvent",
       "created_at": "2016-01-29T16:12:30Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -2400,7 +2400,7 @@
       "type": "PushEvent",
       "created_at": "2016-01-29T16:09:48Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -2418,7 +2418,7 @@
       "type": "PushEvent",
       "created_at": "2016-01-29T16:08:46Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -2474,7 +2474,7 @@
       "type": "PushEvent",
       "created_at": "2016-01-28T14:22:31Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -2501,13 +2501,13 @@
         "issue_id": 127662351,
         "issue_number": 5,
         "issue_title": "Design Sample",
-        "issue_url": "https://github.com/oh-my-github/yo-omg-basic/issues/5"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/5"
       },
       "event_id": "3579644576",
       "type": "IssuesEvent",
       "created_at": "2016-01-28T14:09:51Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -2555,7 +2555,7 @@
       "type": "PushEvent",
       "created_at": "2016-01-27T14:52:30Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -2585,7 +2585,7 @@
       "type": "WatchEvent",
       "created_at": "2016-01-27T03:33:12Z",
       "actor": "1ambda",
-      "repo": "facebook/regenerator"
+      "repo": "facebook/reoh-my-github"
     },
     {
       "payload": {
@@ -2613,7 +2613,7 @@
       "type": "PushEvent",
       "created_at": "2016-01-26T14:35:16Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -2809,7 +2809,7 @@
       "type": "PushEvent",
       "created_at": "2016-01-23T10:41:05Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -2875,13 +2875,13 @@
         "issue_id": 127820269,
         "issue_number": 6,
         "issue_title": "Add bootstrap-sass, material-ui to npm dependencies",
-        "issue_url": "https://github.com/oh-my-github/yo-omg-basic/issues/6"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/6"
       },
       "event_id": "3560716599",
       "type": "IssuesEvent",
       "created_at": "2016-01-23T08:11:14Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -2889,13 +2889,13 @@
         "issue_id": 127820269,
         "issue_number": 6,
         "issue_title": "Add bootstrap-sass, material-ui to npm dependencies",
-        "comment_url": "https://github.com/oh-my-github/yo-omg-basic/issues/6#issuecomment-174160052"
+        "comment_url": "https://github.com/oh-my-github/viewer/issues/6#issuecomment-174160052"
       },
       "event_id": "3560716598",
       "type": "IssueCommentEvent",
       "created_at": "2016-01-23T08:11:14Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -2913,7 +2913,7 @@
       "type": "PushEvent",
       "created_at": "2016-01-23T08:11:03Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -3003,13 +3003,13 @@
         "issue_id": 128171026,
         "issue_number": 15,
         "issue_title": "Remove react dependencies",
-        "issue_url": "https://github.com/oh-my-github/generator/issues/15"
+        "issue_url": "https://github.com/oh-my-github/oh-my-github/issues/15"
       },
       "event_id": "3558078527",
       "type": "IssuesEvent",
       "created_at": "2016-01-22T14:49:56Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -3233,7 +3233,7 @@
       "type": "CreateEvent",
       "created_at": "2016-01-21T14:17:39Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator-python"
+      "repo": "oh-my-github/oh-my-github-python"
     },
     {
       "payload": {
@@ -3251,7 +3251,7 @@
       "type": "PushEvent",
       "created_at": "2016-01-21T14:16:55Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -3269,7 +3269,7 @@
       "type": "PushEvent",
       "created_at": "2016-01-21T13:27:37Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -3287,7 +3287,7 @@
       "type": "PushEvent",
       "created_at": "2016-01-21T13:27:02Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -3305,7 +3305,7 @@
       "type": "PushEvent",
       "created_at": "2016-01-21T13:26:06Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -3333,27 +3333,27 @@
         "issue_id": 127820269,
         "issue_number": 6,
         "issue_title": "Add bootstrap-sass, material-ui to npm dependencies",
-        "issue_url": "https://github.com/oh-my-github/yo-omg-basic/issues/6"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/6"
       },
       "event_id": "3551042748",
       "type": "IssuesEvent",
       "created_at": "2016-01-21T00:52:48Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
         "action": "closed",
         "issue_id": 125400734,
         "issue_number": 5,
-        "issue_title": "Add generator option to ignore some repos while creating profile",
-        "issue_url": "https://github.com/oh-my-github/generator/issues/5"
+        "issue_title": "Add oh-my-github option to ignore some repos while creating profile",
+        "issue_url": "https://github.com/oh-my-github/oh-my-github/issues/5"
       },
       "event_id": "3549118115",
       "type": "IssuesEvent",
       "created_at": "2016-01-20T16:50:38Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -3372,7 +3372,7 @@
       "type": "PushEvent",
       "created_at": "2016-01-20T16:50:31Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -3390,13 +3390,13 @@
         "issue_id": 127662351,
         "issue_number": 5,
         "issue_title": "Design Template",
-        "issue_url": "https://github.com/oh-my-github/yo-omg-basic/issues/5"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/5"
       },
       "event_id": "3547802624",
       "type": "IssuesEvent",
       "created_at": "2016-01-20T11:27:13Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -3404,13 +3404,13 @@
         "issue_id": 127469341,
         "issue_number": 14,
         "issue_title": "Adopt lowdb in place of typescript classes",
-        "comment_url": "https://github.com/oh-my-github/generator/issues/14#issuecomment-172892229"
+        "comment_url": "https://github.com/oh-my-github/oh-my-github/issues/14#issuecomment-172892229"
       },
       "event_id": "3543908362",
       "type": "IssueCommentEvent",
       "created_at": "2016-01-19T15:42:35Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -3418,13 +3418,13 @@
         "issue_id": 127469341,
         "issue_number": 14,
         "issue_title": "Adopt lowdb instead of typescript class",
-        "issue_url": "https://github.com/oh-my-github/generator/issues/14"
+        "issue_url": "https://github.com/oh-my-github/oh-my-github/issues/14"
       },
       "event_id": "3543810757",
       "type": "IssuesEvent",
       "created_at": "2016-01-19T15:21:41Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -3442,7 +3442,7 @@
       "type": "PushEvent",
       "created_at": "2016-01-19T14:47:43Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -3450,13 +3450,13 @@
         "issue_id": 127448095,
         "issue_number": 13,
         "issue_title": "Use npm script instead of gulp task",
-        "issue_url": "https://github.com/oh-my-github/generator/issues/13"
+        "issue_url": "https://github.com/oh-my-github/oh-my-github/issues/13"
       },
       "event_id": "3543375293",
       "type": "IssuesEvent",
       "created_at": "2016-01-19T13:36:57Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -3464,13 +3464,13 @@
         "issue_id": 127427007,
         "issue_number": 12,
         "issue_title": "Add `dist` dir which contains npm published files",
-        "issue_url": "https://github.com/oh-my-github/generator/issues/12"
+        "issue_url": "https://github.com/oh-my-github/oh-my-github/issues/12"
       },
       "event_id": "3543366125",
       "type": "IssuesEvent",
       "created_at": "2016-01-19T13:34:32Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -3488,7 +3488,7 @@
       "type": "PushEvent",
       "created_at": "2016-01-19T13:34:29Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -3506,13 +3506,13 @@
         "issue_id": 127427007,
         "issue_number": 12,
         "issue_title": "Add `dist` dir which contains npm published files",
-        "issue_url": "https://github.com/oh-my-github/generator/issues/12"
+        "issue_url": "https://github.com/oh-my-github/oh-my-github/issues/12"
       },
       "event_id": "3542990752",
       "type": "IssuesEvent",
       "created_at": "2016-01-19T11:41:12Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -3520,13 +3520,13 @@
         "issue_id": 126876277,
         "issue_number": 10,
         "issue_title": "Move tests to '__spec__' dir",
-        "issue_url": "https://github.com/oh-my-github/generator/issues/10"
+        "issue_url": "https://github.com/oh-my-github/oh-my-github/issues/10"
       },
       "event_id": "3542981334",
       "type": "IssuesEvent",
       "created_at": "2016-01-19T11:38:16Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -3534,13 +3534,13 @@
         "issue_id": 126876277,
         "issue_number": 10,
         "issue_title": "Move tests to '__spec__' dir",
-        "comment_url": "https://github.com/oh-my-github/generator/issues/10#issuecomment-172825067"
+        "comment_url": "https://github.com/oh-my-github/oh-my-github/issues/10#issuecomment-172825067"
       },
       "event_id": "3542981331",
       "type": "IssueCommentEvent",
       "created_at": "2016-01-19T11:38:16Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -3560,7 +3560,7 @@
       "type": "PushEvent",
       "created_at": "2016-01-19T11:38:15Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/generator"
+      "repo": "oh-my-github/oh-my-github"
     },
     {
       "payload": {
@@ -3568,13 +3568,13 @@
         "issue_id": 127252682,
         "issue_number": 4,
         "issue_title": "Add `dist` command to app-template",
-        "comment_url": "https://github.com/oh-my-github/yo-omg-basic/issues/4#issuecomment-172695056"
+        "comment_url": "https://github.com/oh-my-github/viewer/issues/4#issuecomment-172695056"
       },
       "event_id": "3541427573",
       "type": "IssueCommentEvent",
       "created_at": "2016-01-19T00:56:54Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -3582,13 +3582,13 @@
         "issue_id": 127252682,
         "issue_number": 4,
         "issue_title": "Add `dist` command to app-template",
-        "issue_url": "https://github.com/oh-my-github/yo-omg-basic/issues/4"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/4"
       },
       "event_id": "3541426450",
       "type": "IssuesEvent",
       "created_at": "2016-01-19T00:56:21Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -3607,7 +3607,7 @@
       "type": "PushEvent",
       "created_at": "2016-01-19T00:50:08Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -3656,7 +3656,7 @@
       "type": "PushEvent",
       "created_at": "2016-01-18T15:47:49Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -3664,13 +3664,13 @@
         "issue_id": 127252682,
         "issue_number": 4,
         "issue_title": "Add `dist` command to app-template",
-        "issue_url": "https://github.com/oh-my-github/yo-omg-basic/issues/4"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/4"
       },
       "event_id": "3539658090",
       "type": "IssuesEvent",
       "created_at": "2016-01-18T15:43:54Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -3688,7 +3688,7 @@
       "type": "PushEvent",
       "created_at": "2016-01-18T15:41:33Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -3746,13 +3746,13 @@
         "issue_id": 127221733,
         "issue_number": 3,
         "issue_title": "Adopt es6-karma-jasmine-webpack-boilerplate",
-        "issue_url": "https://github.com/oh-my-github/yo-omg-basic/issues/3"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/3"
       },
       "event_id": "3539191481",
       "type": "IssuesEvent",
       "created_at": "2016-01-18T13:45:14Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -3760,13 +3760,13 @@
         "issue_id": 127221733,
         "issue_number": 3,
         "issue_title": "Adopt es6-karma-jasmine-webpack-boilerplate",
-        "comment_url": "https://github.com/oh-my-github/yo-omg-basic/issues/3#issuecomment-172530339"
+        "comment_url": "https://github.com/oh-my-github/viewer/issues/3#issuecomment-172530339"
       },
       "event_id": "3539191476",
       "type": "IssueCommentEvent",
       "created_at": "2016-01-18T13:45:14Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -3834,13 +3834,13 @@
         "issue_id": 127221733,
         "issue_number": 3,
         "issue_title": "Adopt es6-karma-jasmine-webpack-boilerplate",
-        "issue_url": "https://github.com/oh-my-github/yo-omg-basic/issues/3"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/3"
       },
       "event_id": "3539037900",
       "type": "IssuesEvent",
       "created_at": "2016-01-18T12:58:19Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -3848,13 +3848,13 @@
         "issue_id": 127089000,
         "issue_number": 2,
         "issue_title": "Convert gulpfile.js to npm script",
-        "issue_url": "https://github.com/oh-my-github/yo-omg-basic/issues/2"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/2"
       },
       "event_id": "3539034048",
       "type": "IssuesEvent",
       "created_at": "2016-01-18T12:57:04Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -3862,13 +3862,13 @@
         "issue_id": 127089000,
         "issue_number": 2,
         "issue_title": "Convert gulpfile.js to npm script",
-        "comment_url": "https://github.com/oh-my-github/yo-omg-basic/issues/2#issuecomment-172520999"
+        "comment_url": "https://github.com/oh-my-github/viewer/issues/2#issuecomment-172520999"
       },
       "event_id": "3539034045",
       "type": "IssueCommentEvent",
       "created_at": "2016-01-18T12:57:04Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
     },
     {
       "payload": {
@@ -3876,13 +3876,140 @@
         "issue_id": 127088375,
         "issue_number": 1,
         "issue_title": "Integrate with react-static-boilerplate",
-        "issue_url": "https://github.com/oh-my-github/yo-omg-basic/issues/1"
+        "issue_url": "https://github.com/oh-my-github/viewer/issues/1"
       },
       "event_id": "3539033315",
       "type": "IssuesEvent",
       "created_at": "2016-01-18T12:56:50Z",
       "actor": "1ambda",
-      "repo": "oh-my-github/yo-omg-basic"
+      "repo": "oh-my-github/viewer"
+    },
+    {
+      "payload": {
+        "push_id": 100000007,
+        "size": 1,
+        "distinct_size": 1,
+        "ref": "refs/heads/master",
+        "head": "e41ac8e836cd47228187aeb5d1ca3f5a636563d0",
+        "before": "0e4848490e8f2e345d6a2a5444d92d7abcbd72a5",
+        "commit_shas": [
+          "e41ac8e836cd47228187aeb5d1ca3f5a636563d0"
+        ]
+      },
+      "event_id": "0000000007",
+      "type": "PushEvent",
+      "created_at": "2015-10-30T00:00:00Z",
+      "actor": "1ambda",
+      "repo": "weichx/cerialize"
+    },
+    {
+      "payload": {
+        "push_id": 100000006,
+        "size": 1,
+        "distinct_size": 1,
+        "ref": "refs/heads/master",
+        "head": "0e4848490e8f2e345d6a2a5444d92d7abcbd72a5",
+        "before": "f743f8b9b93984357f1f8e375974044340245617",
+        "commit_shas": [
+          "0e4848490e8f2e345d6a2a5444d92d7abcbd72a5"
+        ]
+      },
+      "event_id": "0000000006",
+      "type": "PushEvent",
+      "created_at": "2015-10-27T00:00:00Z",
+      "actor": "1ambda",
+      "repo": "weichx/cerialize"
+    },
+    {
+      "payload": {
+        "push_id": 100000005,
+        "size": 2,
+        "distinct_size": 2,
+        "ref": "refs/heads/master",
+        "head": "f743f8b9b93984357f1f8e375974044340245617",
+        "before": "f743f8b9b93984357f1f8e375974044340245617",
+        "commit_shas": [
+          "f743f8b9b93984357f1f8e375974044340245617",
+          "b6ef3380ab6ac34906b8684c29a35b25eda0b8d0"
+        ]
+      },
+      "event_id": "0000000005",
+      "type": "PushEvent",
+      "created_at": "2015-10-26T00:00:00Z",
+      "actor": "1ambda",
+      "repo": "weichx/cerialize"
+    },
+    {
+      "payload": {
+        "push_id": 100000004,
+        "size": 1,
+        "distinct_size": 1,
+        "ref": "refs/heads/master",
+        "head": "49e33fc19e87303f58db9c4b0fe0d47dd7bdad71",
+        "before": "234097ce1f8601eab8ab47e6610d56aea59acce4",
+        "commit_shas": [
+          "49e33fc19e87303f58db9c4b0fe0d47dd7bdad71"
+        ]
+      },
+      "event_id": "0000000004",
+      "type": "PushEvent",
+      "created_at": "2015-10-09T00:00:00Z",
+      "actor": "1ambda",
+      "repo": "julien-truffaut/Monocle"
+    },
+    {
+      "payload": {
+        "push_id": 100000003,
+        "size": 1,
+        "distinct_size": 1,
+        "ref": "refs/heads/master",
+        "head": "234097ce1f8601eab8ab47e6610d56aea59acce4",
+        "before": "3f6ca2a302688511ebb1df84bfa681cd7e392f7b",
+        "commit_shas": [
+          "234097ce1f8601eab8ab47e6610d56aea59acce4"
+        ]
+      },
+      "event_id": "0000000003",
+      "type": "PushEvent",
+      "created_at": "2015-10-09T00:00:00Z",
+      "actor": "1ambda",
+      "repo": "julien-truffaut/Monocle"
+    },
+    {
+      "payload": {
+        "push_id": 100000002,
+        "size": 1,
+        "distinct_size": 1,
+        "ref": "refs/heads/master",
+        "head": "3f6ca2a302688511ebb1df84bfa681cd7e392f7b",
+        "before": "3f6ca2a302688511ebb1df84bfa681cd7e392f7b",
+        "commit_shas": [
+          "3f6ca2a302688511ebb1df84bfa681cd7e392f7b"
+        ]
+      },
+      "event_id": "0000000002",
+      "type": "PushEvent",
+      "created_at": "2015-10-06T00:00:00Z",
+      "actor": "1ambda",
+      "repo": "julien-truffaut/Monocle"
+    },
+    {
+      "payload": {
+        "push_id": 100000001,
+        "size": 1,
+        "distinct_size": 1,
+        "ref": "refs/heads/master",
+        "head": "ab59b845f2245134202862451f703a95f1375dc6",
+        "before": "ab59b845f2245134202862451f703a95f1375dc6",
+        "commit_shas": [
+          "ab59b845f2245134202862451f703a95f1375dc6"
+        ]
+      },
+      "event_id": "0000000001",
+      "type": "PushEvent",
+      "created_at": "2015-09-17T00:00:00Z",
+      "actor": "1ambda",
+      "repo": "akka/akka"
     }
   ],
   "repositories": [

@@ -24,10 +24,11 @@ class App extends React.Component {
         <div className={css.content}>
           <Header user={user} repositories={repositories} />
           <MainTabs
-                    actions={actions}
-                    languages={languages}
-                    repositories={repositories}
-                    activities={activities} />
+            user={user}
+            actions={actions}
+            languages={languages}
+            repositories={repositories}
+            activities={activities} />
         </div>
         <Footer user={user} meta={meta} />
       </div>

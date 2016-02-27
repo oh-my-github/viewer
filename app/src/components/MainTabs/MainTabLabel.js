@@ -1,9 +1,10 @@
 import React, { PropTypes, Component, } from 'react'
 import FontIcon from 'material-ui/lib/font-icon'
 
+import ContributionTabLabelIcon from 'material-ui/lib/svg-icons/action/code'
+import LanguageTabLabelIcon from 'material-ui/lib/svg-icons/action/donut-large'
+import RepositoryTabLabelIcon from 'material-ui/lib/svg-icons/av/equalizer'
 import ActivityTabLabelIcon from 'material-ui/lib/svg-icons/action/question-answer'
-import LanguageTabLabelIcon from 'material-ui/lib/svg-icons/action/code'
-import RepositoryTabLabelIcon from 'material-ui/lib/svg-icons/social/poll'
 
 import { MainColors, SAME, TabColors, } from '../../theme'
 
@@ -24,6 +25,13 @@ const styles = {
   },
 }
 
+export const TabLabelText = {
+  CONTRIBUTION: 'CONTRIB',
+  LANGUAGE: 'LANGUAGE',
+  REPOSITORY: 'REPOSITORY',
+  ACTIVITY: 'ACTIVITY',
+}
+
 export default class MainTabLabel extends Component {
   static createIcon(label, isActive) {
     const iconStyle = Object.assign({}, styles.icon, {
@@ -31,8 +39,9 @@ export default class MainTabLabel extends Component {
     })
 
     const icon =
-      (label === 'LANGUAGE') ?  (<LanguageTabLabelIcon style={iconStyle} />) :
-        (label === 'ACTIVITY') ? (<ActivityTabLabelIcon style={iconStyle} />) :
+      (label === TabLabelText.CONTRIBUTION) ?  (<ContributionTabLabelIcon style={iconStyle} />) :
+      (label === TabLabelText.LANGUAGE) ?  (<LanguageTabLabelIcon style={iconStyle} />) :
+        (label === TabLabelText.ACTIVITY) ? (<ActivityTabLabelIcon style={iconStyle} />) :
           (<RepositoryTabLabelIcon style={iconStyle} />)
 
     return icon

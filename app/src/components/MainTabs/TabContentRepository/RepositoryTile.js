@@ -8,7 +8,7 @@ import ReactTooltip from 'react-tooltip'
 
 import moment from 'moment'
 
-import { MainColors, BatteryColors, SameColor, } from '../../../theme'
+import { MainColors, BatteryIconTypes, BatteryColors, SameColor, } from '../../../theme'
 
 const HEIGHT_TILE = 225
 const HEIGHT_SECTION_REPO = 130
@@ -17,14 +17,6 @@ const HEIGHT_SECTION_REPO_DESC = HEIGHT_SECTION_REPO -HEIGHT_SECTION_REPO_NAME
 const HEIGHT_SECTION_LANG = 35
 const HEIGHT_SECTION_STAT = HEIGHT_TILE - HEIGHT_SECTION_REPO - HEIGHT_SECTION_LANG
 const MAX_DESCRIPTION_TEXT_LENGTH = 85
-
-const BATTERY_ICON_TYPES = [
-  'fa-battery-0',
-  'fa-battery-1',
-  'fa-battery-2',
-  'fa-battery-3',
-  'fa-battery-4',
-]
 
 const styles = {
   paperContainer: {
@@ -137,7 +129,7 @@ class RepositoryTile extends Component {
         iconStyle={{color: BatteryColors[batteryIconTypeIndex], fontSize: 12,}}
                   style={{paddingLeft: 7, paddingTop: '1.5px', cursor: 'default', }}
                   linkButton>
-        <FontIcon className={`fa ${BATTERY_ICON_TYPES[batteryIconTypeIndex]}`} />
+        <FontIcon className={`fa ${BatteryIconTypes[batteryIconTypeIndex]}`} />
       </IconButton>
     )
   }

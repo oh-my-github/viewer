@@ -30,9 +30,7 @@
     "yeoman-generator"
   ],
   "license": "Apache-2.0",
-  "dependencies": {
-    "redux": "^3.3.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^6.3.1",
     "babel": "5.8.23",
@@ -44,8 +42,6 @@
     "browser-sync": "2.11.1",
     "chai": "3.4.1",
     "cheerio": "0.19.0",
-    "color-js": "^1.0.3",
-    "colors": "1.1.2",
     "cross-env": "1.0.7",
     "css-loader": "0.23.1",
     "eslint": "1.10.3",

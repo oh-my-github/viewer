@@ -23,7 +23,7 @@ class SectionOtherLangs extends Component {
   }
 
   handleFilterChange(event) {
-    this.setState({filterKeyword: event.target.value,})
+    this.setState({filterKeyword: event.target.value.trim(),})
   }
 
   renderTitle(langs) {

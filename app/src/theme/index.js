@@ -5,6 +5,7 @@ export const MainColors = [
   '#F8F8F8', /** grey lighten-4 */
   '#FFFFFF', /** white, RepositoryTile Title Section */
   '#757575', /** grey, RepositoryTile RepoSection Icon, Desc */
+  '#fffde7', /** yellow light-5, strip columns in Contrib Table */
 ]
 
 export const BarChartColors = [
@@ -15,12 +16,20 @@ export const BarChartColors = [
   '#E3EACF', /** top 5 */
 ]
 
+export const BatteryIconTypes = [
+  'fa-battery-0',
+  'fa-battery-1',
+  'fa-battery-2',
+  'fa-battery-3',
+  'fa-battery-4',
+]
+
 export const BatteryColors = [
-  '#ef5350', /** battery 0 */
-  '#757575', /** battery 1 */
+  '#e57373', /** battery 0 */
+  '#e57373', /** battery 1 */
   '#ffa000', /** battery 2 */
-  '#66bb6a', /** battery 3 */
-  '#039be5', /** battery 4 */
+  '#c0ca33', /** battery 3 */
+  '#66bb6a', /** battery 4 */
 ]
 
 export const ActivityBadgeColors = {
