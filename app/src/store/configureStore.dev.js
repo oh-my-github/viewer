@@ -4,7 +4,7 @@ import thunk from 'redux-thunk'
 
 import rootReducer from '../reducers'
 
-const middlewares = [promise]
+const middlewares = [promise,]
 
 export default function configureStore(initialState) {
   let store

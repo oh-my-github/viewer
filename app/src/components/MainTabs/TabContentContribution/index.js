@@ -1,12 +1,5 @@
 import React from 'react'
 
-import Table from 'material-ui/lib/table/table'
-import TableHeaderColumn from 'material-ui/lib/table/table-header-column'
-import TableRow from 'material-ui/lib/table/table-row'
-import TableHeader from 'material-ui/lib/table/table-header'
-import TableRowColumn from 'material-ui/lib/table/table-row-column'
-import TableBody from 'material-ui/lib/table/table-body'
-
 import List from 'material-ui/lib/lists/list'
 import ListItem from 'material-ui/lib/lists/list-item'
 import Divider from 'material-ui/lib/divider'
@@ -17,6 +10,7 @@ import IconButton from 'material-ui/lib/icon-button'
 
 import moment from 'moment'
 
+import Filter from '../../Filter'
 import { MainColors, SameColor, BatteryIconTypes, BatteryColors, } from '../../../theme'
 import { sortRecentItemByDate, } from '../../../util'
 import Contribution from './Contribution'
@@ -37,7 +31,7 @@ const styles = {
   },
 
   list: {
-    container: { marginTop: 30, marginBottom: 30, },
+    container: { marginTop: 15, marginBottom: 30, },
     itemLeftIcon: {
       paddingLeft: 15,
       paddingTop: 2,
@@ -87,40 +81,50 @@ export default class TabContentContribution extends React.Component {
 
     /** 2. unique by recent repo (e.g `apache/kafka`) */
     let uniqActivitiesByRepo = new Map()
-    sorted.map(activity => {
-      /** already sorted */
-      if (uniqActivitiesByRepo.get(activity.repo) === void 0)
-        uniqActivitiesByRepo.set(activity.repo, activity)
-    })
+    sorted
+      .filter(activity => activity.type === 'PushEvent')
+      .filter(activity => {
+        const [ owner, ] = activity.repo.split('/')
+        return (user.login != owner)
+      })
+      .map(activity => {
+        /** already sorted */
+        if (uniqActivitiesByRepo.get(activity.repo) === void 0)
+          uniqActivitiesByRepo.set(activity.repo, activity)
+      })
 
     let filtered = Array.from(uniqActivitiesByRepo.values())
 
-    const contribs = TabContentContribution.activitiesToContributions(filtered, user.login)
+    // TODO filterKeyword
+
+    const contribs = TabContentContribution.activitiesToContributions(filtered)
 
     this.setState({contributions: contribs, login: user.login, })
   }
 
+  handleFilterChange(event) {
+    const filterKeyword = event.target.value.trim().toLowerCase()
+    this.setState({ filterKeyword: filterKeyword, })
+  }
+
   /** convert `PushEvent` to contribution except commits to his own repos */
-  static activitiesToContributions(activities, login /** login id */) {
+  static activitiesToContributions(activities) {
     if (activities === void 0) return []
 
-    return activities.
-      filter(activity => {
-        const [ owner, ] = activity.repo.split('/')
+    return activities.map(activity => {
+      const [ owner, repository, ] = activity.repo.split('/') /** e.g 'akka/akka */
+      const [ refs, heads, branch, ] = activity.payload.ref.split('/') /** e.g 'refs/heads/master */
 
-        return (activity.type === 'PushEvent' && login != owner)
-      })
-      .map(activity => {
-        const [ owner, repository, ] = activity.repo.split('/') /** e.g 'akka/akka */
-        const [ refs, heads, branch, ] = activity.payload.ref.split('/') /** e.g 'refs/heads/master */
-        return new Contribution(
-          activity.created_at,
-          owner,
-          repository,
-          branch,
-          activity.payload.head)
-      })
+      return new Contribution(
+        activity.created_at,
+        owner,
+        repository,
+        branch,
+        activity.payload.head)
+    })
   }
+
+  // CONTRIB 탭 filter 구현하기
 
   static renderTitle() {
     return (
@@ -171,7 +175,7 @@ export default class TabContentContribution extends React.Component {
         primaryText={<a href={masterBranchCommitsUrl}>{fullRepoName}</a>}
         secondaryText={secondaryText}
         leftIcon={<FontIcon className='fa fa-github' style={styles.list.itemLeftIcon} />}
-        primaryTogglesNestedList={true}
+        primaryTogglesNestedList
         nestedItems={[]}
         />
     )
@@ -183,7 +187,7 @@ export default class TabContentContribution extends React.Component {
 
     contribs.map((contrib, index) => {
       list.push(TabContentContribution.renderContribItem(index, contrib, login))
-      list.push(<Divider key={`divider_${index}`} inset={true} />)
+      list.push(<Divider key={`divider_${index}`} inset />)
     })
 
     return(
@@ -196,12 +200,18 @@ export default class TabContentContribution extends React.Component {
   // TODO: filter, sorter, paginator
   render() {
     const { user, } = this.props
-    const { contributions, } = this.state
+    const { contributions, filterKeyword, } = this.state
+
+    const filtered = contributions.filter(contrib  => {
+      const repo = `${contrib.owner}/${contrib.repository}`.toLowerCase().trim()
+      return (repo.includes(filterKeyword))
+    })
 
     return (
       <div className='container'>
         {TabContentContribution.renderTitle()}
-        {TabContentContribution.renderContribList(contributions, user.login)}
+        <Filter handler={this.handleFilterChange.bind(this)} floatingLabel='INSERT FILTER' />
+        {TabContentContribution.renderContribList(filtered, user.login)}
       </div>
     )
   }

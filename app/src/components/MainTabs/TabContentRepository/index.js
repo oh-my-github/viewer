@@ -68,13 +68,11 @@ export default class TabContentRepository extends React.Component {
     this.setState({sortComparator: comparator, })
   }
 
-  renderTitle() {
-    const { repositories, } = this.state
-
+  renderTitle(repositories) {
     const titleText = (repositories === void 0 || repositories.length === 0) ? 'No Repository' :
       (repositories.length === 1) ? '1 Repository' : `${repositories.length} Repositories`
 
-    return (<h2 style={styles.title}>{titleText}</h2>)
+    return (<div style={styles.title}>{titleText}</div>)
   }
 
   renderPageItems(repos) {
@@ -133,9 +131,10 @@ export default class TabContentRepository extends React.Component {
 
     return (
       <div className='container'>
-        {this.renderTitle()}
+        {this.renderTitle(sorted)}
         <Filter handler={this.handleFilterChange.bind(this)} floatingLabel='INSERT FILTER' />
         <Sorter callback={this.sortRepository.bind(this)} sortingStrategies={SORTING_STRATEGIES} />
+        <br/>
 
         <div className='row'>
           {this.renderPageItems(sorted)}

@@ -24,7 +24,7 @@ const styles = {
   },
 }
 
-const lazyLoadOffsetVertical = 2000
+const lazyLoadOffsetVertical = 3000
 
 export default class TabContentActivity extends React.Component {
 

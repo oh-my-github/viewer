@@ -17,7 +17,9 @@ export default function profileReducer(state = initialState, action = null) {
   if (error) return state
 
   /** recently occurred events first */
-  const sorted = payload.activities.slice().sort(sortRecentItemByDate)
+  const sorted = payload.activities.slice().sort((a1, a2) => {
+    return sortRecentItemByDate(a1.created_at, a2.created_at)
+  })
 
   /** filter out useless WatchEvents */
   const filteredActivities = sorted.filter(activity => (activity.type != 'WatchEvent'))
