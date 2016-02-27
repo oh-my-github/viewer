@@ -53,7 +53,7 @@ export default class MainTabs extends React.Component {
     super(props)
 
     this.state = {
-      selectedTab: TAB_INDEX_CONTRIBUTION,
+      selectedTab: 0,
     }
   }
 

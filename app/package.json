@@ -13,7 +13,7 @@
     "test:watch": "npm run test -- --watch"
   },
   "name": "oh-my-github-viewer-default",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "1ambda",
   "description": "",
   "homepage": "https://github.com/oh-my-github/viewer#readme",
