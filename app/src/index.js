@@ -22,7 +22,3 @@ ReactDOM.render(
   </Provider>, document.getElementById('app')
 )
 
-if (process.env.NODE_ENV !== 'production') {
-  const showDevTools = require('./showDevTools')
-  //showDevTools(store)
-}

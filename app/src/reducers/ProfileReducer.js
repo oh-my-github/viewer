@@ -10,7 +10,7 @@ const initialState = {
   languages: [],
 }
 
-export default function profileReducer(state = initialState, action) {
+export default function profileReducer(state = initialState, action = null) {
   const { type, payload, error, } = action
 
   if (ActionTypes.FETCH_PROFILE !== type) return state
@@ -18,7 +18,7 @@ export default function profileReducer(state = initialState, action) {
   if (error) return state
 
   /** recently occurred events first */
-  const sorted = payload.activities.slice().sort((act1, act2) => { /** latest */
+  const sorted = payload.activities.slice().sort((act1, act2) => {
     return moment(act2.created_at).valueOf() - moment(act1.created_at).valueOf()
   })
 

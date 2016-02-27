@@ -47,39 +47,15 @@ export default class TabContentRepository extends Component {
     super(props)
 
     this.state = {
-      /** filtered repositories */
-      repositories: [],
-
-      /** color per language */
-      languageToColor: {},
-
       /** used to sort */
       sortComparator: SORTING_STRATEGIES[0].comparator,
 
+      /** used to filter */
+      filterKeyword: '',
+
       /** used to paginate */
-      totalPageCount: 0,
       currentItemOffset: 0,
     }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const { repositories, } = nextProps
-    const totalPageCount = Math.ceil( repositories.length / CONST_ITEM_COUNT_PER_PAGE)
-
-    const sorted = repositories.slice().sort(this.state.sortComparator)
-
-    /** color per language */
-    const languageToColor = {}
-    const languages = Array.from(new Set(sorted.map(repo => repo.language)))
-    const colors = RandomColor({
-      luminosity: 'dark', format: 'rgba', count: languages.length,
-    }).map(rgbString => { return Color(rgbString).setAlpha(0.60).toString() })
-
-    for (let index = 0; index < languages.length; index++) {
-      languageToColor[languages[index]] = colors[index]
-    }
-
-    this.setState({totalPageCount: totalPageCount, repositories: sorted, languageToColor: languageToColor, })
   }
 
   handlePageChange(data) {
@@ -89,28 +65,11 @@ export default class TabContentRepository extends Component {
 
   handleFilterChange(event) {
     const filterKeyword = event.target.value.trim().toLowerCase()
-    const allRepos = this.props.repositories
-    const { sortComparator, } = this.state
-
-    const filtered = allRepos
-      .filter(repo => { /** return true if keyword is included in name or lang of repo */
-        if (repo.name.toLowerCase().includes(filterKeyword)) return true
-
-        const lang = repo.language
-        if (lang && lang.toLowerCase().includes(filterKeyword)) return true
-
-        return false
-      })
-
-    const sorted = filtered.sort(sortComparator)
-
-    const totalPageCount = Math.ceil( sorted.length / CONST_ITEM_COUNT_PER_PAGE)
-    this.setState({repositories: sorted, totalPageCount: totalPageCount, currentItemOffset: 0,})
+    this.setState({filterKeyword: filterKeyword, })
   }
 
   sortRepository(comparator) {
-    const sorted = this.state.repositories.slice().sort(comparator)
-    this.setState({repositories: sorted, sortComparator: comparator, })
+    this.setState({sortComparator: comparator, })
   }
 
   renderTitle() {
@@ -122,14 +81,15 @@ export default class TabContentRepository extends Component {
     return (<h2 style={styles.title}>{titleText}</h2>)
   }
 
-  renderPageItems() {
-    const { languageToColor, repositories, currentItemOffset, } = this.state
-    const sliced = repositories.slice(currentItemOffset, currentItemOffset + CONST_ITEM_COUNT_PER_PAGE)
+  renderPageItems(repos) {
+
+    const { currentItemOffset, } = this.state
+
+    const sliced = repos.slice(currentItemOffset, currentItemOffset + CONST_ITEM_COUNT_PER_PAGE)
 
     const items = sliced.map((repo, index) => {
       return (<RepositoryTile key={index}
-                              repository={repo}
-                              languageColor={languageToColor[repo.language]} />
+                              repository={repo} />
       )
     })
 
@@ -137,8 +97,8 @@ export default class TabContentRepository extends Component {
   }
 
   /** since react-paginate doesn't support es6 class, we can't extract it as an independent class */
-  renderPaginator() {
-    const { totalPageCount, currentItemOffset, } = this.state
+  renderPaginator(totalPageCount) {
+    const { currentItemOffset, } = this.state
     const currentPage = Math.ceil(currentItemOffset/ CONST_ITEM_COUNT_PER_PAGE)
 
     return(
@@ -157,6 +117,24 @@ export default class TabContentRepository extends Component {
   }
 
   render() {
+
+    const { repositories, } = this.props
+    const { sortComparator, filterKeyword, } = this.state
+
+    const filtered = repositories
+      .filter(repo => { /** return true if keyword is included in name or lang of repo */
+        if (repo.name.toLowerCase().includes(filterKeyword)) return true
+
+        const lang = repo.language
+        if (lang && lang.toLowerCase().includes(filterKeyword)) return true
+
+        return false
+      })
+
+    const sorted = filtered.slice().sort(sortComparator)
+
+    const totalPageCount = Math.ceil(sorted.length / CONST_ITEM_COUNT_PER_PAGE)
+
     return (
       <div className='container'>
         {this.renderTitle()}
@@ -164,10 +142,10 @@ export default class TabContentRepository extends Component {
         <Sorter callback={this.sortRepository.bind(this)} sortingStrategies={SORTING_STRATEGIES} />
 
         <div className='row'>
-          {this.renderPageItems()}
+          {this.renderPageItems(sorted)}
         </div>
         <div className='row center'>
-          {this.renderPaginator()}
+          {this.renderPaginator(totalPageCount)}
         </div>
       </div>
     )

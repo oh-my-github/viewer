@@ -8,7 +8,7 @@
     "clean:dist": "node tools/clean.js",
     "build:html": "node tools/buildHtml.js",
     "prebuild": "npm run clean:dist && npm run build:html",
-    "build": "npm run test && node tools/build.js",
+    "build": "npm run test && node tools/build.js && npm run open:dist",
     "test": "cross-env NODE_ENV=test mocha --reporter progress --compilers js:babel/register --recursive \"./src/**/*.spec.js\"",
     "test:watch": "npm run test -- --watch"
   },
@@ -30,7 +30,9 @@
     "yeoman-generator"
   ],
   "license": "Apache-2.0",
-  "dependencies": {},
+  "dependencies": {
+    "redux": "^3.3.1"
+  },
   "devDependencies": {
     "autoprefixer": "^6.3.1",
     "babel": "5.8.23",
@@ -73,11 +75,8 @@
     "react-transform-catch-errors": "1.0.1",
     "react-transform-hmr": "1.0.1",
     "redbox-react": "1.2.0",
-    "redux": "3.0.5",
+    "redux": "3.3.1",
     "redux-actions": "^0.9.1",
-    "redux-devtools": "^3.0.1",
-    "redux-devtools-log-monitor": "^1.0.2",
-    "redux-logger": "^2.4.0",
     "redux-promise": "^0.5.1",
     "redux-thunk": "^1.0.3",
     "rimraf": "^2.5.0",
