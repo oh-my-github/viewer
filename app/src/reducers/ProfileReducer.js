@@ -4,7 +4,7 @@ import * as ActionTypes from '../actions/ActionTypes'
 
 const initialState = {
   user: {},
-  _$meta: {},
+  meta: {},
   activities: [],
   repositories: [],
   languages: [],
@@ -27,7 +27,7 @@ export default function profileReducer(state = initialState, action = null) {
 
   return Object.assign({}, state, {
     user: payload.user,
-    _$meta: payload._$meta,
+    meta: payload._$meta,
     activities: filteredActivities,
     repositories: payload.repositories,
     languages: payload.languages,
