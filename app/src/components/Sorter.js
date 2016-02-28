@@ -4,14 +4,6 @@ import MenuItem from 'material-ui/lib/menus/menu-item'
 
 import moment from 'moment'
 
-export function compareByRecentDate(date1, date2) { /** latest */
-  return moment(date2).valueOf() - moment(date1).valueOf()
-}
-
-export function compareByLargeNumber(number1, number2) { /** largest */
-  return number2 - number1
-}
-
 const EMPTY_COMPARATOR = (a, b) => { return 0 }
 
 export default class Sorter extends Component {
@@ -40,11 +32,12 @@ export default class Sorter extends Component {
   }
 
   handleSorterChange(event, index) {
-    const { sortingStrategies, } = this.props
+    const { sortingStrategies, handler, } = this.props
     const sorter = sortingStrategies[index]
 
     this.setState({strategy: sorter,})
-    this.props.callback(sorter.comparator)
+
+    if (handler) handler(sorter.comparator)
   }
 
   render() {
@@ -66,6 +59,6 @@ export default class Sorter extends Component {
 }
 
 Sorter.propTypes = {
-  callback: PropTypes.func.isRequired,
+  handler: PropTypes.func.isRequired,
   sortingStrategies: PropTypes.array.isRequired,
 }

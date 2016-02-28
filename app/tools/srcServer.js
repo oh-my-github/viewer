@@ -32,8 +32,6 @@ try {
   ROUTES = { '/oh-my-github': DIR_RESOURCE }
 }
 
-console.log(fsStat)
-
 browserSync({
   server: {
     baseDir: BASE_DIR,

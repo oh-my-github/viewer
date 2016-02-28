@@ -2,6 +2,8 @@
 
 Default Viewer for [oh-my-github](https://github.com/oh-my-github/oh-my-github)
 
+[Demo](http://1ambda.github.io/oh-my-github)
+
 ## Usage
 
 See [oh-my-github](https://github.com/oh-my-github/oh-my-github)
@@ -70,4 +72,4 @@ $ npm publish
 
 ## License
 
-MIT
+Apache 2.0

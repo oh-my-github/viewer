@@ -10,10 +10,11 @@ import IconButton from 'material-ui/lib/icon-button'
 
 import moment from 'moment'
 
-import Filter from '../../Filter'
+import Contribution from './Contribution'
 import { MainColors, SameColor, BatteryIconTypes, BatteryColors, } from '../../../theme'
 import { sortRecentItemByDate, } from '../../../util'
-import Contribution from './Contribution'
+import Paginator from '../../Paginator'
+import Filter from '../../Filter'
 
 import css from './index.css'
 
@@ -27,30 +28,18 @@ const styles = {
   table: {
     container: { marginTop: 20, },
     headerColumn: { paddingLeft: 0, },
-    rowColumn: { borderRadius: 0, verticalAlign: 'baseline', },
+    rowColumn: { borderRadius: 0, },
   },
 
   list: {
     container: { marginTop: 15, marginBottom: 30, },
-    itemLeftIcon: {
-      paddingLeft: 15,
-      paddingTop: 2,
-    },
+    itemLeftIcon: { paddingLeft: 15, paddingTop: 2, },
 
-    batteryIcon: {
-      /** do not remove paddingTop to preserve middle position */
-      paddingLeft: 2, paddingTop: 0,
-      width: 25,
-      cursor: 'default',
+    batteryIcon: { /** do not remove paddingTop to preserve middle position */
+      paddingLeft: 2, paddingTop: 0, width: 25, cursor: 'default',
     },
-
-    batteryIconContainer: {
-      float: 'left',
-    },
-
-    since: {
-      float: 'left',
-    },
+    batteryIconContainer: { float: 'left', },
+    since: { float: 'left', },
   },
 }
 
@@ -60,14 +49,18 @@ const TABLE_COLUMN_LAYOUT = {
   ColumnRecentCommit: 'col s4 m4',
 }
 
+const ITEM_COUNT_PER_PAGE = 10
+const INITIAL_PAGE_OFFSET = 0
+
 export default class TabContentContribution extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      filterKeyword: '', /** used to filter */
-      login: '',         /** user.login */
-      contributions: [], /** caching contribs to avoid sorting, filtering every time */
+      filterKeyword: '',                      /** used to filter */
+      login: '',                              /** user.login */
+      contributions: [],                      /** caching contribs */
+      currentPageOffset: INITIAL_PAGE_OFFSET, /** used to paginate */
     }
   }
 
@@ -99,12 +92,19 @@ export default class TabContentContribution extends React.Component {
 
     const contribs = TabContentContribution.activitiesToContributions(filtered)
 
-    this.setState({contributions: contribs, login: user.login, })
+    this.setState({
+      contributions: contribs,
+      login: user.login,
+    })
   }
 
   handleFilterChange(event) {
     const filterKeyword = event.target.value.trim().toLowerCase()
-    this.setState({ filterKeyword: filterKeyword, })
+    this.setState({ filterKeyword: filterKeyword, currentPageOffset: INITIAL_PAGE_OFFSET, })
+  }
+
+  handlePageChange(currentPageOffset) {
+    this.setState({currentPageOffset: currentPageOffset, })
   }
 
   /** convert `PushEvent` to contribution except commits to his own repos */
@@ -115,16 +115,9 @@ export default class TabContentContribution extends React.Component {
       const [ owner, repository, ] = activity.repo.split('/') /** e.g 'akka/akka */
       const [ refs, heads, branch, ] = activity.payload.ref.split('/') /** e.g 'refs/heads/master */
 
-      return new Contribution(
-        activity.created_at,
-        owner,
-        repository,
-        branch,
-        activity.payload.head)
+      return new Contribution(activity.created_at, owner, repository, branch, activity.payload.head)
     })
   }
-
-  // CONTRIB 탭 filter 구현하기
 
   static renderTitle() {
     return (
@@ -172,7 +165,7 @@ export default class TabContentContribution extends React.Component {
         key={index}
         className={css.contribution} /** for hover bg color */
         disabled
-        primaryText={<a href={masterBranchCommitsUrl}>{fullRepoName}</a>}
+        primaryText={<a href={masterBranchCommitsUrl} target='_blank'>{fullRepoName}</a>}
         secondaryText={secondaryText}
         leftIcon={<FontIcon className='fa fa-github' style={styles.list.itemLeftIcon} />}
         primaryTogglesNestedList
@@ -181,11 +174,14 @@ export default class TabContentContribution extends React.Component {
     )
   }
 
-  static renderContribList(contribs, login) {
+  static renderContribList(contribs, currentPageOffset, login) {
+
+    const currentItemOffset = currentPageOffset * ITEM_COUNT_PER_PAGE
+    const sliced = contribs.slice(currentItemOffset, currentItemOffset + ITEM_COUNT_PER_PAGE)
 
     let list = []
 
-    contribs.map((contrib, index) => {
+    sliced.map((contrib, index) => {
       list.push(TabContentContribution.renderContribItem(index, contrib, login))
       list.push(<Divider key={`divider_${index}`} inset />)
     })
@@ -197,10 +193,9 @@ export default class TabContentContribution extends React.Component {
     )
   }
 
-  // TODO: filter, sorter, paginator
   render() {
     const { user, } = this.props
-    const { contributions, filterKeyword, } = this.state
+    const { contributions, filterKeyword, currentPageOffset, } = this.state
 
     const filtered = contributions.filter(contrib  => {
       const repo = `${contrib.owner}/${contrib.repository}`.toLowerCase().trim()
@@ -211,7 +206,13 @@ export default class TabContentContribution extends React.Component {
       <div className='container'>
         {TabContentContribution.renderTitle()}
         <Filter handler={this.handleFilterChange.bind(this)} floatingLabel='INSERT FILTER' />
-        {TabContentContribution.renderContribList(filtered, user.login)}
+        {TabContentContribution.renderContribList(filtered, currentPageOffset, user.login)}
+        <div className='row center'>
+          <Paginator handler={this.handlePageChange.bind(this)}
+                     totalItemCount={filtered.length}
+                     itemCountPerPage={ITEM_COUNT_PER_PAGE}
+                     currentPageOffset={currentPageOffset} />
+        </div>
       </div>
     )
   }
