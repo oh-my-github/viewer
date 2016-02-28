@@ -54,9 +54,8 @@ export default class TabContentRepository extends React.Component {
     }
   }
 
-  handleFilterChange(event) {
-    const filterKeyword = event.target.value.trim().toLowerCase()
-    this.setState({filterKeyword: filterKeyword, currentPageOffset: INITIAL_PAGE_OFFSET,})
+  handleFilterChange(filterKeyword) {
+    this.setState({filterKeyword: filterKeyword.toLowerCase(), currentPageOffset: INITIAL_PAGE_OFFSET,})
   }
 
   handleSorterChange(comparator) {

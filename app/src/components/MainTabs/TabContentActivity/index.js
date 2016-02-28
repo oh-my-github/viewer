@@ -37,9 +37,8 @@ export default class TabContentActivity extends React.Component {
     }
   }
 
-  handleFilterChange(event) {
-    const filterKeyword = event.target.value.trim().toLowerCase()
-    this.setState({ filterKeyword: filterKeyword, })
+  handleFilterChange(filterKeyword) {
+    this.setState({ filterKeyword: filterKeyword.toLowerCase(), })
   }
 
   renderTitle(activities) {

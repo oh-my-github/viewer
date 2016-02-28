@@ -5,10 +5,10 @@ import Tooltip from 'material-ui/lib/tooltip'
 
 import Humanize from 'humanize-plus'
 
-import SectionMostLovedLangs from './SectionMostLovedLangs'
-import SectionOtherLangs from './SectionOtherLangs'
+import SectionFavorite from './SectionFavorite'
+import SectionOther from './SectionOther'
 
-const mostLovedLangCount = 5
+const FAVORITE_LANG_COUNT = 5
 
 export const styles = {
   tabContent: {
@@ -17,7 +17,7 @@ export const styles = {
   },
 
   sectionRepo: {
-    fontSize: '20px',
+    fontSize: 20,
     fontWeight: 200,
   },
 
@@ -58,13 +58,13 @@ export default class TabContentLanguage extends React.Component {
       return lang
     })
 
-    const mostLovedLangs = sortedRepoLangs.slice(0, mostLovedLangCount)
-    const otherLangs = sortedRepoLangs.slice(mostLovedLangCount)
+    const favoriteLangs = sortedRepoLangs.slice(0, FAVORITE_LANG_COUNT)
+    const otherLangs = sortedRepoLangs.slice(FAVORITE_LANG_COUNT)
 
     return (
       <div className='container' style={styles.tabContent} >
-        <SectionMostLovedLangs mostLovedLangs={mostLovedLangs} />
-        <SectionOtherLangs otherLangs={otherLangs} />
+        <SectionFavorite languages={favoriteLangs} />
+        <SectionOther languages={otherLangs} />
       </div>
     )
   }

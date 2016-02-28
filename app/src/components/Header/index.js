@@ -39,7 +39,7 @@ const styles = {
     height: 30,
     boxShadow: '0 0 2px rgba(0, 0, 0, .3)',
     float: 'left',
-    margin: '8px 15px 0 0',
+    margin: '8px 0 0 15px',
   },
 
   appBarRightElementText: {
@@ -54,23 +54,32 @@ const styles = {
 }
 
 export default class Header extends Component {
-  createIconMenu(user) {
+  renderIconMenu(user) {
     return (
       <IconMenu iconButtonElement={<IconButton iconStyle={{fill: MainColors[4],}}><MoreVertIcon /></IconButton>}
                 targetOrigin={{horizontal: 'right', vertical: 'top',}}
                 anchorOrigin={{horizontal: 'right', vertical: 'top',}} >
-        <MenuItem linkButton target='_blank' href={`https://github.com/${user.login}`}
+        <MenuItem touch linkButton target='_blank' href={`https://github.com/${user.login}`}
                   primaryText={user.login} leftIcon={<SvgIconActionAccountCircle color={HeaderColors.ID} />} />
         <Divider />
-        <MenuItem linkButton target='_blank' href={`https://gist.github.com/${user.login}`}
+        <MenuItem touch linkButton target='_blank' href={`https://gist.github.com/${user.login}`}
                   primaryText={`Gist`} leftIcon={<SvgIconActionCode color={HeaderColors.GIST} />} />
-        <MenuItem linkButton target='_blank' href={`https://github.com/stars/${user.login}`}
+        <MenuItem touch linkButton target='_blank' href={`https://github.com/stars/${user.login}`}
                   primaryText={`Favorite`} leftIcon={<SvgIconActionFavorite color={HeaderColors.FAVORITE} />} />
       </IconMenu>
     )
   }
 
-  renderElementRight(user, repositories) {
+  renderElementLeft() {
+    return (
+      <IconButton touch tooltipPosition='bottom-right'
+                  linkButton href='http://github.com/oh-my-github/oh-my-github'>
+        <FontIcon className='fa fa-github' />
+      </IconButton>
+    )
+  }
+
+  renderElementRight(user, repositories, iconMenu) {
 
     const repoStat = repositories.reduce((stat, repo) => {
       stat.starCount += repo.stargazers_count
@@ -80,17 +89,16 @@ export default class Header extends Component {
 
     const starButton = StatLabelStarFactory(repoStat.starCount)
     const forkButton = StatLabelForkFactory(repoStat.forkCount)
-    const iconMenu = this.createIconMenu(user)
 
     return (
       <div>
-        <a href={`https://github.com/${user.login}`} target='_blank'>
-          <Avatar src={user.avatar_url} style={styles.appBarRightElementAvatar} />
-        </a>
         <div style={styles.appBarRightElementButtons}>
           {starButton}
           {forkButton}
         </div>
+        <a href={`https://github.com/${user.login}`} target='_blank'>
+          <Avatar src={user.avatar_url} style={styles.appBarRightElementAvatar} />
+        </a>
         {iconMenu}
       </div>
     )
@@ -99,19 +107,18 @@ export default class Header extends Component {
   render() {
     const { user, repositories, } = this.props
 
+    const iconMenu = this.renderIconMenu(user)
+    const leftElement = this.renderElementLeft()
+    const rightElement = this.renderElementRight(user, repositories, iconMenu)
+
     return (
       <header>
         <AppBar
           style={styles.appBar}
-          title={<div className='hide-on-small-only'>Github Profile</div>}
+          title={<div className='hide-on-small-only'>Github Report</div>}
           titleStyle={styles.title}
-          iconElementLeft={
-          <IconButton touch tooltipPosition='bottom-right'
-                      linkButton href={`https://${user.login}.github.io/${DEFAULT_REPOSITORY}`}>
-            <FontIcon className='fa fa-github' />
-          </IconButton>
-          }
-          iconElementRight={this.renderElementRight(user, repositories)}
+          iconElementLeft={leftElement}
+          iconElementRight={rightElement}
           />
       </header>
     )
