@@ -1,8 +1,13 @@
 # Viewer
 
-Default Viewer for [oh-my-github](https://github.com/oh-my-github/oh-my-github)
+Default Viewer for [oh-my-github](https://github.com/oh-my-github/oh-my-github), See [Demo](http://1ambda.github.io/oh-my-github)
 
-[Demo](http://1ambda.github.io/oh-my-github)
+Supported Browsers
+
+- Chrome (Recommended)
+- Safari
+- Firefox
+- IE 11+
 
 ## Usage
 
